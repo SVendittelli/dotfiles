@@ -160,7 +160,7 @@
 [commit]
 	template = ~/.git-commit.tmpl
 [core]
-#	autocrlf = input
+	autocrlf = input
 #	editor = code --wait
 	excludesfile = ~/.gitignore-global
 	pager = less -FRX
@@ -182,6 +182,7 @@
 	lineNumber = true
 [init]
 	defaultBranch = main
+
 # run "git maintenance register" in a repo to let it be automatically optimized. See: https://git-scm.com/docs/git-maintenance
 [maintenance]
 [pull]
@@ -191,6 +192,7 @@
 	followTags = true
 [status]
 	showUntrackedFiles = all
+
 # alias GitHub's URL to "gh:" for use in clone etc.
 [url "https://github.com/"]
 	insteadOf = gh:
