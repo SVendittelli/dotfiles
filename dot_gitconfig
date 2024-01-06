@@ -158,11 +158,11 @@
 	changed = yellow bold
 	untracked = red bold
 [commit]
-#	template = ~/.git-commit-template
+	template = ~/.git-commit.tmpl
 [core]
 #	autocrlf = input
 #	editor = code --wait
-#	excludesfile = ~/.gitignore-global
+	excludesfile = ~/.gitignore-global
 	pager = less -FRX
 	ignorecase = false
 [credential "https://github.com"]
