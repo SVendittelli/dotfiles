@@ -130,9 +130,7 @@
 	la = !git config --global -l | sed -n -e '/alias/,$p' | sed 's/alias.//g'
 
 #	Edit thhe global git config
-	config-edit = !chezmoi edit ~/.gitconfig
-#	Apply the config edits
-	config-apply = !chezmoi apply ~/.gitconfig
+	config-edit = !chezmoi edit --apply ~/.gitconfig
 
 #	Show the last commit
 	last = show -1 HEAD
