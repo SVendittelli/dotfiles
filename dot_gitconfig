@@ -1,3 +1,145 @@
+[alias]
+# add aliases:
+#	Add (followed by status to see what was added)
+	a = !git add $1 && git status
+#	Add all files (regardless of current directory)
+	aa = !git add -A && git status
+#	Add changes on a hunk-by-hunk basis
+	ap = add --patch
+#	Add an entry for the path in the index with no content. Useful for showing the unstaged content of new files with git diff and committing them with git commit -a.
+	an = add --intent-to-add
+
+# branch aliases:
+#	Branch list with sha, commit subject line, worktree, and upstream
+	b = branch -vv
+#	Create a branch
+	bc = switch -c
+#	Delete a branch
+	bd = branch -d
+#	Force delete a branch
+	bdd = branch -D
+#	Get the upstream branch of the current branch
+	bu = rev-parse --abbrev-ref --symbolic-full-name @{upstream}
+#	List local branchs and show if there are behind or ahead of their upstreams
+	bl = !git fetch --quiet && printf 'Updated\t\tLocal Branch\t\tRemote Status\n' && git for-each-ref --sort='-authordate' --format='%(align:16)%(authordate:short)%(end)%(align:24)%(refname:short)%(end)%(upstream:track)' refs/heads
+#	List all the branches on the remote
+	blr = !git fetch --prune --quiet && printf 'Updated\t\tRemote Branch\n' && git for-each-ref --sort='-authordate' --format='%(align:16)%(authordate:short)%(end)%(refname:short)' refs/remotes/origin | grep -v HEAD
+
+# commit aliases:
+#	Create a commit
+	c = commit
+#	Amend last commit
+	ca = commit --amend
+#	Create a commit with an inline message
+	cm = commit -m
+
+# clone aliased:
+	cl = clone
+
+# checkout aliases:
+	co = checkout
+
+# cherrpyick aliases:
+	cp = cherry-pick
+
+# diff aliases:
+#	Differences locally since last commit
+	df = diff
+#	Differences between the local and remote
+	dfu = diff @{upstream}
+#	Differences that have been staged
+	dfs = diff --staged
+#	Differences to the remote main branch
+	dfm = diff origin/main
+
+# fetch aliases:
+	ft = fetch
+
+# log aliases:
+#	Last 20 commits with a human readable dates
+	lg = !git pretty-log -20 --date=auto:human
+#	Last 20 commits with dates relative to now
+	lgr = !git pretty-log -20 --date=relative
+#	Commit log with a graph
+	graph = log --oneline --abbrev-commit --all --graph --decorate
+#	Internal command to pretty print commit log
+	pretty-log = log --pretty=format:'%Cred[%h]%Creset >%C(yellow)%d %Creset%s %Cgreen(%cd) %C(bold cyan)<%an>%Creset'
+
+# fetch aliases:
+#	Fetch from remote, pruning dead references
+	pr = fetch --prune
+
+# push aliases:
+#	Push
+	ph = push
+#	Force push
+	phf = push --force
+#	Push, setting the upstream with the same branch name as locally
+	phu = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+
+# pull aliases:
+#	Pull with one-descriptions
+	pl = pull --log
+#	Pull the main branch
+	plom = pull origin main
+
+# rebase aliases:
+	rb = rebase
+
+# restore aliases:
+#	Restore
+	rs = restore
+	rsb = restore --source=HEAD --staged --worktree
+	rss = restore --staged
+	rsw = restore --worktree
+	rssw = restore --staged --worktree
+
+# reset alaises:
+	rt = reset
+	rth = reset --hard
+	rtu = reset --hard @{upstream}
+
+# status aliases:
+	s = status --show-stash
+	ss = status --short --branch
+
+# stash aliases:
+	st = stash
+	sta = stash apply
+	stc = stash clear
+	stk = stash --keep-index
+	stl = stash list --pretty=format:'%C(bold magenta)%gd%Creset > %s %Cgreen(%cr)%Creset'
+	stp = stash pop
+	sts = stash show
+	stu = stash --include-untracked
+	stdf = stash show --patch
+	snap = !git update-ref --create-reflog -m snapshot refs/stash $(git stash create 'snapshot')
+
+# switch aliases:
+	sw = switch
+	swm = switch main
+
+# tag aliases:
+	t = !GIT_COMMITTER_DATE=$(git show --format=%aD | head -1) git tag $1
+
+# General aliases:
+#	Update main with latest changes
+	um = !git switch main && git pull
+
+#	List aliases
+	la = !git config --global -l | sed -n -e '/alias/,$p' | sed 's/alias.//g'
+
+#	Edit thhe global git config
+	config-edit = !chezmoi edit ~/.gitconfig
+#	Apply the config edits
+	config-apply = !chezmoi apply ~/.gitconfig
+
+#	Show the last commit
+	last = show -1 HEAD
+#	Undo the last commit (preserving changes)
+	undo-commit = reset HEAD~
+#	Show commit logs and diff output each commit introduces
+	what = whatchanged --oneline
 [branch]
 	sort = -authordate
 [color]
