@@ -62,6 +62,7 @@ alias unexport='unset'
 alias update="sudo apt update && sudo apt upgrade -y"
 
 ## Shorten commands
+alias e=$EDITOR
 alias g='git'
 alias x="exit"
 
