@@ -11,6 +11,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
+fpath=(/home/sam/zsh/completion $fpath)
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/sam/.zshrc'
 
