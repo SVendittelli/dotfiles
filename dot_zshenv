@@ -1,1 +1,3 @@
-export EDITOR="nano"
+# Set environment variables
+## Set editor to VS Code
+export EDITOR="code -n -w"
