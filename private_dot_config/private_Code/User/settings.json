@@ -53,7 +53,7 @@
     "docker.images.groupBy": "RepositoryName",
     "editor.bracketPairColorization.enabled": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.fontFamily": "Fira code",
+    "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.formatOnSave": true,
