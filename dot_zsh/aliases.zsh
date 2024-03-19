@@ -71,8 +71,11 @@ alias reload="source ~/.zshenv && source ~/.zshrc"
 
 ## Edit dotfiles
 alias edf="chezmoi edit --apply"
-alias i3config="edf ~/.config/i3/config"
 alias zshconfig="edf ~/.zshrc"
+
+## Edit NixOS config
+alias enos="sudo $EDITOR /etc/nixos"
+alias anos="sudo nixos-rebuild switch --flake /etc/nixos#default"
 
 # List processes on port
 function on-port {

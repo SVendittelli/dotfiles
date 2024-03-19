@@ -1,3 +1,3 @@
 # Set environment variables
 ## Set editor to VS Code
-export EDITOR="code -n -w"
+export EDITOR="nvim"
