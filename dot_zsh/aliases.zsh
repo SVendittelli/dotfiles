@@ -74,8 +74,8 @@ alias edf="chezmoi edit --apply"
 alias zshconfig="edf ~/.zshrc"
 
 ## Edit NixOS config
-alias enos="sudo $EDITOR /etc/nixos"
-alias anos="sudo nixos-rebuild switch --flake /etc/nixos#default"
+alias enos="$EDITOR ~/nixos"
+alias anos="~/nixos/nixos-rebuild.sh"
 
 # List processes on port
 function on-port {
