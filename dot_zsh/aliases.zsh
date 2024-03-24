@@ -1,6 +1,6 @@
 # common aliases
 
-## Dirsctories aliases
+## Directories aliases
 # Changing/making/removing directory
 setopt auto_cd
 setopt auto_pushd
@@ -36,12 +36,10 @@ function d() {
 compdef _dirs d
 
 ## ls aliases
-alias ls='ls --color=auto'
-alias l='ls -lFh'   #size,show type,human readable
-alias la='ls -lAFh' #long list,show almost all,show type,human readable
-alias lr='ls -tRFh' #sorted by date,recursive,show type,human readable
-alias lt='ls -ltFh' #long list,sorted by date,show type,human readable
-alias ll='ls -l'    #long list
+alias ls='eza'
+alias l='ls -lh'         #size,show type,headers
+alias la='ls -lah --git' #long list,show almost all,show type,headers
+alias ll='ls -l'         #long list
 
 ## Improve grep
 alias grep='grep --color'
@@ -56,15 +54,20 @@ alias -g L="| less"
 alias -g M="| most"
 
 ## Helpful system aliases
-alias help='man'
+alias help='tldr'
 alias p='ps -f'
 alias unexport='unset'
-alias update="sudo apt update && sudo apt upgrade -y"
 
 ## Shorten commands
 alias e=$EDITOR
+alias e.='$EDITOR .'
 alias g='git'
 alias x="exit"
+
+## Vim
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
 
 ## Reload zsh config
 alias reload="source ~/.zshenv && source ~/.zshrc"
