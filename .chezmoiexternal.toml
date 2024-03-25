@@ -26,4 +26,9 @@
     url = "https://github.com/folke/tokyonight.nvim/archive/main.tar.gz"
     exact = true
     stripComponents = 1
+[".tmux/plugins/tpm"]
+    type = "archive"
+    url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
 
