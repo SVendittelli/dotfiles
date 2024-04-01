@@ -9,6 +9,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
-## tmux
-export ZSH_TMUX_AUTOSTART=true
+# enable nix-ld for running dynamically linked binaries
+export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
 

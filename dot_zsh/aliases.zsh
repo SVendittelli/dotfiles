@@ -26,7 +26,7 @@ alias reload="source ~/.zshenv && source ~/.zshrc"
 ## Edit dotfiles
 alias edf="chezmoi edit --apply"
 alias zshconfig="edf ~/.zshrc"
-alias udf="chezmoi --refresh-externals update && reload"
+alias udf="chezmoi update && reload"
 
 ## Edit NixOS config
 alias enos="$EDITOR ~/nixos"
