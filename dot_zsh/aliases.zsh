@@ -5,6 +5,7 @@ alias ls='eza'
 alias l='ls -lh'         #size,show type,headers
 alias la='ls -lah --git' #long list,show almost all,show type,headers
 alias ll='ls -l'         #long list
+alias lt='ls -lah --git --git-ignore --tree' #long list,show almost all,show type,headers,follow git ignore,tree
 
 ## Helpful system aliases
 alias help='tldr'
