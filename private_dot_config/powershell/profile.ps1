@@ -1,0 +1,59 @@
+<#
+  Author: Sam Vendittelli
+  Description: PowersShell Profile containing aliases and functions to be loaded when a new PowerShell session is started.
+#>
+
+# Aliases
+Set-Alias -Name cat -Value bat
+Set-Alias -Name e -Value nvim
+Set-Alias -Name g -Value git
+Set-Alias -Name ls -Value Get-ChildItemPretty
+Set-Alias -Name ll -Value Get-ChildItemPretty
+Set-Alias -Name la -Value Get-ChildItemPretty
+Set-Alias -Name l -Value Get-ChildItemPretty
+Set-Alias -Name vim -Value nvim
+Set-Alias -Name vi -Value nvim
+Set-Alias -Name which -Value Show-Command
+
+# Functions
+function Get-ChildItemPretty {
+    <#
+    .SYNOPSIS
+        Runs eza with a specific set of arguments. Plus some line breaks before and after the output.
+        Alias: ls, ll, la, l
+    #>
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $false, Position = 0)]
+        [string]$Path = $PWD
+    )
+
+    Write-Host ""
+    eza -a -l --header --icons --hyperlink --time-style relative $Path
+    Write-Host ""
+}
+
+function Show-Command {
+    <#
+    .SYNOPSIS
+        Displays the definition of a command. Alias: which
+    #>
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $true, Position = 0)]
+        [string]$Name
+    )
+    Write-Verbose "Showing definition of '$Name'"
+    Get-Command $Name | Select-Object -ExpandProperty Definition
+}
+
+function x {
+  <#
+  .SYNOPSIS
+    Exits
+  #>
+  exit
+}
+
+# Environment Variables
+$ENV:EDITOR = "nvim"
