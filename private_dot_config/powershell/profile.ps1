@@ -4,10 +4,10 @@
 #>
 
 # Aliases
-Set-Alias -Name cat -Value bat
-Set-Alias -Name e -Value nvim
+Set-Alias -Name cat -Value bat -Option AllScope
+Set-Alias -Name e -Value nvm
 Set-Alias -Name g -Value git
-Set-Alias -Name ls -Value Get-ChildItemPretty
+Set-Alias -Name ls -Value Get-ChildItemPretty -Option AllScope
 Set-Alias -Name ll -Value Get-ChildItemPretty
 Set-Alias -Name la -Value Get-ChildItemPretty
 Set-Alias -Name l -Value Get-ChildItemPretty
