@@ -22,7 +22,5 @@ README.md
 
 .config/tmux
 .tmux/**
-
-.themes/**
 {{- end }}
 
