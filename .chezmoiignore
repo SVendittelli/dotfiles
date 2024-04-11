@@ -5,6 +5,8 @@ README.md
 # Files to be ignored on *nix
 {{- if ne .chezmoi.os "windows" }}
 *.ps1
+
+.config/powershell
 {{- end }}
 
 # Files to be ignored on windows
