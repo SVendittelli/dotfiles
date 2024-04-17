@@ -1,0 +1,10 @@
+add neotree
+add undotree
+configure linters and indenting
+add git-worktrees
+extract options to own file
+extract autocmds to own file
+go through init.lua again
+go through lazyvims configs https://www.lazyvim.org/
+go through prime's configs https://github.com/ThePrimeagen/init.lua/tree/master
+go through tj's configs https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim
