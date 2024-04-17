@@ -14,6 +14,7 @@ alias help='tldr'
 alias e=$EDITOR
 alias e.='e .'
 alias g='git'
+alias lg='lazygit'
 alias x="exit"
 
 ## Vim
