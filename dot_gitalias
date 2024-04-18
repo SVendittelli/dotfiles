@@ -1,0 +1,279 @@
+[alias]
+#	Short aliases for frequent commands
+
+	a = !git add $@ && git status
+	b = branch -vv
+	c = commit
+	d = diff
+	f = fetch
+	g = grep
+	l = log
+	m = merge
+	p = pull
+	s = status
+	w = worktree
+
+# add aliases:
+#	add all files (regardless of current directory)
+
+#	add changes on a hunk-by-hunk basis
+	ap = add --patch
+#	add just the files that are updated
+	au = add --update
+#	add an entry for the path in the index with no content. Useful for showing the unstaged content of new files with git diff and committing them with git commit -a.
+	an = add --intent-to-add
+
+# branch aliases:
+#	Create a branch
+	bc = switch -c
+#	Delete a branch
+	bd = branch -d
+#	Force delete a branch
+	bdd = branch -D
+
+# commit aliases:
+#	Amend last commit
+	ca = commit --amend
+#	Amend last commit, keep the same message
+	cane = commit --amend --no-edit
+#	Create a commit with an inline message
+	cm = commit -m
+
+# clone aliased:
+	cl = clone
+	clb = clone --bare
+
+# checkout aliases:
+	co = checkout
+
+# cherrpyick aliases:
+	cp = cherry-pick
+
+# diff aliases:
+#	Differences that have been not yet been staged
+	dc = diff --cached
+#	Differences between the local and remote
+	du = diff @{upstream}
+#	Differences that have been staged
+	ds = diff --staged
+#	Differences to the remote main branch
+	dm = diff origin/main
+
+# grep aliases:
+#	grep grouping by file
+	gg = grep --break --heading
+
+# log aliases:
+#	log with a text-based graphical representation of the commit history
+	lg = log --oneline --abbrev-commit --all --graph --decorate --topo-order
+#	log with one line per item
+	lo = log --oneline
+#	log with one line per item, recent first
+	lo = log --oneline --reverse
+#	log with patch generation
+	lp = log --patch
+#	log in a nicely formatted list, human readable dates
+	ll = pretty-log --date=auto:human
+#	log in a nicely formatted list, ISO-8601 dates
+	lll = pretty-log --date=iso8601-strict --no-abbrev-commit
+
+#	Internal command to pretty print commit log
+	pretty-log = log --decorate --boundary --pretty=format:'%Cred[%h]%Creset %m%C(yellow)%d %Creset%s %Cgreen(%cd) %C(bold cyan)<%an>%Creset'
+
+# push aliases:
+#	push
+	ph = push
+#	force push
+	phf = push --force
+#	push, setting the upstream with the same branch name as locally
+	phu = !git push --set-upstream origin $(git current-branch)
+
+# pull aliases:
+#	pull with one-descriptions
+	pl = pull --log
+#	pull only if changes can be fastforwarded
+	plf = pull --ff-only
+#	pull the main branch
+	plom = pull origin main
+
+# rebase aliases:
+	rb = rebase
+#	rebase abort
+	rba = rebase --abort
+#	rebase continue
+	rbc = rebase --continue
+#	rebase skip
+	rbs = rebase --skip
+#	rebase interactive
+	rbi = rebase --interactive
+#	rebase interactive on unpushed commits
+	rbiu = rebase --interactive @{upstream}
+
+# restore aliases:
+#	Restore
+	rs = restore
+	rsb = restore --source=HEAD --staged --worktree
+	rss = restore --staged
+	rsw = restore --worktree
+	rssw = restore --staged --worktree
+
+# reset alaises:
+	rt = reset
+	rth = reset --hard
+	rtu = reset --hard @{upstream}
+
+# status aliases:
+	s = status --show-stash
+	ss = status --short --branch
+
+# stash aliases:
+	st = stash
+	sta = stash apply
+	stc = stash clear
+	stk = stash --keep-index
+	stl = stash list --pretty=format:'%C(bold magenta)%gd%Creset > %s %Cgreen(%cr)%Creset'
+	stp = stash pop
+	sts = stash show
+	stu = stash --include-untracked
+	stdf = stash show --patch
+	snap = !git update-ref --create-reflog -m snapshot refs/stash $(git stash create 'snapshot')
+
+# switch aliases:
+	sw = switch
+	swm = switch main
+
+# tag aliases:
+#	use the date of the last comit for a newly created tag
+	t = !GIT_COMMITTER_DATE=$(git show --format=%aD | head -1) git tag $@
+#	last tag in the current branch
+	last-tag = describe --tags --abbrev=0
+#	last tag in the current branch
+	last-tagged = "!git describe --tags \"$(git rev-list --tags --max-count=1)\""
+
+# worktree
+#	worktree add
+	wa = worktree add
+#	worktree list
+	wl = worktree list
+#	worktree remove
+	wr = worktree remove
+
+# General aliases:
+	# Add all files of the given type
+	add-cached   = "!git add \"$(git ls-files --cached             | sort -u)\""
+	add-deleted  = "!git add \"$(git ls-files --deleted            | sort -u)\""
+	add-others   = "!git add \"$(git ls-files --others             | sort -u)\""
+	add-ignored  = "!git add \"$(git ls-files --ignored            | sort -u)\""
+	add-killed   = "!git add \"$(git ls-files --killed             | sort -u)\""
+	add-modified = "!git add \"$(git ls-files --modified           | sort -u)\""
+	add-stage    = "!git add \"$(git ls-files --stage    | cut -f2 | sort -u)\""
+	add-unmerged = "!git add \"$(git ls-files --unmerged | cut -f2 | sort -u)\""
+
+	# Friendly wording is easier to remember.
+	# Thanks to http://gggritso.com/human-git-aliases
+	aliases = alias
+	branches = branch -a
+	tags = tag -n1 --list
+	stashes = stash list
+
+	# Assume & Unassume
+	#
+	# Sometimes we want to change a file in a repo, but never check in your edits.
+	# We can't use .gitignore because the file is tracked. We use update-index.
+	#
+	# If you interact with big corporate projects, such as projects in Subversion,
+	# then you might run into the need to ignore certain files which are under the
+	# Subversion control, yet you need to modify them but not commit.
+	#
+	# The assume-unchanged flag comes to the rescue.
+	#
+	# Suppose we want to edit passwords.txt and for gosh sake never check it in:
+	#
+	#     $ git status
+	#     modified passwords.txt
+	#     modified foo.txt
+	#
+	#     $ git assume passwords.txt
+	#     $ git status
+	#     modified foo.txt
+	#
+	#     $ git assumed
+	#     passwords.txt
+	#
+	#     $ git unassume passwords.txt
+	#     $ git status
+	#     modified passwords.txt
+	#     modified foo.txt
+	#
+	# Thanks <http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/>
+	# Thanks <http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/>
+	#
+	assume   = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+
+#	Edit the global git config
+	config-edit = !chezmoi edit --apply ~/.gitconfig
+
+	# Expunge a file everywhere; this command is typically for a serious problem,
+	# such as accidentally committing a file of sensitive data, such as passwords.
+	# After you use command, you will likely need to force push everything.
+	# See <https://help.github.com/articles/removing-sensitive-data-from-a-repository/>
+	expunge = "!f() { git filter-branch --force --index-filter \"git rm --cached --ignore-unmatch $1\" --prune-empty --tag-name-filter \"cat\" -- --all ; }; f"
+
+	### inbound & outbound ###
+
+	# Show incoming changes with upstream.
+	inbound = !git remote update --prune; git log ..@{upstream}
+	# Show outgoing changes with upstream.
+	outbound = log @{upstream}..
+
+	# Initalize a repo and immediately add an empty rebaseable commit.
+	# This initialization makes it easier to do later git rebase commands,
+	# because it enables a rebase to go all the way back to the first commit.
+	init-empty = "!f() { git init && git commit --allow-empty --allow-empty-message --message ''; }; f"
+
+#	Show the last commit
+	last = show -1 HEAD
+
+	# Show log of new commits after you fetched, with stats, excluding merges
+	log-fresh = log ORIG_HEAD.. --stat --no-merges
+	# Show log for my own commits by my own user email
+	log-my = "!git log --author \"$(git config user.email)\""
+
+	# Show logs of unreachable commits.
+	# This can be useful, for example, when recovering contents of dropped stashes or reset commits.
+	show-unreachable = "!git fsck --unreachable | grep commit | cut -d\" \" -f3 | xargs git log"
+
+	# Track and untrack, with default parameters, and with printing the command
+	track = "!f(){ branch=\"$(git current-branch)\"; cmd=\"git branch $branch --set-upstream-to=${1:-origin}/${2:-$branch}\"; echo \"$cmd\"; $cmd; }; f"
+	untrack = "!f(){ branch=\"$(git current-branch)\"; cmd=\"git branch --unset-upstream ${1:-$branch}\"; echo \"$cmd\"; $cmd; }; f"
+
+#	Update main with latest changes
+	um = "!git switch \"$(git default-branch)\" && git pull"
+
+#	Undo the last commit
+	undo-commit = reset --soft HEAD~1
+	undo-commit-hard = reset --hard HEAD~1
+
+	# Show who contributed, in descending order by number of commits
+	who = shortlog --summary --numbered --no-merges
+
+	# whatchanged
+	what = whatchanged
+
+	### Shell scripting aliases ###
+
+	# Show the top level directory name
+	top = rev-parse --show-toplevel
+
+	# Show the default branch name
+	default-branch = config init.defaultBranch
+
+	# Show the current branch name
+	current-branch = branch --show-current
+
+	# Show the upstream branch name
+	upstream-branch = rev-parse --abbrev-ref --symbolic-full-name "@{upstream}"
+
+# vim:ft=gitconfig

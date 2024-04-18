@@ -5,10 +5,7 @@
 # `~/.config/chezmoi/chezmoi.toml`
 # See https://www.chezmoi.io/docs/how-to/
 
-{{- /* This file supports Go's text/template language. */}}
-
 {{- $email := promptString "Git email address for the author/committer" }}
-{{- $name := promptString "Git username for the author/committer" }}
 
 encryption = "age"
 
@@ -17,8 +14,7 @@ identity = "~/.keys/chezmoi.txt"
 recipient = "age1854gyefj8vf0qzpfxldjzremfg69fmawcmgwnve8d4equgvl99qslgywr8"
 
 [data]
-email = "{{ $email }}"
-name = "{{ $name }}"
+email = {{ $email | quote }}
 
 [diff]
 exclude = ["scripts"]
