@@ -12,3 +12,4 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # enable nix-ld for running dynamically linked binaries
 export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
 
+# vim:ft=zsh

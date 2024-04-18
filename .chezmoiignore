@@ -1,3 +1,8 @@
+# Read by chezmoi when chosing repository files to copy to home directory.
+#
+# This list defines globs to ignore, and supports Go's text/template language.
+# See https://www.chezmoi.io/docs/reference/#chezmoiignore
+
 README.md
 .oh-my-zsh/cache/completions/
 .oh-my-zsh/cache/grep-alias/
@@ -26,3 +31,4 @@ README.md
 .tmux/**
 {{- end }}
 
+# vim:ft=gitignore

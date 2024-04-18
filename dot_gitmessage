@@ -1,0 +1,31 @@
+
+# header: <type>(<scope>): <summary>, 50 chars ->|
+
+# body: optional, 72 chars ------------------------------------------->|
+
+
+# footer(s): optional, 72 chars -------------------------------------->|
+
+
+# Guidelines: Follows Conventional Commits & Angular style
+#
+# Header:
+#
+# <type>:
+#   - feat: A new feature
+#   - fix: A bug fix
+#   - build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+#   - ci: Changes to our CI configuration files and scripts (examples: CircleCi, SauceLabs)
+#   - docs: Documentation only changes
+#   - perf: A code change that improves performance
+#   - refactor: A code change that neither fixes a bug nor adds a feature
+#   - style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc.)
+#   - test: Adding missing tests or correcting existing tests
+#   - chore: Other changes that don't modify src or test files
+#   - revert: Reverts a previous commit
+#
+# <scope>: Optional, the area of the code the change was made in
+#
+# <summary>: Summary of the change in imperative tense, start lowercase, no punctuation at the end
+#
+# Breaking changes: `!` after type/scope or `BREAKING CHANGE` in footer

@@ -157,7 +157,7 @@
 	changed = yellow bold
 	untracked = red bold
 [commit]
-	template = ~/.git-commit.tmpl
+	template = ~/.gitmessage
 [core]
 	autocrlf = input
 	pager = less -FRX
@@ -194,7 +194,9 @@
 [url "https://github.com/"]
 	insteadOf = gh:
 [user]
-	email = sam.vendittelli@hotmail.com
-	name = Sam Vendittelli
+	email = {{ .email }}
+	name = {{ .name }}
 [web]
 	browser = firefox
+
+# vim:ft=gitconfig
