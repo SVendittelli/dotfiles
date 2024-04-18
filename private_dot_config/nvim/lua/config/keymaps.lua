@@ -26,8 +26,6 @@ vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
--- [[ Custom ]]
-
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
@@ -37,8 +35,30 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Fix indentation when moving lines in visual mode
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+-- Append line below to current line without moving the cursor
+vim.keymap.set('n', 'J', 'mzJ`z')
+
 -- Keep the cursor centered when scrolling
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- Paste over selection without replacing copy register
+vim.keymap.set('x', '<leader>p', [["_dP]])
+-- Delete without replacing copy register
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+
+-- Yank to system clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
+
+-- Make ctrl-c the same as escape in the one place it isn't
+vim.keymap.set('i', '<C-c>', '<Esc>')
+
+-- Open netrw file explorer
+vim.keymap.set('n', '<leader>oe', vim.cmd.Ex, { desc = '[O]pen file [E]xplorer' })
