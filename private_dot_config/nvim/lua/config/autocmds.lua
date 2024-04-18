@@ -11,3 +11,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+--  Automatically apply changes on files under chezmoi source path
+--  e.g. ~/.local/share/chezmoi/*
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = { os.getenv 'HOME' .. '/.local/share/chezmoi/*' },
+  group = vim.api.nvim_create_augroup('chezmoi-edit-group', { clear = true }),
+  callback = function()
+    vim.schedule(require('chezmoi.commands.__edit').watch)
+  end,
+})
