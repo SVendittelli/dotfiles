@@ -22,6 +22,7 @@ vim.opt.showmode = false
 vim.opt.breakindent = true
 
 -- Save undo history
+vim.opt.undodir = os.getenv 'home' .. '/.vim/undodir'
 vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
@@ -48,6 +49,8 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- Set highlight on search, but clear on pressing <Esc> in normal mode
+vim.opt.hlsearch = true
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
@@ -56,9 +59,22 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 
 -- Add a line length guide
 vim.opt.colorcolumn = '80'
 
--- Set tab length
+-- Set tab length and automatically expand them to spaces
 vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+-- Insert indents automatically
+vim.opt.smartindent = true
+
+-- Turn off line wrapping
+vim.opt.wrap = false
+
+-- True color support
+vim.opt.termguicolors = true
