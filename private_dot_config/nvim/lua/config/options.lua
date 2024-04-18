@@ -2,6 +2,9 @@
 -- See `:help vim.opt`
 -- NOTE: For more options, you can see `:help option-list`
 
+-- Set to true if you have a Nerd Font installed
+vim.g.have_nerd_font = true
+
 -- Make line numbers default
 vim.opt.number = true
 -- Use relative line numbers, to help with jumping.
@@ -22,7 +25,7 @@ vim.opt.showmode = false
 vim.opt.breakindent = true
 
 -- Save undo history
-vim.opt.undodir = os.getenv 'home' .. '/.vim/undodir'
+vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
