@@ -26,6 +26,7 @@ vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
+-- TODO replace with vim-tmux-navigator
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
@@ -49,16 +50,17 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Paste over selection without replacing copy register
-vim.keymap.set('x', '<leader>p', [["_dP]])
+vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste over selection without replacing copy register' })
 -- Delete without replacing copy register
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without replacing copy register' })
 
 -- Yank to system clipboard
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
-vim.keymap.set('n', '<leader>Y', [["+Y]])
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank to system clipboard' })
+vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank until end of line to system clipboard' })
 
 -- Make ctrl-c the same as escape in the one place it isn't
 vim.keymap.set('i', '<C-c>', '<Esc>')
 
+-- TODO Replace with " ee" wheni change the file explorer
 -- Open netrw file explorer
 vim.keymap.set('n', '<leader>oe', vim.cmd.Ex, { desc = '[O]pen file [E]xplorer' })

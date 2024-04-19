@@ -22,16 +22,16 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
-## Reload zsh config
+##edit and reload zsh config
+alias zshconfig="chezmoi edit --apply ~/.zshrc"
 alias reload="source ~/.zshenv && source ~/.zshrc"
 
 ## Edit dotfiles
-alias edf="chezmoi edit --apply"
-alias zshconfig="edf ~/.zshrc"
+alias edf="(cd $(chezmoi source-path) && $EDITOR .)"
 alias udf="chezmoi update && reload"
 
 ## Edit NixOS config
-alias enos="$EDITOR ~/nixos"
+alias enos="(cd ~/nixos && $EDITOR)"
 alias anos="~/nixos/nixos-rebuild.sh"
 
 # List processes on port
