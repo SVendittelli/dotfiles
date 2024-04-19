@@ -37,11 +37,11 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Fix indentation when moving lines in visual mode
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selected test down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selected test up' })
 
 -- Append line below to current line without moving the cursor
-vim.keymap.set('n', 'J', 'mzJ`z')
+vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Append the line below to the current line with a space' })
 
 -- Keep the cursor centered when scrolling
 vim.keymap.set('n', '<C-d>', '<C-d>zz')

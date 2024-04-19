@@ -15,6 +15,7 @@
 
 # add aliases:
 #	add all files (regardless of current directory)
+	aa = !git add --all $@ && git status
 
 #	add changes on a hunk-by-hunk basis
 	ap = add --patch
