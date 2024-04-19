@@ -22,7 +22,7 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
-##edit and reload zsh config
+## Edit and reload zsh config
 alias zshconfig="chezmoi edit --apply ~/.zshrc"
 alias reload="source ~/.zshenv && source ~/.zshrc"
 
@@ -33,6 +33,7 @@ alias udf="chezmoi update && reload"
 ## Edit NixOS config
 alias enos="(cd ~/nixos && $EDITOR)"
 alias anos="~/nixos/nixos-rebuild.sh"
+alias update="(cd ~/nixos && nix flake update)"
 
 # List processes on port
 function on-port {

@@ -118,8 +118,7 @@ fi
 source ~/.zsh/aliases.zsh
 
 # Set up fzf key bindings and fuzzy completion
-# TODO: remove this once nix packages has version 0.48.x
-# eval "$(fzf --zsh)"
+eval "$(fzf --zsh)"
 
 # Set up atuin
 eval "$(atuin init zsh)"

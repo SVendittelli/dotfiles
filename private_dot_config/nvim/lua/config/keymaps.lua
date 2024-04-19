@@ -51,10 +51,6 @@ vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank until end of line to sy
 -- Make ctrl-c the same as escape in the one place it isn't
 vim.keymap.set('i', '<C-c>', '<Esc>')
 
--- TODO Replace with " ee" wheni change the file explorer
--- Open netrw file explorer
-vim.keymap.set('n', '<leader>oe', vim.cmd.Ex, { desc = '[O]pen file [E]xplorer' })
-
 -- increment/decrement numbers
 vim.keymap.set('n', '<leader>+', '<C-a>', { desc = 'Increment number' })
 vim.keymap.set('n', '<leader>-', '<C-x>', { desc = 'Decrement number' })
@@ -64,10 +60,3 @@ vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = '[S]plit window [V]erticall
 vim.keymap.set('n', '<leader>sh', '<C-w>s', { desc = '[S]plit window [H]orizontally' })
 vim.keymap.set('n', '<leader>se', '<C-w>=', { desc = 'Make [S]plits [E]qual size' })
 vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current [S]plit [x]' })
-
--- tab management
-vim.keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', { desc = '[T]ab [O]pen' })
-vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = 'Close current [T]ab' })
-vim.keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', { desc = '[T]ab [N]ext' })
-vim.keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', { desc = '[T]ab [P]revious' })
-vim.keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open new [T]ab of the current [F]ile' })
