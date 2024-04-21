@@ -78,7 +78,10 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  alias-finder
+  aliases
   colored-man-pages
+  command-not-found
   docker
   docker-compose
   encode64
@@ -90,6 +93,7 @@ plugins=(
   npm
   sudo
   tmux
+  web-search
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
