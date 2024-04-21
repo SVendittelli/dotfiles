@@ -90,7 +90,6 @@ plugins=(
   npm
   sudo
   tmux
-  wd
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
