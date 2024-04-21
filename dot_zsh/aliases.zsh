@@ -1,5 +1,8 @@
 # common aliases
 
+## Alias cd to use zoxide
+alias cd='z'
+
 ## ls aliases
 alias ls='eza'
 alias l='ls -lh'         #size,show type,headers

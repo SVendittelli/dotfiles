@@ -1,3 +1,6 @@
+[".config/ranger/plugins/zoxide"]
+    type = "git-repo"
+    url = "https://github.com/jchook/ranger-zoxide.git"
 [".oh-my-zsh"]
     type = "archive"
     url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
@@ -21,14 +24,17 @@
     url = "https://github.com/romkatv/powerlevel10k/archive/master.tar.gz"
     exact = true
     stripComponents = 1
+    refreshPeriod = "168h"
 [".themes/tokyonight.nvim"]
     type = "archive"
     url = "https://github.com/folke/tokyonight.nvim/archive/main.tar.gz"
     exact = true
     stripComponents = 1
+    refreshPeriod = "168h"
 [".tmux/plugins/tpm"]
     type = "archive"
     url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
     exact = true
     stripComponents = 1
+    refreshPeriod = "168h"
 
