@@ -1,0 +1,7 @@
+{{ if eq .chezmoi.os "windows" -}}
+{{ range .packages.windows.winget -}}
+winget install --exact --no-upgrade --id {{ . | quote }}
+{{ end -}}
+{{ end -}}
+
+# vim:ft=ps1

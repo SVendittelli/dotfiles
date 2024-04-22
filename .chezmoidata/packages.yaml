@@ -1,0 +1,20 @@
+packages:
+  windows:
+    winget:
+      - "Alacritty.Alacritty"
+      - "AutoHotkey.AutoHotkey"
+      - "Balena.Etcher"
+      - "Git.Git"
+      - "GitHub.cli"
+      - "GoLang.Go"
+      - "HTTPie.HTTPie"
+      - "LGUG2Z.komorebi"
+      - "LGUG2Z.whkd"
+      - "Microsoft.VisualStudioCode"
+      - "Neovim.Neovim"
+      - "Obsidian.Obsidian"
+      - "OpenJS.NodeJS.LTS"
+      - "Rustlang.Rustup"
+      - "SumatraPDF.SumatraPDF"
+      - "twpayne.chezmoi"
+      - "zig.zig"
