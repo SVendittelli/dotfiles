@@ -9,6 +9,7 @@ README.md
 
 {{- if ne .chezmoi.os "windows" }}
 # Files to be ignored on *nix
+*.ahk
 *.ps1
 
 applications.yaml
@@ -28,8 +29,8 @@ komorebi.json
 .p10k.zsh
 
 .config/atuin
-
 .config/kitty
+.config/ranger
 
 .config/tmux
 .tmux/**
