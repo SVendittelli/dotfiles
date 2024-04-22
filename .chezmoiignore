@@ -1,7 +1,7 @@
 # Read by chezmoi when chosing repository files to copy to home directory.
 #
 # This list defines globs to ignore, and supports Go's text/template language.
-# See https://www.chezmoi.io/docs/reference/#chezmoiignore
+# See https://www.chezmoi.io/reference/special-files-and-directories/chezmoiignore/
 
 README.md
 .oh-my-zsh/cache/completions/
@@ -13,7 +13,7 @@ README.md
 
 applications.yaml
 komorebi.json
-whkdrc
+.config/whkdrc
 
 .config/powershell
 {{- end }}
