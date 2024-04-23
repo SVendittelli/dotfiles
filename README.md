@@ -10,3 +10,11 @@ Install with:
 chezmoi init --apply SVendittelli
 ```
 
+## Windows
+
+In an administrator shell:
+
+```powershell
+Set-ExecutionPolicy remotesigned
+```
+
