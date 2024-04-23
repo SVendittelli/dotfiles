@@ -47,6 +47,10 @@
     refreshPeriod = "168h"
 {{- end }}
 
+{{- if eq .chezmoi.os "darwin" }}
+# macOS specific
+{{- end }}
+
 {{- if eq .chezmoi.os "windows" }}
 # Windows specific
 ["applications.yaml"]
@@ -57,4 +61,11 @@
     type = "file"
     url = "https://github.com/Dashlane/dashlane-cli/releases/download/{{ (gitHubLatestRelease "Dashlane/dashlane-cli").TagName }}/dcli-win-x64-signed.exe"
     refreshPeriod = "168h"
+["fonts"]
+    type = "archive"
+    url = "https://github.com/romkatv/powerlevel10k-media/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+    include = ["*/*.ttf"]
 {{- end }}
