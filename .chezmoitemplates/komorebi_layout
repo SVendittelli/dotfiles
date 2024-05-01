@@ -1,0 +1,5 @@
+{{- if eq .chassisType "desktop" -}}
+UltrawideVerticalStack
+{{- else -}}
+BSP
+{{- end -}}

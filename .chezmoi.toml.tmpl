@@ -6,6 +6,18 @@
 # See https://www.chezmoi.io/docs/how-to/
 
 {{- $email := promptString "Git email address for the author/committer" }}
+{{- $chassisType := "desktop" }}
+{{- if eq .chezmoi.os "darwin" }}
+{{-   if contains "MacBook" (output "sysctl" "-n" "hw.model") }}
+{{-     $chassisType = "laptop" }}
+{{-   else }}
+{{-     $chassisType = "desktop" }}
+{{-   end }}
+{{- else if eq .chezmoi.os "linux" }}
+{{-   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis }}
+{{- else if eq .chezmoi.os "windows" }}
+{{-   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim }}
+{{- end }}
 
 encryption = "age"
 
@@ -14,6 +26,7 @@ identity = "~/.keys/chezmoi.txt"
 recipient = "age1854gyefj8vf0qzpfxldjzremfg69fmawcmgwnve8d4equgvl99qslgywr8"
 
 [data]
+chassisType = {{ $chassisType | quote }}
 email = {{ $email | quote }}
 
 [hooks.read-source-state.pre]
