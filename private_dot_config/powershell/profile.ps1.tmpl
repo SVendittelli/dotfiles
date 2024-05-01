@@ -3,6 +3,9 @@
   Description: PowersShell Profile containing aliases and functions to be loaded when a new PowerShell session is started.
 #>
 
+# Update Path
+$Env:PATH += ";$Env:USERPROFILE\bin"
+
 # Aliases
 Set-Alias -Name cat -Value bat -Option AllScope
 Set-Alias -Name e -Value nvm
