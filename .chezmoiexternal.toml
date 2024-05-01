@@ -35,7 +35,7 @@
     stripComponents = 1
     refreshPeriod = "168h"
 
-{{- if eq .chezmoi.os "linux" }}
+{{ if eq .chezmoi.os "linux" -}}
 # Linux specific
 [".config/ranger/plugins/zoxide"]
     type = "git-repo"
@@ -46,13 +46,11 @@
     url = "https://github.com/Dashlane/dashlane-cli/releases/download/{{ (gitHubLatestRelease "Dashlane/dashlane-cli").TagName }}/dcli-linux-x64"
     refreshPeriod = "168h"
     executable = true
-{{- end }}
 
-{{- if eq .chezmoi.os "darwin" }}
+{{ else if eq .chezmoi.os "darwin" -}}
 # macOS specific
-{{- end }}
 
-{{- if eq .chezmoi.os "windows" }}
+{{ else if eq .chezmoi.os "windows" -}}
 # Windows specific
 [".config/komorebi/applications.yaml"]
     type = "file"
@@ -70,4 +68,4 @@
     stripComponents = 1
     refreshPeriod = "168h"
     include = ["*/*.ttf"]
-{{- end }}
+{{ end -}}

@@ -1,4 +1,35 @@
 packages:
+  darwin:
+    brews:
+      - "bat"
+      - "chezmoi"
+      - "dive"
+      - "eza"
+      - "fd"
+      - "fzf"
+      - "gh"
+      - "git"
+      - "git-extras"
+      - "git-lfs"
+      - "go"
+      - "httpie"
+      - "jq"
+      - "lf"
+      - "lazygit"
+      - "neovim"
+      - "nvm"
+      - "ripgrep"
+      - "tmux"
+      - "zig"
+      - "zsh"
+    casks:
+      - "docker"
+      - "firefox@developer-edition"
+      - "google-chrome"
+      - "meetingbar"
+      - "obsidian"
+      - "rectangle"
+      - "visual-studio-code"
   windows:
     winget:
       - "7zip.7zip"
@@ -13,6 +44,7 @@ packages:
       - "eza-community.eza"
       - "Git.Git"
       - "GitHub.cli"
+      - "gokcehan.lf"
       - "GoLang.Go"
       - "Google.Chrome"
       - "HTTPie.HTTPie"

@@ -10,6 +10,20 @@ Install with:
 chezmoi init --apply SVendittelli
 ```
 
+## macOS
+
+Install homebrew:
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Install `chezmoi`:
+
+```shell
+brew install chezmoi
+```
+
 ## Windows
 
 In an administrator shell:
@@ -17,4 +31,3 @@ In an administrator shell:
 ```powershell
 Set-ExecutionPolicy remotesigned
 ```
-
