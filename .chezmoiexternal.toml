@@ -54,7 +54,7 @@
 
 {{- if eq .chezmoi.os "windows" }}
 # Windows specific
-["applications.yaml"]
+[".config/komorebi/applications.yaml"]
     type = "file"
     url = "https://raw.githubusercontent.com/LGUG2Z/komorebi-application-specific-configuration/master/applications.yaml"
     refreshPeriod = "168h"

@@ -59,6 +59,7 @@ function x {
 $ENV:EDITOR = "nvim"
 $ENV:SHELL = "pwsh"
 $ENV:HOME = $Env:USERPROFILE
+$Env:KOMOREBI_CONFIG_HOME = "$Env:USERPROFILE\.config\komorebi"
 
 # Completions
 {{ completion "powershell" }}

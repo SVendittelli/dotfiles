@@ -12,8 +12,7 @@ README.md
 *.ahk
 *.ps1
 
-applications.yaml
-komorebi.json
+.config/komorebi
 .config/whkdrc
 
 .config/powershell
