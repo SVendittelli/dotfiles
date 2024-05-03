@@ -38,4 +38,8 @@ command = ".local/share/chezmoi/.install-password-manager.sh"
 args = ["{{ (gitHubLatestRelease "Dashlane/dashlane-cli").TagName }}"]
 {{ end -}}
 
+[interpreters.ps1]
+command = "pwsh"
+args = ["-NoLogo"]
+
 # vim:ft=toml
