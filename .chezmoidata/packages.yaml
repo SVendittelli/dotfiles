@@ -51,6 +51,7 @@ packages:
       - "HTTPie.HTTPie"
       - "Inkscape.Inkscape"
       - "JesseDuffield.lazygit"
+      - "jqlang.jq"
       - "KDE.Krita"
       - "LGUG2Z.komorebi"
       - "LGUG2Z.whkd"

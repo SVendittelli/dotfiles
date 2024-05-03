@@ -1,7 +1,38 @@
 {{ if eq .chezmoi.os "windows" -}}
-{{ range .packages.windows.winget -}}
-winget install --exact --no-upgrade --id {{ . | quote }}
-{{ end -}}
+
+$TempFile = New-TemporaryFile
+
+@'
+{
+    "$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
+    "CreationDate" : "2024-01-01T00:00:00.000-00:00",
+    "Sources" :
+    [
+        {
+            "Packages" :
+            [
+{{- range .packages.windows.winget }}
+                {
+                    "PackageIdentifier" : {{ . | quote }}
+                },
+{{- end }}
+            ],
+            "SourceDetails" :
+            {
+                "Argument" : "https://cdn.winget.microsoft.com/cache",
+                "Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
+                "Name" : "winget",
+                "Type" : "Microsoft.PreIndexed.Package"
+            }
+        }
+    ],
+    "WinGetVersion" : "1.7.11132"
+}
+'@ | Out-File $TempFile
+
+winget import -i $TempFile --ignore-unavailable --no-upgrade
+
+Remove-Item $TempFile
 {{ end -}}
 
 # vim:ft=ps1

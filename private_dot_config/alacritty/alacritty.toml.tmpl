@@ -2,7 +2,7 @@ import = [
     "~/.themes/tokyonight.nvim/extras/alacritty/tokyonight_night.toml"
 ]
 
-working_directory = {{ .chezmoi.config.destDir | quote }}
+working_directory = {{ .chezmoi.homeDir | quote }}
 
 {{ if eq .chezmoi.os "windows" -}}
 [shell]
