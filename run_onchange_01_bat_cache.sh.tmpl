@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# change detection hash: {{ joinPath .chezmoi.homeDir ".config/bat/themes/tokyonight_night.tmTheme" | include | sha256sum }}
+bat cache --build
+
+# vim:ft=sh

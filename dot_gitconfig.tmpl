@@ -1,6 +1,8 @@
 [include]
 	# Store git aliases in a seperate file as there are a lot of them
 	path = ~/.gitalias
+	# Delta theme
+	path = ~/.themes/tokyonight.nvim/extras/delta/tokyonight_night.gitconfig
 
 [branch]
 	sort = -authordate
@@ -23,7 +25,7 @@
 	template = ~/.gitmessage
 [core]
 	autocrlf = input
-	pager = less -FRX
+	pager = delta
 	ignorecase = false
 [credential "https://github.com"]
 	helper = 
@@ -31,6 +33,10 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = {{ template "gh_credential_helper" . }}
+[delta]
+	navigate = true
+[diff]
+    colorMoved = default
 [fetch]
 	prune = true
 [filter "lfs"]
@@ -42,10 +48,14 @@
 	lineNumber = true
 [init]
 	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
 
 # run "git maintenance register" in a repo to let it be automatically optimized. See: https://git-scm.com/docs/git-maintenance
 [maintenance]
 
+[merge]
+	conflictstyle = diff3
 [pull]
 	rebase = true
 [push]
