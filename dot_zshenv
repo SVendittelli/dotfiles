@@ -12,4 +12,7 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # enable nix-ld for running dynamically linked binaries
 export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
 
+# set config directory to default value (makes some apps on macOS look in the correct place)
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # vim:ft=zsh
