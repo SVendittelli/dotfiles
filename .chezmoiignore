@@ -9,7 +9,7 @@ README.md
 
 {{ if eq .chezmoi.os "windows" -}}
 # Files to be ignored on windows
-*.sh
+**/*.sh
 
 .zsh/**
 .zsh*
@@ -25,8 +25,8 @@ README.md
 
 {{ else -}}
 # Files to be ignored on macOS and linux
-*.ahk
-*.ps1
+**/*.ahk
+**/*.ps1
 
 .config/komorebi
 .config/whkdrc
