@@ -36,4 +36,8 @@ requirements.txt
 .config/powershell
 {{ end -}}
 
+{{- if eq .chezmoi.os "linux" }}
+**/*darwin.sh
+{{- end }}
+
 # vim:ft=gitignore
