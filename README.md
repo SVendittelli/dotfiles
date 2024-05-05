@@ -1,5 +1,7 @@
 # Dot Files
 
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+
 My dot files for zsh, vim, tmux, etc.
 
 Managed using [chezmoi](https://www.chezmoi.io/).
@@ -30,10 +32,18 @@ chezmoi init --apply SVendittelli
 
 ## Windows
 
-In an administrator shell:
+In an _administrator_ shell:
 
 ```powershell
 Set-ExecutionPolicy remotesigned
 $Env:PATH += ";$Env:USERPROFILE\bin"
 chezmoi init --apply SVendittelli
+```
+
+## `pre-commit`
+
+```shell
+chezmoi cd
+pre-commit install
+exit
 ```

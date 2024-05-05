@@ -42,4 +42,3 @@ alias update="(cd ~/nixos && nix flake update)"
 function on-port {
     lsof -i :"$@"
 }
-

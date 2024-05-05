@@ -20,6 +20,7 @@ packages:
       - "lf"
       - "neovim"
       - "nvm"
+      - "pre-commit"
       - "ripgrep"
       - "tmux"
       - "zig"

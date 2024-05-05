@@ -4,6 +4,8 @@
 # See https://www.chezmoi.io/reference/special-files-and-directories/chezmoiignore/
 
 README.md
+requirements.txt
+
 .oh-my-zsh/cache/completions/
 .oh-my-zsh/cache/grep-alias/
 

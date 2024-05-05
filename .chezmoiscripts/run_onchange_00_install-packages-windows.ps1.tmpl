@@ -31,6 +31,13 @@ $TempFile = New-TemporaryFile
 winget import -i $TempFile --ignore-unavailable --no-upgrade
 
 Remove-Item $TempFile
+
+{{- if lookPath "pip" }}
+# install pre-commit with pip as it is not available on winget
+# hash: {{ include "requirements.txt" | sha256sum }}
+pip install -r {{ joinPath .chezmoi.sourceDir "requirements.txt" }}
+{{- end }}
+
 {{ end -}}
 
 # vim:ft=ps1
