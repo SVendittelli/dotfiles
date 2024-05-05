@@ -40,6 +40,7 @@ packages:
       - "Alacritty.Alacritty"
       - "AutoHotkey.AutoHotkey"
       - "Balena.Etcher"
+      - "beekeeper-studio.beekeeper-studio"
       - "BurntSushi.ripgrep.MSVC"
       - "code52.Carnac"
       - "CodeSector.TeraCopy"
