@@ -123,6 +123,9 @@ fi
 # Import aliases
 source ~/.zsh/aliases.zsh
 
+# Set up fzf theme
+source ~/.themes/tokyonight.nvim/extras/fzf/tokyonight_night.zsh
+
 # Set up atuin
 eval "$(atuin init zsh)"
 
