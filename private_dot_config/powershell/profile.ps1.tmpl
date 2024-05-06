@@ -8,6 +8,7 @@ $Env:PATH += ";$Env:USERPROFILE\bin"
 
 # Aliases
 Set-Alias -Name cat -Value bat -Option AllScope
+Set-Alias -Name cd -Value z -Option AllScope
 Set-Alias -Name e -Value nvim
 Set-Alias -Name g -Value git
 Set-Alias -Name lg -Value lazygit
@@ -70,5 +71,8 @@ $Env:XDG_CONFIG_HOME = "$Env:USERPROFILE\.config"
 
 # Completions
 {{ completion "powershell" }}
+
+# Must be at the end of the powershell profile
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
 # vim:ft=ps1

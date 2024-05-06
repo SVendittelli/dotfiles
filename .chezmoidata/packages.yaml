@@ -24,6 +24,7 @@ packages:
       - "ripgrep"
       - "tmux"
       - "zig"
+      - "zoxide"
       - "zsh"
     casks:
       - "alacritty"
@@ -37,6 +38,7 @@ packages:
   windows:
     winget:
       - "7zip.7zip"
+      - "ajeetdsouza.zoxide"
       - "Alacritty.Alacritty"
       - "AutoHotkey.AutoHotkey"
       - "Balena.Etcher"
