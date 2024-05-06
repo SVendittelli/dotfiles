@@ -14,6 +14,7 @@ alias lt='ls -lah --git --git-ignore --tree' #long list,show almost all,show typ
 alias help='tldr'
 
 ## Shorten commands
+alias cm='chezmoi'
 alias e=$EDITOR
 alias e.='e .'
 alias g='git'
