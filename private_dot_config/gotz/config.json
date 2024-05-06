@@ -1,0 +1,43 @@
+{
+  "config_version": "1.0",
+  "timezones": [
+    {
+      "Name": "NL",
+      "TZ": "Europe/Amsterdam"
+    }
+  ],
+  "style": {
+    "symbols": "custom",
+    "custom_symbols": [
+      { "Start": 6, "Symbol": "=" },
+      { "Start": 9, "Symbol": "#" },
+      { "Start": 17, "Symbol": "=" },
+      { "Start": 22, "Symbol": "-" }
+    ],
+    "colorize": true,
+    "day_segments": {
+      "morning": 6,
+      "day": 9,
+      "evening": 17,
+      "night": 22
+    },
+    "coloring": {
+      "StaticColorMorning": "yellow",
+      "StaticColorDay": "green",
+      "StaticColorEvening": "yellow",
+      "StaticColorNight": "magenta",
+      "StaticColorForeground": "",
+      "DynamicColorMorning": "yellow",
+      "DynamicColorDay": "green",
+      "DynamicColorEvening": "yellow",
+      "DynamicColorNight": "magenta",
+      "DynamicColorForeground": "",
+      "DynamicColorBackground": ""
+    }
+  },
+  "tics": false,
+  "stretch": true,
+  "inline": true,
+  "hours12": false,
+  "live": false
+}

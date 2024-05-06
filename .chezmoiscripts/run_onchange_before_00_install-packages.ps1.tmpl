@@ -38,6 +38,12 @@ Remove-Item $TempFile
 pip install -r {{ joinPath .chezmoi.sourceDir "requirements.txt" }}
 {{- end }}
 
+{{- if lookPath "go" }}
+{{- range .packages.all.go }}
+go install {{ . }}
+{{- end }}
+{{- end }}
+
 {{ end -}}
 
 # vim:ft=ps1

@@ -1,4 +1,7 @@
 packages:
+  all:
+    go:
+      - "github.com/merschformann/gotz@latest"
   darwin:
     brews:
       - "bat"

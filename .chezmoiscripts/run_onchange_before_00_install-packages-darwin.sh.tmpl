@@ -10,5 +10,11 @@ cask {{ . | quote }}
 {{ end -}}
 EOF
 
+{{- if lookPath "go" }}
+{{- range .packages.all.go }}
+go install {{ . }}
+{{- end }}
+{{- end }}
+
 {{- end }}
 # vim:ft=sh
