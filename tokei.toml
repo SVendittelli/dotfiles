@@ -1,0 +1,4 @@
+# Count hidden files and directories.
+hidden = true
+# Sort languages based on column [possible values: files, lines, blanks, code, comments]
+sort = "code"
