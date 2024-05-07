@@ -54,6 +54,18 @@ function Show-Command {
     Get-Command $Name | Select-Object -ExpandProperty Definition
 }
 
+function wttr {
+  <#
+  .SYNOPSIS
+    Gets weather for configured location
+  #>
+    param (
+        [Parameter(Mandatory = $false, Position = 0)]
+        [string]$Location = '{{ .location }}'
+    )
+    curl -fGsS "wttr.in/$Location"
+}
+
 function x {
   <#
   .SYNOPSIS

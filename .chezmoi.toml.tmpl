@@ -6,6 +6,7 @@
 # See https://www.chezmoi.io/docs/how-to/
 
 {{- $email := promptString "Git email address for the author/committer" }}
+{{- $location := promptString "Location to show weather for" }}
 {{- $chassisType := "desktop" }}
 {{- if eq .chezmoi.os "darwin" }}
 {{-   if contains "MacBook" (output "sysctl" "-n" "hw.model") }}
@@ -28,6 +29,7 @@ recipient = "age1854gyefj8vf0qzpfxldjzremfg69fmawcmgwnve8d4equgvl99qslgywr8"
 [data]
 chassisType = {{ $chassisType | quote }}
 email = {{ $email | quote }}
+location = {{ $location | quote }}
 
 [hooks.read-source-state.pre]
 {{ if eq .chezmoi.os "windows" -}}

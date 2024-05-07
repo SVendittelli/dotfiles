@@ -43,3 +43,15 @@ alias update="(cd ~/nixos && nix flake update)"
 function on-port {
     lsof -i :"$@"
 }
+
+function wttr {
+    local location
+    if [[ -n $* ]]; then
+        location="${1// /+}"
+    else
+        location="{{ .location }}"
+    fi
+    curl -fGsS --compressed "wttr.in/${location}"
+}
+
+# vim:ft=zsh
