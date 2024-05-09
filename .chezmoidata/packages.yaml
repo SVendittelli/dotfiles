@@ -38,12 +38,21 @@ packages:
       - "obsidian"
       - "rectangle"
       - "visual-studio-code"
+    gh:
+      - "dlvhdr/gh-dash"
+      - "seachicken/gh-poi"
     go:
       - "github.com/merschformann/gotz@latest"
   linux:
+    gh:
+      - "dlvhdr/gh-dash"
+      - "seachicken/gh-poi"
     go:
       - "github.com/merschformann/gotz@latest"
   windows:
+    gh:
+      - "dlvhdr/gh-dash"
+      - "seachicken/gh-poi"
     go:
       - "github.com/isacikgoz/gitbatch/cmd/gitbatch@latest"
       - "github.com/merschformann/gotz@latest"

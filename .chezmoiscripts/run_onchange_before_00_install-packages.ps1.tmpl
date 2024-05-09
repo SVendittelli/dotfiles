@@ -1,5 +1,11 @@
 {{ if eq .chezmoi.os "windows" -}}
 
+{{- if lookPath "gh" }}
+{{- range .packages.darwin.gh }}
+gh extension install {{ . }}
+{{- end }}
+{{- end }}
+
 {{- if lookPath "go" }}
 {{- range .packages.windows.go }}
 go install {{ . }}

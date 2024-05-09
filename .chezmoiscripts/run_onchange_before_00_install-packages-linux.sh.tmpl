@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 {{- if eq .chezmoi.os "darwin" }}
 
+{{- if lookPath "gh" }}
+{{- range .packages.darwin.gh }}
+gh extension install {{ . }}
+{{- end }}
+{{- end }}
+
 {{- if lookPath "go" }}
 {{- range .packages.linux.go }}
 go install {{ . }}

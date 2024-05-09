@@ -83,17 +83,21 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 plugins=(
   alias-finder
   aliases
+  {{ if lookPath "brew" }}brew{{ end }}
   colored-man-pages
   command-not-found
+  {{- if lookPath "docker" }}
   docker
   docker-compose
+  {{- end }}
   encode64
+  {{ if lookPath "gh" }}gh{{ end }}
   git-auto-fetch
   git-extras
-  golang
+  {{ if lookPath "go" }}golang{{ end }}
   history
-  httpie
-  npm
+  {{ if lookPath "httpie" }}httpie{{ end }}
+  {{ if lookPath "npm" }}npm{{ end }}
   sudo
   tmux
   web-search

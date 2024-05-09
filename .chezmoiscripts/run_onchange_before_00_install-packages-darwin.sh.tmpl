@@ -12,6 +12,12 @@ cask {{ . | quote }}
 EOF
 {{- end }}
 
+{{- if lookPath "gh" }}
+{{- range .packages.darwin.gh }}
+gh extension install {{ . }}
+{{- end }}
+{{- end }}
+
 {{- if lookPath "go" }}
 {{- range .packages.darwin.go }}
 go install {{ . }}
