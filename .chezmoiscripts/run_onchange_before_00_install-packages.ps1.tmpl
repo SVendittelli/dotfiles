@@ -26,6 +26,11 @@ pip install -r $PipTempFile
 Remove-Item $PipTempFile
 {{- end }}
 
+# https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.psresourceget/
+{{- range .packages.windows.psresourceget }}
+Install-PSResource -Name {{ . }}
+{{- end }}
+
 {{- if lookPath "winget" }}
 $WingetTempFile = New-TemporaryFile
 

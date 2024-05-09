@@ -59,6 +59,8 @@ packages:
     pip:
       - "gitbatch"
       - "pre-commit"
+    psresourceget:
+      - "posh-git"
     winget:
       - "7zip.7zip"
       - "ajeetdsouza.zoxide"
