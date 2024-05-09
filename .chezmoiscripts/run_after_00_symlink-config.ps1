@@ -5,8 +5,8 @@ If ($PSVersionTable.PSVersion.Major -Le 5 -Or $isWindows) {
   }
 
   # symlink powershell profile
-  If (-Not (Test-Path $PROFILE.CurrentUserAllHosts)) {
-    New-Item -ItemType SymbolicLink -Path $PROFILE.CurrentUserAllHosts -Target $env:USERPROFILE\.config\powershell\profile.ps1
+  If (-Not (Test-Path $Profile)) {
+    New-Item -ItemType SymbolicLink -Path $Profile -Target $env:USERPROFILE\.config\powershell\profile.ps1
   }
 
   # symlink alacritty config

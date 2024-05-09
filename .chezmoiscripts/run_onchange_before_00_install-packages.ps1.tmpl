@@ -1,6 +1,27 @@
 {{ if eq .chezmoi.os "windows" -}}
 
-$TempFile = New-TemporaryFile
+{{- if lookPath "go" }}
+{{- range .packages.windows.go }}
+go install {{ . }}
+{{- end }}
+{{- end }}
+
+{{- if lookPath "pip" }}
+$PipTempFile = New-TemporaryFile
+
+@'
+{{- range .packages.windows.pip }}
+{{ . }}
+{{- end }}
+'@ | Out-File $PipTempFile
+
+pip install -r $PipTempFile
+
+Remove-Item $PipTempFile
+{{- end }}
+
+{{- if lookPath "winget" }}
+$WingetTempFile = New-TemporaryFile
 
 @'
 {
@@ -26,22 +47,11 @@ $TempFile = New-TemporaryFile
         }
     ]
 }
-'@ | Out-File $TempFile
+'@ | Out-File $WingetTempFile
 
-winget import -i $TempFile --ignore-unavailable --no-upgrade
+winget import -i $WingetTempFile --ignore-unavailable --no-upgrade
 
-Remove-Item $TempFile
-
-{{- if lookPath "pip" }}
-# install pre-commit with pip as it is not available on winget
-# hash: {{ include "requirements.txt" | sha256sum }}
-pip install -r {{ joinPath .chezmoi.sourceDir "requirements.txt" }}
-{{- end }}
-
-{{- if lookPath "go" }}
-{{- range .packages.all.go }}
-go install {{ . }}
-{{- end }}
+Remove-Item $WingetTempFile
 {{- end }}
 
 {{ end -}}

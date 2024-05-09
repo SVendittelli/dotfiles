@@ -1,7 +1,4 @@
 packages:
-  all:
-    go:
-      - "github.com/merschformann/gotz@latest"
   darwin:
     brews:
       - "bat"
@@ -15,6 +12,7 @@ packages:
       - "git-delta"
       - "git-extras"
       - "git-lfs"
+      - "gitbatch"
       - "go"
       - "httpie"
       - "jq"
@@ -40,7 +38,18 @@ packages:
       - "obsidian"
       - "rectangle"
       - "visual-studio-code"
+    go:
+      - "github.com/merschformann/gotz@latest"
+  linux:
+    go:
+      - "github.com/merschformann/gotz@latest"
   windows:
+    go:
+      - "github.com/isacikgoz/gitbatch/cmd/gitbatch@latest"
+      - "github.com/merschformann/gotz@latest"
+    pip:
+      - "gitbatch"
+      - "pre-commit"
     winget:
       - "7zip.7zip"
       - "ajeetdsouza.zoxide"

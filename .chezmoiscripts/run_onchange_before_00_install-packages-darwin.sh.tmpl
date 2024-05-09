@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 {{- if eq .chezmoi.os "darwin" }}
 
+{{- if lookPath "brew" }}
 brew bundle --no-lock --file=/dev/stdin <<EOF
 {{ range .packages.darwin.brews -}}
 brew {{ . | quote }}
@@ -9,9 +10,10 @@ brew {{ . | quote }}
 cask {{ . | quote }}
 {{ end -}}
 EOF
+{{- end }}
 
 {{- if lookPath "go" }}
-{{- range .packages.all.go }}
+{{- range .packages.darwin.go }}
 go install {{ . }}
 {{- end }}
 {{- end }}

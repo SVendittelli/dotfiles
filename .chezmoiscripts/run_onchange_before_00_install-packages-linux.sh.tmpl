@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+{{- if eq .chezmoi.os "darwin" }}
+
+{{- if lookPath "go" }}
+{{- range .packages.linux.go }}
+go install {{ . }}
+{{- end }}
+{{- end }}
+
+{{- end }}
+# vim:ft=sh
