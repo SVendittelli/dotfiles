@@ -86,6 +86,9 @@ $Env:XDG_CONFIG_HOME = "$Env:USERPROFILE\.config"
 ## chezmoi
 {{ completion "powershell" }}
 
+## delta
+Invoke-Expression -Command $(delta --generate-completion powershell | Out-String)
+
 ## gh cli
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 
