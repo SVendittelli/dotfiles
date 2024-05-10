@@ -8,3 +8,27 @@ git:
     colorArg: always
     pager: delta --dark --paging=never
 notARepository: "quit"
+customCommands:
+  - key: "R"
+    command: "gh repo view --web"
+    description: "view repo on github"
+    context: "global"
+    loadingText: "opening github..."
+    subprocess: false
+  - key: "o"
+    command: "gh pr view --web"
+    description: "view PR on github"
+    context: "global"
+    loadingText: "opening github..."
+    subprocess: false
+  - key: "o"
+    command: "gh pr view --web"
+    description: "view PR on github"
+    context: "localBranches"
+    loadingText: "opening github..."
+    subprocess: false
+  - key: "C"
+    command: "gh pr create -f --draft --head {{.SelectedLocalBranch.Name}}"
+    description: "create PR on GitHub"
+    context: "localBranches"
+    subprocess: true

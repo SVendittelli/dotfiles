@@ -60,6 +60,11 @@
 #	Differences to the remote main branch
 	dm = diff origin/main
 
+# gh aliases
+	rvw = !gh repo view --web
+	prcw = !gh pr create --web
+	prvw = !gh pr view --web
+
 # grep aliases:
 #	grep grouping by file
 	gg = grep --break --heading
