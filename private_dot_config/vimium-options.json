@@ -1,4 +1,5 @@
 {
+  "keyMappings": "unmap H\nunmap J\nunmap K\nunmap L\nmap H previousTab\nmap L nextTab\nmap J goBack\nmap K goForward",
   "searchUrl": "https://duckduckgo.com/?q=",
   "settingsVersion": "2.1.2",
   "exclusionRules": [
