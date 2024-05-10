@@ -26,7 +26,6 @@ repos:
         exclude: \.tmpl$
       - id: check-yaml
       - id: detect-private-key
-      - id: requirements-txt-fixer
       - id: end-of-file-fixer
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v3.2.0

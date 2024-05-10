@@ -5,11 +5,12 @@
 	path = ~/.themes/tokyonight.nvim/extras/delta/tokyonight_night.gitconfig
 
 [branch]
-	sort = -authordate
+	sort = -committerdate
 [color]
 	ui = auto
 [color "branch"]
-	local = yellow
+	current = green bold
+	local = yellow dim
 	remote = blue
 [color "diff"]
 	meta = yellow bold
@@ -34,10 +35,31 @@
 [credential "https://gist.github.com"]
 	helper =
 	helper = {{ template "gh_credential_helper" . }}
+
 [delta]
+	syntax-theme = tokyonight_night
 	navigate = true
+	dark = true
+	side-by-side = false
+	file-modified-label = modified:
+	features = unobtrusive-line-numbers decorations
+[delta "decorations"]
+	file-style = bold yellow ul
+	file-decoration-style = ul "#555555"
+	hunk-header-decoration-style = omit
+	commit-decoration-style = none
+[delta "unobtrusive-line-numbers"]
+	line-numbers = true
+	line-numbers-minus-style = "#3d4163"
+	line-numbers-zero-style = "#3d4163"
+	line-numbers-plus-style = "#3d4163"
+	line-numbers-left-style = "#3d4163"
+	line-numbers-right-style = "#3d4163"
+	line-numbers-left-format = "{nm:>4}│"
+	line-numbers-right-format = "{np:>4}│"
+
 [diff]
-    colorMoved = default
+	colorMoved = default
 [fetch]
 	prune = true
 [filter "lfs"]
@@ -50,7 +72,7 @@
 [init]
 	defaultBranch = main
 [interactive]
-	diffFilter = delta --color-only
+	diffFilter = delta --color-only --features ''
 
 # run "git maintenance register" in a repo to let it be automatically optimized. See: https://git-scm.com/docs/git-maintenance
 [maintenance]
