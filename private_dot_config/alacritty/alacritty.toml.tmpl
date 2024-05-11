@@ -6,8 +6,7 @@ working_directory = {{ .chezmoi.homeDir | quote }}
 
 {{ if eq .chezmoi.os "windows" -}}
 [shell]
-program = "powershell"
-args = ["pwsh"]
+program = "pwsh"
 {{- end }}
 
 [window]
