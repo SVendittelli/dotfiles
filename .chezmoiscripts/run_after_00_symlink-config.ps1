@@ -5,12 +5,11 @@ If ($PSVersionTable.PSVersion.Major -Le 5 -Or $isWindows) {
   }
 
   # symlink powershell profile
+  # as OneDrive syncs this file we must over copy it, not symlink or junction
   $ConfigFolder = Split-Path $PROFILE.CurrentUserCurrentHost
   $ConfigFile = "$ConfigFolder\powershell.config.json"
-  If (-Not ((Test-Path $Profile) -And (Test-Path $ConfigFile))) {
-    New-Item -ItemType SymbolicLink -Path $Profile -Target $env:USERPROFILE\.config\powershell\profile.ps1
-    New-Item -ItemType SymbolicLink -Path $ConfigFile -Target $env:USERPROFILE\.config\powershell\powershell.config.json
-  }
+  Copy-Item -Path $env:USERPROFILE\.config\powershell\profile.ps1 -Destination $Profile
+  Copy-Item -Path $env:USERPROFILE\.config\powershell\powershell.config.json -Destination $ConfigFile
 
   # symlink alacritty config
   If (-Not (Test-Path $env:APPDATA\alacritty)) {
