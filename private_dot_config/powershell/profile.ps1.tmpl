@@ -17,6 +17,7 @@ Set-Alias -Name ls -Value Get-ChildItemPretty -Option AllScope
 Set-Alias -Name ll -Value Get-ChildItemPretty
 Set-Alias -Name la -Value Get-ChildItemPretty
 Set-Alias -Name l -Value Get-ChildItemPretty
+Set-Alias -Name open -Value Invoke-Item
 Set-Alias -Name touch -Value New-Item
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name vi -Value nvim
@@ -84,6 +85,12 @@ $Env:XDG_CONFIG_HOME = "$Env:USERPROFILE\.config"
 
 # PowerShell Gallery modules
 Import-Module posh-git
+
+# PSReadLine Config
+## Arrow keys search history with what I have already typed
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 # Completions
 ## chezmoi
