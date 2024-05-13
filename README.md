@@ -43,7 +43,7 @@ rundll32 sysdm.cpl,EditEnvironmentVariables
 Set the following user environment variable:
 
 ```toml
-KOMOREBI_CONFIG_HOME = "C:\Users\samve\.config\komorebi"
+KOMOREBI_CONFIG_HOME = "%USERPROFILE%\.config\komorebi"
 ```
 
 Back in the _administrator_ shell:
