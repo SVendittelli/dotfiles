@@ -6,7 +6,9 @@ My dot files for zsh, vim, tmux, etc.
 
 Managed using [chezmoi](https://www.chezmoi.io/).
 
-## Linux
+## Installation
+
+### Linux
 
 Install `chezmoi` using the correct package manager.
 
@@ -15,7 +17,7 @@ export PATH="$PATH:~/bin"
 chezmoi init --apply SVendittelli
 ```
 
-## macOS
+### macOS
 
 Install homebrew:
 
@@ -30,9 +32,21 @@ brew install chezmoi
 chezmoi init --apply SVendittelli
 ```
 
-## Windows
+### Windows
 
 In an _administrator_ shell:
+
+```powershell
+rundll32 sysdm.cpl,EditEnvironmentVariables
+```
+
+Set the following user environment variable:
+
+```toml
+KOMOREBI_CONFIG_HOME = "C:\Users\samve\.config\komorebi"
+```
+
+Back in the _administrator_ shell:
 
 ```powershell
 Set-ExecutionPolicy remotesigned
@@ -41,7 +55,9 @@ Set-PSResourceRepository -Name PSGallery -Trusted
 chezmoi init --apply SVendittelli
 ```
 
-## `pre-commit`
+## Set up pre-commit
+
+Run git hooks on commit and push using [pre-commit](https://pre-commit.com/):
 
 ```shell
 chezmoi cd
