@@ -55,6 +55,12 @@ function Show-Command {
     Get-Command $Name | Select-Object -ExpandProperty Definition
 }
 
+function tunnel {
+    $Port = $Env:PORT ?? 3000
+    Write-Host "localhost:$Port available at https://local.1sv.me/"
+    cloudflared tunnel run --url "http://localhost:$Port" local
+}
+
 function wttr {
   <#
   .SYNOPSIS

@@ -3,6 +3,7 @@ packages:
     brews:
       - "bat"
       - "chezmoi"
+      - "cloudflared"
       - "dive"
       - "eza"
       - "fd"
@@ -70,6 +71,7 @@ packages:
       - "Balena.Etcher"
       - "beekeeper-studio.beekeeper-studio"
       - "BurntSushi.ripgrep.MSVC"
+      - "Cloudflare.cloudflared"
       - "code52.Carnac"
       - "CodeSector.TeraCopy"
       - "dandavison.delta"

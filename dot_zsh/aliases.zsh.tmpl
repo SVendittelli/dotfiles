@@ -47,6 +47,12 @@ function on-port {
     lsof -i :"$@"
 }
 
+function tunnel {
+    local LOCAL_PORT = ${PORT:-3000}
+    Write-Host "localhost:${LOCAL_PORT} available at https://local.1sv.me/"
+    cloudflared tunnel run --url "http://localhost:${LOCAL_PORT}" local
+}
+
 function wttr {
     local location
     if [[ -n $* ]]; then
