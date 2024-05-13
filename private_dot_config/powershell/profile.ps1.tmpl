@@ -56,7 +56,10 @@ function Show-Command {
 }
 
 function tunnel {
-    $Port = $Env:PORT ?? 3000
+    param (
+        [Parameter(Mandatory = $false, Position = 0)]
+        [string]$Port = $Env:PORT ?? 3000
+    )
     Write-Host "localhost:$Port available at https://local.1sv.me/"
     cloudflared tunnel run --url "http://localhost:$Port" local
 }
