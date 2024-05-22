@@ -111,8 +111,10 @@ Invoke-Expression -Command $(delta --generate-completion powershell | Out-String
 ## gh cli
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 
+## starship prompt
+Invoke-Expression (&starship init powershell)
+
 ## zoxide
-## Must be at the end of the powershell profile
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
 # vim:ft=ps1
