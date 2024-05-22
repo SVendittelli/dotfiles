@@ -1,6 +1,7 @@
 packages:
   darwin:
     brews:
+      - "arc"
       - "bat"
       - "chezmoi"
       - "cloudflared"
@@ -24,6 +25,7 @@ packages:
       - "neovim"
       - "nvm"
       - "pre-commit"
+      - "raycast"
       - "ripgrep"
       - "tlrc"
       - "tmux"
@@ -110,6 +112,7 @@ packages:
       - "sharkdp.fd"
       - "SumatraPDF.SumatraPDF"
       - "th-ch.YouTubeMusic"
+      - "TheBrowserCompany.Arc"
       - "tldr-pages.tlrc"
       - "twpayne.chezmoi"
       - "Valve.Steam"
