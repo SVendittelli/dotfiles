@@ -40,6 +40,11 @@ function Get-ChildItemPretty {
     Write-Host ""
 }
 
+# Change the window title to reflect the pwd
+function Invoke-Starship-PreCommand {
+  $host.ui.RawUI.WindowTitle = "$env:USERNAME@$env:COMPUTERNAME`: $pwd `a"
+}
+
 function Show-Command {
     <#
     .SYNOPSIS

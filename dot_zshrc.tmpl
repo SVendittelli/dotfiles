@@ -130,6 +130,12 @@ source ~/.zsh/aliases.zsh
 # Set up fzf theme
 source ~/.themes/tokyonight.nvim/extras/fzf/tokyonight_night.zsh
 
+# Update the window title in starship to be the pwd
+function set_win_title(){
+    echo -ne "\033]0; $(basename "$PWD") \007"
+}
+starship_precmd_user_func="set_win_title"
+
 # Set up atuin
 eval "$(atuin init zsh)"
 
