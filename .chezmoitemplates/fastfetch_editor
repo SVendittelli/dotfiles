@@ -1,0 +1,5 @@
+{{- if eq .chezmoi.os "windows" -}}
+%EDITOR% --version | rg -m1 \"\"
+{{- else -}}
+$EDITOR --version | head -1
+{{- end -}}
