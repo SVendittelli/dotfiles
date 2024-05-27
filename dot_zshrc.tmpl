@@ -145,6 +145,9 @@ eval "$(delta --generate-completion zsh)"
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
+# Add miniserve completions
+eval "$(miniserve --print-completions zsh)"
+
 # Set up zoxide
 eval "$(zoxide init zsh)"
 
