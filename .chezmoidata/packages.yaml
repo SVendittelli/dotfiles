@@ -26,6 +26,7 @@ packages:
       - "less"
       - "lf"
       - "libqalculate"
+      - "lnav"
       - "miniserve"
       - "neovim"
       - "nvm"
