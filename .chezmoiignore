@@ -19,7 +19,6 @@ requirements.txt
 
 .config/atuin
 .config/kitty
-.config/ranger
 
 .config/tmux
 .tmux/**
