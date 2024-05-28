@@ -1,5 +1,8 @@
 # common aliases
 
+## Alias cat to use bat
+alias cat='bat'
+
 ## Alias cd to use zoxide
 alias cd='z'
 
@@ -15,6 +18,9 @@ alias lt='ls -lah --git --git-ignore --tree' #long list,show almost all,show typ
 
 ## Helpful system aliases
 alias help='tldr'
+
+## neofetch
+alias neofetch='fastfetch'
 
 ## Shorten commands
 alias cm='chezmoi'
@@ -32,10 +38,6 @@ alias vim='nvim'
 ## Edit and reload zsh config
 alias zshconfig="chezmoi edit --apply ~/.zshrc"
 alias reload="source ~/.zshenv && source ~/.zshrc"
-
-## Edit dotfiles
-alias edf="(cd $(chezmoi source-path) && $EDITOR .)"
-alias udf="chezmoi update && reload"
 
 ## Edit NixOS config
 alias enos="(cd ~/nixos && $EDITOR)"

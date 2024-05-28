@@ -16,7 +16,6 @@ requirements.txt
 .zsh/**
 .zsh*
 .oh-my-zsh/**
-.p10k.zsh
 
 .config/atuin
 .config/kitty

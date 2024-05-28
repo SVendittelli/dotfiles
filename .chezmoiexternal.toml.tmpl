@@ -20,12 +20,6 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
-[".oh-my-zsh/custom/themes/powerlevel10k"]
-    type = "archive"
-    url = "https://github.com/romkatv/powerlevel10k/archive/master.tar.gz"
-    exact = true
-    stripComponents = 1
-    refreshPeriod = "168h"
 [".themes/tokyonight.nvim"]
     type = "archive"
     url = "https://github.com/folke/tokyonight.nvim/archive/main.tar.gz"
@@ -53,7 +47,7 @@
 [".local/bin/hjson"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "hjson/hjson-go" "hjson_*_linux_amd64.tar.gz" | quote }}
-    path = "hjson"
+    path = "./hjson"
     refreshPeriod = "168h"
     executable = true
 
@@ -62,7 +56,7 @@
 [".local/bin/hjson"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "hjson/hjson-go" "hjson_*_darwin_amd64.tar.gz" | quote }}
-    path = "hjson"
+    path = "./hjson"
     refreshPeriod = "168h"
     executable = true
 
