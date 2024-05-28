@@ -50,7 +50,7 @@ Back in the _administrator_ shell:
 
 ```powershell
 Set-ExecutionPolicy remotesigned
-$Env:PATH += ";$Env:USERPROFILE\bin"
+$Env:PATH += ";$Env:USERPROFILE\.local\bin"
 Set-PSResourceRepository -Name PSGallery -Trusted
 chezmoi init --apply SVendittelli
 ```
