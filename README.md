@@ -13,7 +13,7 @@ Managed using [chezmoi](https://www.chezmoi.io/).
 Install `chezmoi` using the correct package manager.
 
 ```shell
-export PATH="$PATH:~/bin"
+export PATH="$HOME/.local/bin/:$PATH"
 chezmoi init --apply SVendittelli
 ```
 
