@@ -1,0 +1,3 @@
+[wsl2]
+memory=4GB   # Limits VM memory to use no more than 4 GB, this can be set as whole numbers using GB or MB
+processors=4 # Sets the VM to use two virtual processors

@@ -33,6 +33,8 @@ requirements.txt
 
 .config/powershell
 
+.wslconfig
+
 {{- if eq .chezmoi.os "linux" }}
 # Files to be ignored on linux
 **/*darwin.sh
