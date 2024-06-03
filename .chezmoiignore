@@ -24,7 +24,7 @@ requirements.txt
 .tmux/**
 
 {{ else -}}
-# Files to be ignored on macOS and linux
+# Files to be ignored on both macOS and linux
 **/*.ahk
 **/*.ps1
 
@@ -32,10 +32,17 @@ requirements.txt
 .config/whkdrc
 
 .config/powershell
-{{ end -}}
 
 {{- if eq .chezmoi.os "linux" }}
+# Files to be ignored on linux
 **/*darwin.sh
+
+{{- else if eq .chezmoi.os "darwin" }}
+# Files to be ignored on macOS
+**/*linux.sh
+
+{{- end }}
+
 {{- end }}
 
 # vim:ft=gitignore
