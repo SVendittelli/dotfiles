@@ -2,6 +2,7 @@ wslPackages:
   apt:
     - "build-essential"
     - "eza"
+    - "gh"
     - "gpg"
     - "rustup"
   aptGet:

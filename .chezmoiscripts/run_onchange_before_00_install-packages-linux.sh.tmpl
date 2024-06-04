@@ -8,11 +8,16 @@ then
     sudo apt install -y gpg
 fi
 
+sudo mkdir -p -m 755 /etc/apt/keyrings
 if [[ ! -f /etc/apt/keyrings/gierens.gpg || ! -f /etc/apt/sources.list.d/gierens.list ]]; then
-    sudo mkdir -p /etc/apt/keyrings
     wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
     echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
     sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+fi
+if [[ ! -f /etc/apt/keyrings/githubcli-archive-keyring.gpg || ! -f /etc/apt/sources.list.d/github-cli.list ]]; then
+    wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null
+    sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 fi
 
 sudo apt update
