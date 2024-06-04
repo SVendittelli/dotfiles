@@ -41,7 +41,11 @@ Install `chezmoi` and initialise:
 
 ```shell
 brew install chezmoi
-chezmoi init --apply SVendittelli
+chezmoi init SVendittelli
+chezmoi apply ~/.local/bin/dcli
+dcli sync
+chezmoi apply ~/.keys
+chezmoi apply
 ```
 
 ### Windows
@@ -64,7 +68,11 @@ Back in the _administrator_ shell:
 Set-ExecutionPolicy remotesigned
 $Env:PATH += ";$Env:USERPROFILE\.local\bin"
 Set-PSResourceRepository -Name PSGallery -Trusted
-chezmoi init --apply SVendittelli
+chezmoi init SVendittelli
+chezmoi apply ~/.local/bin/dcli.exe
+dcli sync
+chezmoi apply ~/.keys
+chezmoi apply
 ```
 
 ## Set up pre-commit
