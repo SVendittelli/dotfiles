@@ -13,6 +13,8 @@ requirements.txt
 # Files to be ignored on windows
 **/*.sh
 
+.bashrc
+
 .zsh/**
 .zsh*
 .oh-my-zsh/**
@@ -37,6 +39,12 @@ requirements.txt
 
 {{- if eq .chezmoi.os "linux" }}
 # Files to be ignored on linux
+{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# Files to be ignored in WSL
+{{ else }}
+# Files ignored on other linux machines
+.bashrc
+{{ end }}
 **/*darwin.sh
 
 {{- else if eq .chezmoi.os "darwin" }}

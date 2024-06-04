@@ -1,23 +1,26 @@
 # common aliases
 
+{{- if lookPath "bat" }}
 ## Alias cat to use bat
 alias cat='bat'
+{{- end }}
 
+{{- if lookPath "z" }}
 ## Alias cd to use zoxide
 alias cd='z'
+{{- end }}
 
 ## fd show hidden files by default
 alias fd='fd --hidden'
 
+{{- if lookPath "eza" }}
 ## ls aliases
 alias ls='eza'
 alias l='ls -lh'         #size,show type,headers
 alias la='ls -lah --git' #long list,show almost all,show type,headers
 alias ll='ls -l'         #long list
 alias lt='ls -lah --git --git-ignore --tree' #long list,show almost all,show type,headers,follow git ignore,tree
-
-## Helpful system aliases
-alias help='tldr'
+{{- end }}
 
 ## neofetch
 alias neofetch='fastfetch'
@@ -51,7 +54,7 @@ function on-port {
 
 function tunnel {
     local LOCAL_PORT = ${1:-${PORT:-3000}}
-    Write-Host "localhost:${LOCAL_PORT} available at https://local.1sv.me/"
+    echo "localhost:${LOCAL_PORT} available at https://local.1sv.me/"
     cloudflared tunnel run --url "http://localhost:${LOCAL_PORT}" local
 }
 

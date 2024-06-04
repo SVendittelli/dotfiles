@@ -10,6 +10,7 @@ Darwin)
     ;;
 Linux)
     # commands to install password-manager-binary on Linux
+    mkdir $HOME/.local/bin
     curl -L https://github.com/Dashlane/dashlane-cli/releases/download/$1/dcli-linux-x64 > $HOME/.local/bin/dcli
     chmod +x $HOME/.local/bin/dcli
     ;;

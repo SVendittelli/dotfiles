@@ -129,22 +129,34 @@ function set_win_title(){
 }
 starship_precmd_user_func="set_win_title"
 
+{{- if lookPath "atuin" }}
 # Set up atuin
 eval "$(atuin init zsh)"
+{{- end }}
 
+{{- if lookPath "delta" }}
 # Set up delta
 eval "$(delta --generate-completion zsh)"
+{{- end }}
 
+{{- if lookPath "fzf" }}
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
+{{- end }}
 
+{{- if lookPath "miniserve" }}
 # Add miniserve completions
 eval "$(miniserve --print-completions zsh)"
+{{- end }}
 
+{{- if lookPath "starship" }}
 # Starship
 eval "$(starship init zsh)"
+{{- end }}
 
+{{- if lookPath "zoxide" }}
 # Set up zoxide
 eval "$(zoxide init zsh)"
+{{- end }}
 
 # vim:ft=zsh

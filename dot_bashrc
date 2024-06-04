@@ -1,0 +1,12 @@
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# Use zsh instead of bash
+if test -t 1; then
+    exec zsh
+fi
+
+# vim:ft=zsh

@@ -15,6 +15,9 @@ Install `chezmoi` using the correct package manager.
 ```shell
 export PATH="$HOME/.local/bin/:$PATH"
 chezmoi init --apply SVendittelli
+chezmoi apply .local/bin/dcli
+dcli sync
+chezmoi apply .keys
 ```
 
 ### macOS

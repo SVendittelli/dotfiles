@@ -1,0 +1,16 @@
+wslPackages:
+  apt:
+    - "build-essential"
+    - "eza"
+    - "gpg"
+    - "rustup"
+  aptGet:
+    - "chezmoi"
+    - "neovim"
+    - "zsh"
+  cargo:
+    - "atuin"
+    - "git-delta"
+  snap:
+    - "chezmoi --classic"
+    - "starship --edge"
