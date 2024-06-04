@@ -4,9 +4,9 @@ wslPackages:
     - "eza"
     - "gh"
     - "gpg"
+    - "pre-commit"
     - "rustup"
   aptGet:
-    - "chezmoi"
     - "neovim"
     - "zsh"
   cargo:

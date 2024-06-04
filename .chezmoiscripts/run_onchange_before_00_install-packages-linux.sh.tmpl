@@ -30,9 +30,11 @@ sudo apt-get update
 sudo apt-get -y install {{ range .wslPackages.aptGet }}{{ . }} {{ end }}
 
 # Install cargo packages
+{{- if lookPath "cargo" }}
 {{ range .wslPackages.cargo -}}
 cargo install {{ . }}
 {{ end }}
+{{- end }}
 
 # Install snap packages
 {{ range .wslPackages.snap }}

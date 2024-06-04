@@ -1,5 +1,8 @@
 # Changes to $PATH.
 export PATH=$HOME/.local/bin:$PATH
+if (( $+commands[cargo] )) then
+  export PATH=$PATH:~/.cargo/bin/
+fi
 if (( $+commands[go] )) then
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
@@ -129,32 +132,32 @@ function set_win_title(){
 }
 starship_precmd_user_func="set_win_title"
 
-{{- if lookPath "atuin" }}
+{{ if lookPath "atuin" -}}
 # Set up atuin
 eval "$(atuin init zsh)"
 {{- end }}
 
-{{- if lookPath "delta" }}
+{{ if lookPath "delta" -}}
 # Set up delta
 eval "$(delta --generate-completion zsh)"
 {{- end }}
 
-{{- if lookPath "fzf" }}
+{{ if lookPath "fzf" -}}
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 {{- end }}
 
-{{- if lookPath "miniserve" }}
+{{ if lookPath "miniserve" -}}
 # Add miniserve completions
 eval "$(miniserve --print-completions zsh)"
 {{- end }}
 
-{{- if lookPath "starship" }}
+{{ if lookPath "starship" -}}
 # Starship
 eval "$(starship init zsh)"
 {{- end }}
 
-{{- if lookPath "zoxide" }}
+{{ if lookPath "zoxide" -}}
 # Set up zoxide
 eval "$(zoxide init zsh)"
 {{- end }}
