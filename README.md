@@ -14,10 +14,19 @@ Install `chezmoi` using the correct package manager.
 
 ```shell
 export PATH="$HOME/.local/bin/:$PATH"
-chezmoi init --apply SVendittelli
-chezmoi apply .local/bin/dcli
+chezmoi init SVendittelli
+chezmoi apply ~/.local/bin/dcli
 dcli sync
-chezmoi apply .keys
+chezmoi apply ~/.keys
+chezmoi apply
+```
+
+#### WSL
+
+On Windows Subsystem for Linux ypu may additionally need to run these commands:
+
+```shell
+rustup default stable
 ```
 
 ### macOS
