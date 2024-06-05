@@ -1,5 +1,6 @@
 wslPackages:
   apt:
+    - "bat"
     - "build-essential"
     - "eza"
     - "gh"
