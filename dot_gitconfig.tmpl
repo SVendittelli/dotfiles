@@ -1,6 +1,8 @@
 [include]
 	# Store git aliases in a seperate file as there are a lot of them
 	path = ~/.gitalias
+	# Store git maintenance in a seperate file as it is different on each machine
+	path = ~/.gitmaintenance
 	# Delta theme
 	path = ~/.themes/tokyonight.nvim/extras/delta/tokyonight_night.gitconfig
 
@@ -83,10 +85,6 @@
 	defaultBranch = main
 [interactive]
 	diffFilter = delta --color-only --features ''
-
-# run "git maintenance register" in a repo to let it be automatically optimized. See: https://git-scm.com/docs/git-maintenance
-[maintenance]
-
 [merge]
 	conflictstyle = diff3
 	tool = nvimdiff

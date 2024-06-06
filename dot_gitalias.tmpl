@@ -86,6 +86,12 @@
 #	Internal command to pretty print commit log
 	pretty-log = log --decorate --boundary --pretty=format:'%Cred[%h]%Creset %m%C(yellow)%d %Creset%s %Cgreen(%cd) %C(bold cyan)<%an>%Creset'
 
+# Maintenance aliases:
+#	register
+	mr = maintenance register --config-file {{ .chezmoi.homeDir }}/.gitmaintenance
+#	unregister
+	mu = maintenance unregister --config-file {{ .chezmoi.homeDir }}/.gitmaintenance
+
 # push aliases:
 #	push
 	ph = push

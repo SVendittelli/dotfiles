@@ -1,0 +1,4 @@
+# run "git mr" in a repo to let it be automatically optimized. See: https://git-scm.com/docs/git-maintenance
+[maintenance]
+
+# vim:ft=gitconfig
