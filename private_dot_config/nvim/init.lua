@@ -509,6 +509,7 @@ require('lazy').setup({
     config = function()
       -- See `:help cmp`
       local cmp = require('cmp')
+      local lspkind = require('lspkind')
       local luasnip = require('luasnip')
       luasnip.config.setup({})
 
@@ -519,6 +520,11 @@ require('lazy').setup({
           end,
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
+
+        -- Use lspkind to automatically set the lsp icon
+        formatting = {
+          format = lspkind.cmp_format({}),
+        },
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
@@ -570,6 +576,7 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'supermaven' },
         },
       })
     end,
