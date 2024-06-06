@@ -32,4 +32,4 @@
 #   - https://www.conventionalcommits.org/en/v1.0.0/
 #   - https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format
 #
-# vim:cc=50,72
+# vim:cc=50,72 ff=unix

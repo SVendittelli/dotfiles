@@ -87,9 +87,11 @@
 	pretty-log = log --decorate --boundary --pretty=format:'%Cred[%h]%Creset %m%C(yellow)%d %Creset%s %Cgreen(%cd) %C(bold cyan)<%an>%Creset'
 
 # Maintenance aliases:
-#	register
+#	schedule maintenance
+	ms = maintenance start
+#	register repository for maintenance
 	mr = maintenance register --config-file {{ .chezmoi.homeDir }}/.gitmaintenance
-#	unregister
+#	unregister repository for maintenance
 	mu = maintenance unregister --config-file {{ .chezmoi.homeDir }}/.gitmaintenance
 
 # push aliases:
