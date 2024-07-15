@@ -95,6 +95,7 @@ packages:
       - "gokcehan.lf"
       - "GoLang.Go"
       - "Google.Chrome"
+      - "Gyan.FFmpeg"
       - "HTTPie.HTTPie"
       - "Inkscape.Inkscape"
       - "JesseDuffield.Lazydocker"
