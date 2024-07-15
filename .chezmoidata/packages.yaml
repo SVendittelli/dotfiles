@@ -132,6 +132,7 @@ packages:
       - "Valve.Steam"
       - "VideoLAN.VLC"
       - "Wacom.WacomTabletDriver"
+      - "wagoodman.dive"
       - "WinDirStat.WinDirStat"
       - "WiresharkFoundation.Wireshark"
       - "XAMPPRocky.tokei"
