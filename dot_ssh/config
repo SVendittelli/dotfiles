@@ -1,0 +1,9 @@
+# ~/.ssh/config
+# =============================================================================
+# OpenSSH client configuration.
+#
+# See https://www.ssh.com/ssh/config
+
+LogLevel VERBOSE
+
+# vim:ft=sshconfig
