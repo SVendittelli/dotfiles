@@ -1,0 +1,24 @@
+# ~/.curlrc
+# =============================================================================
+# cURL config file
+#
+# See:
+# - https://curl.se/docs/manpage.html
+# - https://everything.curl.dev/cmdline/configfile.html
+
+# Set the maximum time in seconds that you allow curl's connection to take.
+connect-timeout = 15
+
+# Follow `Location:` headers within redirects (3XX responses).
+location
+
+# Set the previous URL automatically when following a `Location:` header.
+referer = ";auto"
+
+# Use the server-provided timestamp on downloaded files, if any.
+remote-time
+
+# Retry the transfer if a transient error occurs.
+retry = 5
+
+# vim:ft=dosini
