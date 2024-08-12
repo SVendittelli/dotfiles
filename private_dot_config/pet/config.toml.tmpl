@@ -1,0 +1,36 @@
+
+[General]
+  Backend = "gist"
+  Cmd = []
+  Column = 40
+  Editor = "nvim"
+  SelectCmd = "fzf --ansi --layout=reverse --border --height=90% --pointer=* --cycle --prompt=Snippets:"
+  SnippetFile = "{{ .chezmoi.homeDir }}/.config/pet/snippet.toml"
+  SortBy = ""
+
+[Gist]
+  Public = false
+  access_token = {{ dashlaneNote "pet-github-gist-pat" | trim | quote }}
+  auto_sync = true
+  file_name = "pet-snippet.toml"
+  gist_id = "272dae22c2c511ba63d9227830287e4f"
+
+[GHEGist]
+  Public = false
+  access_token = ""
+  auto_sync = false
+  base_url = ""
+  file_name = ""
+  gist_id = ""
+  upload_url = ""
+
+[GitLab]
+  ID = ""
+  Url = ""
+  Visibility = "private"
+  access_token = ""
+  auto_sync = false
+  file_name = "pet-snippet.toml"
+  skip_ssl = false
+
+# vim:ft=toml
