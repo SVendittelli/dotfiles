@@ -23,7 +23,7 @@ chezmoi apply
 
 #### WSL
 
-On Windows Subsystem for Linux ypu may additionally need to run these commands:
+On Windows Subsystem for Linux you may additionally need to run these commands:
 
 ```shell
 rustup default stable
