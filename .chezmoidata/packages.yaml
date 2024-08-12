@@ -25,6 +25,7 @@ packages:
       - "jesseduffield/lazydocker/lazydocker"
       - "jq"
       - "just"
+      - "knqyf263/pet/pet"
       - "lazygit"
       - "less"
       - "lf"
