@@ -118,6 +118,7 @@ packages:
       - "Mozilla.Firefox.DeveloperEdition"
       - "Neovim.Neovim"
       - "Obsidian.Obsidian"
+      - "OlegDanilov.RapidEnvironmentEditor"
       - "OpenJS.NodeJS.LTS"
       - "OpenWhisperSystems.Signal"
       - "Python.Python.3.12"
