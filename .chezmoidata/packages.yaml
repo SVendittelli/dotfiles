@@ -71,6 +71,8 @@ packages:
     go:
       - "github.com/isacikgoz/gitbatch/cmd/gitbatch@latest"
       - "github.com/merschformann/gotz@latest"
+    msstore:
+      - "9PFZ3G4D1C9R" # LanguageTool
     pip:
       - "gitbatch"
       - "pre-commit"
@@ -109,7 +111,6 @@ packages:
       - "jftuga.less"
       - "jqlang.jq"
       - "KDE.Krita"
-      - "LanguageTool.LanguageToolforDesktop"
       - "LGUG2Z.komorebi"
       - "LGUG2Z.whkd"
       - "Microsoft.PowerShell"

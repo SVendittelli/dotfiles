@@ -55,6 +55,23 @@ $WingetTempFile = New-TemporaryFile
                 "Name" : "winget",
                 "Type" : "Microsoft.PreIndexed.Package"
             }
+        },
+        {
+            "Packages" :
+            [
+{{- range .packages.windows.msstore }}
+                {
+                    "PackageIdentifier" : {{ . | quote }}
+                },
+{{- end }}
+            ],
+            "SourceDetails" :
+            {
+                "Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+                "Identifier" : "StoreEdgeFD",
+                "Name" : "msstore",
+                "Type" : "Microsoft.Rest"
+            }
         }
     ]
 }
