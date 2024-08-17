@@ -1,0 +1,14 @@
+packagesPersonal:
+  windows:
+    msstore:
+      - "9WZDNCRFJ3TJ" # Netflix
+      - "9NKSQGP7F2NH" # WhatsApp
+    winget:
+      - "7zip.7zip"
+      - "Discord.Discord"
+      - "Elgato.StreamDeck"
+      - "KDE.Krita"
+      - "OpenWhisperSystems.Signal"
+      - "RaspberryPiFoundation.RaspberryPiImager"
+      - "Valve.Steam"
+      - "Zoom.Zoom"

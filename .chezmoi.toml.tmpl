@@ -7,6 +7,7 @@
 
 {{- $email := promptString "Git email address for the author/committer" }}
 {{- $location := promptString "Location to show weather for" }}
+{{- $personal := promptBool "Install personal packages" }}
 {{- $chassisType := "desktop" }}
 {{- if eq .chezmoi.os "darwin" }}
 {{-   if contains "MacBook" (output "sysctl" "-n" "hw.model") }}
@@ -30,6 +31,7 @@ recipient = "age1854gyefj8vf0qzpfxldjzremfg69fmawcmgwnve8d4equgvl99qslgywr8"
 chassisType = {{ $chassisType | quote }}
 email = {{ $email | quote }}
 location = {{ $location | quote }}
+personal = {{ $personal }}
 
 [hooks.read-source-state.pre]
 {{ if eq .chezmoi.os "windows" -}}
