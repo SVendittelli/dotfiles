@@ -11,6 +11,7 @@ packages:
       - "eza"
       - "fastfetch"
       - "fd"
+      - "ffmpeg" # Play, record, convert, and stream audio and video - vhs dependency - https://ffmpeg.org/
       - "fnm"
       - "fzf"
       - "gh"
@@ -40,7 +41,9 @@ packages:
       - "starship"
       - "tlrc"
       - "tmux"
+      - "ttyd" # vhs dependency - https://github.com/tsl0922/ttyd
       - "tokei"
+      - "vhs" # Terminal GIFs as code - https://github.com/charmbracelet/vhs
       - "zig"
       - "zoxide"
       - "zsh"
@@ -87,6 +90,7 @@ packages:
       - "BurntSushi.ripgrep.MSVC"
       - "Casey.Just"
       - "charmbracelet.glow"
+      - "charmbracelet.vhs" # Terminal GIFs as code - https://github.com/charmbracelet/vhs
       - "Cloudflare.cloudflared"
       - "code52.Carnac"
       - "CodeSector.TeraCopy"
@@ -100,7 +104,7 @@ packages:
       - "gokcehan.lf"
       - "GoLang.Go"
       - "Google.Chrome"
-      - "Gyan.FFmpeg"
+      - "Gyan.FFmpeg" # Play, record, convert, and stream audio and video - vhs dependency - https://ffmpeg.org/
       - "HTTPie.HTTPie"
       - "Inkscape.Inkscape"
       - "JesseDuffield.Lazydocker"
@@ -130,6 +134,7 @@ packages:
       - "th-ch.YouTubeMusic"
       - "TheBrowserCompany.Arc"
       - "tldr-pages.tlrc"
+      - "tsl0922.ttyd" # vhs dependency - https://github.com/tsl0922/ttyd
       - "twpayne.chezmoi"
       - "VideoLAN.VLC"
       - "Wacom.WacomTabletDriver"
