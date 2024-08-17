@@ -50,6 +50,13 @@ chezmoi apply
 
 ### Windows
 
+Open the developer settings using the following command and then manually
+activate developer mode and change the powershell execution policy:
+
+```powershell
+Start ms-settings:developers
+```
+
 In an _administrator_ shell:
 
 ```powershell
