@@ -1,0 +1,68 @@
+# Functions
+# -----------------------------------------------------------------------------
+
+function Get-ChildItemPretty {
+    <#
+    .SYNOPSIS
+        Runs eza with a specific set of arguments. Plus some line breaks before and after the output.
+        Alias: ls, ll, la, l
+    #>
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $false, Position = 0)]
+        [string]$Path = $PWD
+    )
+
+    Write-Host ""
+    eza -a -l --header --time-style relative $Path
+    Write-Host ""
+}
+
+# Change the window title to reflect the pwd
+function Invoke-Starship-PreCommand {
+  $host.ui.RawUI.WindowTitle = "$env:USERNAME@$env:COMPUTERNAME`: $pwd `a"
+}
+
+function Show-Command {
+    <#
+    .SYNOPSIS
+        Displays the definition of a command. Alias: which
+    #>
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $true, Position = 0)]
+        [string]$Name
+    )
+    Write-Verbose "Showing definition of '$Name'"
+    Get-Command $Name | Select-Object -ExpandProperty Definition
+}
+
+function tunnel {
+    param (
+        [Parameter(Mandatory = $false, Position = 0)]
+        [string]$Port = $Env:PORT
+    )
+    $Port = if ($Env:PORT) { $Env:PORT } else { 3000 }
+    Write-Host "localhost:$Port available at https://local.1sv.me/"
+    cloudflared tunnel run --url "http://localhost:$Port" local
+}
+
+function wttr {
+  <#
+  .SYNOPSIS
+    Gets weather for configured location
+  #>
+    param (
+        [Parameter(Mandatory = $false, Position = 0)]
+        [string]$Location = '{{ .location }}'
+    )
+    curl -fGsS "wttr.in/$Location"
+}
+
+function x {
+  <#
+  .SYNOPSIS
+    Exits
+  #>
+  exit
+}

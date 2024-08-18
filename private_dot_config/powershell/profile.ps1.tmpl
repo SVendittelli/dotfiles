@@ -6,91 +6,25 @@
 # Update Path
 $Env:PATH += ";$Env:USERPROFILE\.local\bin"
 
-# Aliases
-Set-Alias -Name cat -Value bat -Option AllScope
-Set-Alias -Name cm -Value chezmoi
-Set-Alias -Name e -Value nvim
-Set-Alias -Name g -Value git
-Set-Alias -Name lg -Value lazygit
-Set-Alias -Name ls -Value Get-ChildItemPretty -Option AllScope
-Set-Alias -Name ll -Value Get-ChildItemPretty
-Set-Alias -Name la -Value Get-ChildItemPretty
-Set-Alias -Name l -Value Get-ChildItemPretty
-Set-Alias -Name neofetch -Value fastfetch
-Set-Alias -Name open -Value Invoke-Item
-Set-Alias -Name touch -Value New-Item
-Set-Alias -Name vim -Value nvim
-Set-Alias -Name vi -Value nvim
-Set-Alias -Name which -Value Show-Command
+# Includes
+# -----------------------------------------------------------------------------
 
-# Functions
-function Get-ChildItemPretty {
-    <#
-    .SYNOPSIS
-        Runs eza with a specific set of arguments. Plus some line breaks before and after the output.
-        Alias: ls, ll, la, l
-    #>
-    [CmdletBinding()]
-    param (
-        [Parameter(Mandatory = $false, Position = 0)]
-        [string]$Path = $PWD
-    )
+# Determine user profile parent directory.
+$ConfigFolder = "$Env:USERPROFILE\.config\powershell"
 
-    Write-Host ""
-    eza -a -l --header --time-style relative $Path
-    Write-Host ""
+# Load functions declarations from separate configuration file.
+if (Test-Path $ConfigFolder/functions.ps1) {
+    . $ConfigFolder/functions.ps1
 }
 
-# Change the window title to reflect the pwd
-function Invoke-Starship-PreCommand {
-  $host.ui.RawUI.WindowTitle = "$env:USERNAME@$env:COMPUTERNAME`: $pwd `a"
-}
-
-function Show-Command {
-    <#
-    .SYNOPSIS
-        Displays the definition of a command. Alias: which
-    #>
-    [CmdletBinding()]
-    param (
-        [Parameter(Mandatory = $true, Position = 0)]
-        [string]$Name
-    )
-    Write-Verbose "Showing definition of '$Name'"
-    Get-Command $Name | Select-Object -ExpandProperty Definition
-}
-
-function tunnel {
-    param (
-        [Parameter(Mandatory = $false, Position = 0)]
-        [string]$Port = $Env:PORT
-    )
-    $Port = if ($Env:PORT) { $Env:PORT } else { 3000 }
-    Write-Host "localhost:$Port available at https://local.1sv.me/"
-    cloudflared tunnel run --url "http://localhost:$Port" local
-}
-
-function wttr {
-  <#
-  .SYNOPSIS
-    Gets weather for configured location
-  #>
-    param (
-        [Parameter(Mandatory = $false, Position = 0)]
-        [string]$Location = '{{ .location }}'
-    )
-    curl -fGsS "wttr.in/$Location"
-}
-
-function x {
-  <#
-  .SYNOPSIS
-    Exits
-  #>
-  exit
+# Load alias definitions from separate configuration file.
+if (Test-Path $ConfigFolder/aliases.ps1) {
+    . $ConfigFolder/aliases.ps1
 }
 
 # Environment Variables
+# -----------------------------------------------------------------------------
+
 $ENV:EDITOR = "nvim"
 $ENV:SHELL = "pwsh"
 $ENV:HOME = $Env:USERPROFILE
@@ -100,15 +34,21 @@ $Env:KOMOREBI_CONFIG_HOME = "$Env:USERPROFILE\.config\komorebi"
 $Env:XDG_CONFIG_HOME = "$Env:USERPROFILE\.config"
 
 # PowerShell Gallery modules
+# -----------------------------------------------------------------------------
+
 Import-Module posh-git
 
 # PSReadLine Config
+# -----------------------------------------------------------------------------
+
 ## Arrow keys search history with what I have already typed
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 # Completions
+# -----------------------------------------------------------------------------
+
 ## chezmoi
 {{ completion "powershell" }}
 
@@ -133,6 +73,7 @@ if (Get-Command miniserve -errorAction SilentlyContinue) {
 }
 
 # Shell integrations
+# -----------------------------------------------------------------------------
 
 ## fnm
 ## Use zoxide for cd and invoke fnm immediately afterwards

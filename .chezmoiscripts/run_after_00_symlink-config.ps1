@@ -4,12 +4,13 @@ If ($PSVersionTable.PSVersion.Major -Le 5 -Or $isWindows) {
     New-Item -ItemType Junction -Path $env:LOCALAPPDATA\nvim -Value $env:USERPROFILE\.config\nvim
   }
 
-  # symlink powershell profile
-  # as OneDrive syncs this file we must over copy it, not symlink or junction
-  $ConfigFolder = Split-Path $PROFILE.CurrentUserCurrentHost
-  $ConfigFile = "$ConfigFolder\powershell.config.json"
-  Copy-Item -Path $env:USERPROFILE\.config\powershell\profile.ps1 -Destination $Profile.CurrentUserAllHosts
-  Copy-Item -Path $env:USERPROFILE\.config\powershell\powershell.config.json -Destination $ConfigFile
+  # copy powershell profile
+  ## as OneDrive syncs this file we must over copy it, not symlink or junction
+  $ConfigFolder = "$Env:USERPROFILE\.config\powershell"
+  $ProfileFolder = Split-Path -Parent $Profile
+  $DestinationFile = "$ProfileFolder\powershell.config.json"
+  Copy-Item -Path "$ConfigFolder\powershell.config.json" -Destination $ProfileConfigFile
+  Copy-Item -Path "$ConfigFolder\profile.ps1" -Destination $Profile.CurrentUserAllHosts
 
   # symlink alacritty config
   If (-Not (Test-Path $env:APPDATA\alacritty)) {
