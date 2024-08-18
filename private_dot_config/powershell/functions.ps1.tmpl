@@ -1,11 +1,190 @@
-# Functions
+# ~/.config/powershell/functions.ps1
+# =============================================================================
+# PowerShell functions sourced by `./profile.ps1`.
+
+# Easier navigation
 # -----------------------------------------------------------------------------
 
-function Get-ChildItemPretty {
+function Set-LocationHome {
     <#
     .SYNOPSIS
-        Runs eza with a specific set of arguments. Plus some line breaks before and after the output.
-        Alias: ls, ll, la, l
+        Goes to user home directory.
+    .INPUTS
+        System.String
+    .OUTPUTS
+        None
+    #>
+    [CmdletBinding(
+        SupportsShouldProcess=$true,
+        ConfirmImpact='Low'
+    )]
+    param()
+
+    begin {
+        $path = $HOME
+        Write-Verbose "Destination set to $path"
+    }
+
+    process {
+        if ($PSCmdlet.ShouldProcess($path, 'Go to directory')) {
+            Write-Verbose "Navigating to $path"
+            cd $path
+        }
+    }
+}
+
+function Set-LocationUp {
+    <#
+    .SYNOPSIS
+        Goes up a directory.
+    .INPUTS
+        System.String
+    .OUTPUTS
+        None
+    #>
+    [CmdletBinding(
+        SupportsShouldProcess=$true,
+        ConfirmImpact='Low'
+    )]
+    param()
+
+    begin {
+        $path = Convert-Path -Path ".."
+        Write-Verbose "Destination set to $path"
+    }
+
+    process {
+        if ($PSCmdlet.ShouldProcess($path, 'Go to directory')) {
+            Write-Verbose "Navigating to $path"
+            cd $path
+        }
+    }
+}
+
+function Set-LocationUp2 {
+    <#
+    .SYNOPSIS
+        Goes up two directories.
+    .INPUTS
+        System.String
+    .OUTPUTS
+        None
+    #>
+    [CmdletBinding(
+        SupportsShouldProcess=$true,
+        ConfirmImpact='Low'
+    )]
+    param()
+
+    begin {
+        $path = Convert-Path -Path "../.."
+        Write-Verbose "Destination set to $path"
+    }
+
+    process {
+        if ($PSCmdlet.ShouldProcess($path, 'Go to directory')) {
+            Write-Verbose "Navigating to $path"
+            cd $path
+        }
+    }
+}
+
+function Set-LocationUp3 {
+    <#
+    .SYNOPSIS
+        Goes up three directories.
+    .INPUTS
+        System.String
+    .OUTPUTS
+        None
+    #>
+    [CmdletBinding(
+        SupportsShouldProcess=$true,
+        ConfirmImpact='Low'
+    )]
+    param()
+
+    begin {
+        $path = Convert-Path -Path "../../.."
+        Write-Verbose "Destination set to $path"
+    }
+
+    process {
+        if ($PSCmdlet.ShouldProcess($path, 'Go to directory')) {
+            Write-Verbose "Navigating to $path"
+            cd $path
+        }
+    }
+}
+
+function Set-LocationUp4 {
+    <#
+    .SYNOPSIS
+        Goes up four directories.
+    .INPUTS
+        System.String
+    .OUTPUTS
+        None
+    #>
+    [CmdletBinding(
+        SupportsShouldProcess=$true,
+        ConfirmImpact='Low'
+    )]
+    param()
+
+    begin {
+        $path = Convert-Path -Path "../../../.."
+        Write-Verbose "Destination set to $path"
+    }
+
+    process {
+        if ($PSCmdlet.ShouldProcess($path, 'Go to directory')) {
+            Write-Verbose "Navigating to $path"
+            cd $path
+        }
+    }
+}
+
+function Set-LocationUp5 {
+    <#
+    .SYNOPSIS
+        Goes up five directories.
+    .INPUTS
+        System.String
+    .OUTPUTS
+        None
+    #>
+    [CmdletBinding(
+        SupportsShouldProcess=$true,
+        ConfirmImpact='Low'
+    )]
+    param()
+
+    begin {
+        $path = Convert-Path -Path "../../../../.."
+        Write-Verbose "Destination set to $path"
+    }
+
+    process {
+        if ($PSCmdlet.ShouldProcess($path, 'Go to directory')) {
+            Write-Verbose "Navigating to $path"
+            cd $path
+        }
+    }
+}
+
+# Directory browsing
+# -----------------------------------------------------------------------------
+
+function Get-ChildItemVisible {
+    <#
+    .SYNOPSIS
+        Lists visible files in long format using eza.
+        Alias: l, ll
+    .PARAMETER Path
+        The directory to list from.
+    .INPUTS
+        System.String[]
     #>
     [CmdletBinding()]
     param (
@@ -13,10 +192,99 @@ function Get-ChildItemPretty {
         [string]$Path = $PWD
     )
 
-    Write-Host ""
-    eza -a -l --header --time-style relative $Path
-    Write-Host ""
+    eza --long --header --git --group-directories-first --time-style relative $Path
 }
+
+function Get-ChildItemAll {
+    <#
+    .SYNOPSIS
+        Lists all files in long format using eza.
+        Alias: la
+    .PARAMETER Path
+        The directory to list from.
+    .INPUTS
+        System.String[]
+    #>
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $false, Position = 0)]
+        [string]$Path = $PWD
+    )
+
+    eza --long --all --header --git --group-directories-first --time-style relative $Path
+}
+
+function Get-ChildItemTree {
+    <#
+    .SYNOPSIS
+        Lists all files in a tree format using eza.
+        Alias: lt
+    .PARAMETER Path
+        The directory to list from.
+    .INPUTS
+        System.String[]
+    #>
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $false, Position = 0)]
+        [string]$Path = $PWD
+    )
+
+    eza --long --all --header --git --git-ignore --tree --group-directories-first --time-style relative $Path
+}
+
+# File management
+# -----------------------------------------------------------------------------
+
+function New-ItemEmpty {
+    <#
+    .SYNOPSIS
+        Creates an empty file or updates its timestamp.
+    .Description
+        Host-level *nix equivalent to `touch`.
+    .INPUTS
+        System.Object
+    .OUTPUTS
+        None
+    .LINK
+        New-Item
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(
+            Mandatory=$true,
+            ValueFromPipeline=$true
+        )]
+        [string]$File
+    )
+
+    if (Test-Path $File) {
+        (Get-ChildItem $File).LastWriteTime = Get-Date
+    }
+    else {
+        New-Item -ItemType File $File
+    }
+}
+
+# General
+# -----------------------------------------------------------------------------
+
+function Get-Aliases {
+    <#
+    .SYNOPSIS
+        Lists aliases.
+    .INPUTS
+        None
+    .OUTPUTS
+        Microsoft.PowerShell.Commands.Internal.Format
+    .LINK
+        Get-Alias
+    #>
+    Get-Alias | Format-Table Name,ResolvedCommandName,Description,HelpUri
+}
+
+# Other useful functions
+# -----------------------------------------------------------------------------
 
 # Change the window title to reflect the pwd
 function Invoke-Starship-PreCommand {
