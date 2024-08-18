@@ -25,13 +25,14 @@ if (Test-Path $ConfigFolder/aliases.ps1) {
 # Environment Variables
 # -----------------------------------------------------------------------------
 
-$ENV:EDITOR = "nvim"
-$ENV:SHELL = "pwsh"
-$ENV:HOME = $Env:USERPROFILE
-$Env:BAT_CONFIG_DIR = "$Env:USERPROFILE\.config\bat"
-$Env:PET_CONFIG_DIR = "$Env:USERPROFILE\.config\pet"
-$Env:KOMOREBI_CONFIG_HOME = "$Env:USERPROFILE\.config\komorebi"
-$Env:XDG_CONFIG_HOME = "$Env:USERPROFILE\.config"
+$Env:EDITOR = "nvim"
+$Env:SHELL = "pwsh"
+$Env:HOME = $Env:USERPROFILE
+$Env:XDG_CONFIG_HOME = "$Env:HOME\.config"
+$Env:BAT_CONFIG_DIR = "$Env:XDG_CONFIG_HOME\bat"
+$Env:KOMOREBI_CONFIG_HOME = "$Env:XDG_CONFIG_HOME\komorebi"
+$Env:RIPGREP_CONFIG_PATH = "$Env:XDG_CONFIG_HOME\.ripgreprc"
+$Env:PET_CONFIG_DIR = "$Env:XDG_CONFIG_HOME\pet"
 
 # PowerShell Gallery modules
 # -----------------------------------------------------------------------------
