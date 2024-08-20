@@ -68,6 +68,8 @@ packages:
     go:
       - "github.com/merschformann/gotz@latest"
   windows:
+    dotnet:
+      - "WinDebloat" # Remove Windows 10 bloatware - https://github.com/SimonCropp/WinDebloat
     gh:
       - "dlvhdr/gh-dash"
       - "seachicken/gh-poi"
@@ -81,6 +83,13 @@ packages:
       - "pre-commit"
     psresourceget:
       - "posh-git"
+    windebloat:
+      include:
+        - "DeveloperMode" # Enables Developer Mode
+        - "Paint" # Uninstall Paint and install paint.net
+      exclude:
+        - "Photos" # Do not remove Photos, yet to find a good alternative
+        - "Xbox" # Do not remove Xbox apps, needed for AoE II
     winget:
       - "ajeetdsouza.zoxide"
       - "Alacritty.Alacritty"
@@ -113,6 +122,7 @@ packages:
       - "jqlang.jq"
       - "LGUG2Z.komorebi"
       - "LGUG2Z.whkd"
+      - "Microsoft.DotNet.SDK.8" # Dependency of WinDebloat
       - "Microsoft.PowerShell"
       - "Microsoft.PowerToys"
       - "Microsoft.VisualStudioCode"

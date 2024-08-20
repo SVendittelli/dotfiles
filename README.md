@@ -50,13 +50,6 @@ chezmoi apply
 
 ### Windows
 
-Open the developer settings using the following command and then manually
-activate developer mode and change the powershell execution policy:
-
-```powershell
-Start ms-settings:developers
-```
-
 In an _administrator_ shell:
 
 ```powershell
@@ -72,9 +65,22 @@ KOMOREBI_CONFIG_HOME = "%USERPROFILE%\.config\komorebi"
 Back in the _administrator_ shell:
 
 ```powershell
+# Enable developer mode
+Set-ItemProperty -Path "Registry::HKLM\SOFTWARE\Policies\Microsoft\Windows\Appx"`
+                 -Name "AllowDevelopmentWithoutDevLicense"`
+                 -Type "DWord"`
+                 -Value "1"
+
+# Set the execution policy
 Set-ExecutionPolicy remotesigned
+
+# Temporarily add the user's bin directory to the path for the password manager
 $Env:PATH += ";$Env:USERPROFILE\.local\bin"
+
+# Trust the PSGallery repository
 Set-PSResourceRepository -Name PSGallery -Trusted
+
+# Initialise chezmoi
 chezmoi init SVendittelli
 chezmoi apply ~/.local/bin/dcli.exe
 dcli sync

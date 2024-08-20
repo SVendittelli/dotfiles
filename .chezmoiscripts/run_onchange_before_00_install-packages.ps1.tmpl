@@ -96,6 +96,17 @@ winget import -i $WingetTempFile --ignore-unavailable --no-upgrade --accept-pack
 Remove-Item $WingetTempFile
 {{- end }}
 
+{{- if lookPath "dotnet" }}
+{{- range .packages.windows.dotnet }}
+# Install after winget so we have latest SDK available
+dotnet tool install -g {{ . }}
+{{- end }}
+{{- end }}
+
+{{- if lookPath "WinDebloat" }}
+WinDebloat --include {{ range .packages.windows.windebloat.include }}{{ . }} {{ end }} --exclude {{ range .packages.windows.windebloat.exclude }}{{ . }} {{ end }}
+{{- end }}
+
 {{ end -}}
 
 # vim:ft=ps1
