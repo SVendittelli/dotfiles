@@ -6,6 +6,8 @@
 README.md
 requirements.txt
 
+justfile
+
 .oh-my-zsh/cache/completions/
 .oh-my-zsh/cache/grep-alias/
 
