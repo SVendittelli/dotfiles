@@ -1,6 +1,7 @@
 packages:
   darwin:
     brews:
+      - "act" # Run GitHub Actions locally - https://github.com/nektos/act
       - "arc"
       - "bat"
       - "chezmoi"
@@ -127,6 +128,7 @@ packages:
       - "Microsoft.PowerToys"
       - "Microsoft.VisualStudioCode"
       - "Mozilla.Firefox.DeveloperEdition"
+      - "nektos.act" # Run GitHub Actions locally - https://github.com/nektos/act
       - "Neovim.Neovim"
       - "Obsidian.Obsidian"
       - "OlegDanilov.RapidEnvironmentEditor"
