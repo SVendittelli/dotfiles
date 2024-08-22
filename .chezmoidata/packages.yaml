@@ -89,7 +89,6 @@ packages:
         - "DeveloperMode" # Enables Developer Mode
         - "Paint" # Uninstall Paint and install paint.net
       exclude:
-        - "Photos" # Do not remove Photos, yet to find a good alternative
         - "Xbox" # Do not remove Xbox apps, needed for AoE II
     winget:
       - "ajeetdsouza.zoxide"
@@ -107,6 +106,7 @@ packages:
       - "dandavison.delta"
       - "Docker.DockerDesktop"
       - "Doist.Todoist"
+      - "DuongDieuPhap.ImageGlass" # Image viewer for Windows - https://imageglass.org/
       - "eza-community.eza"
       - "Fastfetch-cli.Fastfetch"
       - "Git.Git"
