@@ -41,6 +41,7 @@ Set-Alias -Name g -Value git
 Set-Alias -Name lg -Value lazygit
 Set-Alias -Name neofetch -Value fastfetch
 Set-Alias -Name open -Value Invoke-Item
+Set-Alias -Name python3 -Value python
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name vi -Value nvim
 Set-Alias -Name which -Value Show-Command
