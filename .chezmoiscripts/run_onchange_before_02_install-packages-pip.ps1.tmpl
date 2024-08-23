@@ -1,0 +1,19 @@
+{{ if eq .chezmoi.os "windows" -}}
+
+{{- if lookPath "pip" }}
+$PipTempFile = New-TemporaryFile
+
+@'
+{{- range .packages.windows.pip }}
+{{ . }}
+{{- end }}
+'@ | Out-File $PipTempFile
+
+pip install -r $PipTempFile
+
+Remove-Item $PipTempFile
+{{- end }}
+
+{{ end -}}
+
+# vim:ft=ps1

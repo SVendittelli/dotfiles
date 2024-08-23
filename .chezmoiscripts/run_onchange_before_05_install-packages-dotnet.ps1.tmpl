@@ -1,0 +1,12 @@
+{{ if eq .chezmoi.os "windows" -}}
+
+{{- if lookPath "dotnet" }}
+{{- range .packages.windows.dotnet }}
+# Install after winget so we have latest SDK available
+dotnet tool install -g {{ . }}
+{{- end }}
+{{- end }}
+
+{{ end -}}
+
+# vim:ft=ps1

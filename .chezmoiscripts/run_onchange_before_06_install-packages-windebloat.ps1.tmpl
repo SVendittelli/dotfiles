@@ -1,0 +1,9 @@
+{{ if eq .chezmoi.os "windows" -}}
+
+{{- if lookPath "WinDebloat" }}
+WinDebloat --include {{ range .packages.windows.windebloat.include }}{{ . }} {{ end }} --exclude {{ range .packages.windows.windebloat.exclude }}{{ . }} {{ end }}
+{{- end }}
+
+{{ end -}}
+
+# vim:ft=ps1

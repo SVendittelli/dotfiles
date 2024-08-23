@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.os "windows" -}}
+
+# https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.psresourceget/
+{{- range .packages.windows.psresourceget }}
+Install-PSResource -Name {{ . }}
+{{- end }}
+
+{{ end -}}
+
+# vim:ft=ps1

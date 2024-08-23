@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "windows" -}}
+
+{{- if lookPath "go" }}
+{{- range .packages.windows.go }}
+go install {{ . }}
+{{- end }}
+{{- end }}
+
+{{ end -}}
+
+# vim:ft=ps1
