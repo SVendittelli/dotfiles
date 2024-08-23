@@ -62,12 +62,14 @@ packages:
       - "dlvhdr/gh-dash"
       - "seachicken/gh-poi"
     go:
+      - "github.com/go-delve/delve/cmd/dlv@latest" # Debugger for the Go programming language - https://github.com/go-delve/delve
       - "github.com/merschformann/gotz@latest"
   linux:
     gh:
       - "dlvhdr/gh-dash"
       - "seachicken/gh-poi"
     go:
+      - "github.com/go-delve/delve/cmd/dlv@latest" # Debugger for the Go programming language - https://github.com/go-delve/delve
       - "github.com/merschformann/gotz@latest"
   windows:
     dotnet:
@@ -76,6 +78,7 @@ packages:
       - "dlvhdr/gh-dash"
       - "seachicken/gh-poi"
     go:
+      - "github.com/go-delve/delve/cmd/dlv@latest" # Debugger for the Go programming language - https://github.com/go-delve/delve
       - "github.com/isacikgoz/gitbatch/cmd/gitbatch@latest"
       - "github.com/merschformann/gotz@latest"
     msstore:
