@@ -15,7 +15,27 @@ function changed {
   git diff --name-only $oldRef $newRef | grep "^$1" > /dev/null 2>&1
 }
 
+# js package managers
+## bun install
+if changed 'bun.lockb'; then
+  echo "📦 bun.lockb changed. Running bun install to bring your dependencies up to date."
+  bun install
+fi
+
+## npm install
 if changed 'package-lock.json'; then
   echo "📦 package-lock.json changed. Running npm install to bring your dependencies up to date."
   npm install
+fi
+
+## pnpm install
+if changed 'pnpm-lock.yaml'; then
+  echo "📦 pnpm-lock.yaml changed. Running pnpm install to bring your dependencies up to date."
+  pnpm install
+fi
+
+## yarn install
+if changed 'yarn.lock'; then
+  echo "📦 yarn.lock changed. Running yarn install to bring your dependencies up to date."
+  yarn install
 fi

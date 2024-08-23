@@ -1,0 +1,14 @@
+{{ if eq .chezmoi.os "windows" -}}
+
+{{- if lookPath "fnm" }}
+fnm install --lts
+fnm default lts-latest
+
+npm install --global {{ range .packages.windows.npm }}{{ . }} {{ end }}
+
+corepack enable
+{{- end }}
+
+{{ end -}}
+
+# vim:ft=ps1
