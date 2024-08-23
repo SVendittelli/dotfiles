@@ -33,6 +33,10 @@ repos:
       - id: conventional-pre-commit
         stages: [commit-msg]
         args: [--strict, --force-scope, feat, fix, chore, docs]
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
 
 ci:
   autofix_commit_msg: "chore(pre-commit): auto fixes"
