@@ -148,6 +148,11 @@ eval "$(delta --generate-completion zsh)"
 eval "$(fzf --zsh)"
 {{- end }}
 
+{{ if lookPath "gitleaks" -}}
+# Add gitleaks completions
+eval "$(gitleaks completion zsh)"
+{{- end }}
+
 {{ if lookPath "miniserve" -}}
 # Add miniserve completions
 eval "$(miniserve --print-completions zsh)"
