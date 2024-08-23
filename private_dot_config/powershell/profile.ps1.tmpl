@@ -68,6 +68,11 @@ if (Get-Command gh -errorAction SilentlyContinue) {
     Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 }
 
+## gitleaks
+if (Get-Command gitleaks -errorAction SilentlyContinue) {
+    Invoke-Expression -Command $(gitleaks completion powershell | Out-String)
+}
+
 ## miniserve
 if (Get-Command miniserve -errorAction SilentlyContinue) {
     Invoke-Expression -Command $(miniserve --print-completions powershell | Out-String)

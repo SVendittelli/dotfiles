@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Check if hooks.gitleaks is enabled in git config
+if [[ "$(git config get --type bool hooks.gitleaks)" == "true" ]]; then
+    # If hooks.gitleaks is enabled, run gitleaks
+    echo "Running gitleaks..."
+
+    # Run gitleaks and capture the exit code
+    gitleaks protect -v --staged
+    exitCode=$?
+
+    echo
+
+    # If gitleaks detects sensitive information, exit with a non-zero status code
+    if [ $exitCode -eq 1 ]; then
+        echo "Warning: gitleaks has detected sensitive information in your changes."
+        echo "To disable the gitleaks pre-commit hook, run the following command:"
+        echo
+        echo "    git config set hooks.gitleaks false"
+    fi
+
+    exit $exitCode
+else
+    # If hooks.gitleaks is not enabled, display a message
+    echo "gitleaks pre-commit hook disabled (enable with 'git config set hooks.gitleaks true')"
+fi
