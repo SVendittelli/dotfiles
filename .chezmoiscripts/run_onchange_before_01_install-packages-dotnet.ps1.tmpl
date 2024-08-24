@@ -6,7 +6,6 @@ Write-Host "Installing .NET packages..."
 Write-Host ""
 
 {{- range .packages.windows.dotnet }}
-# Install after winget so we have latest SDK available
 dotnet tool install -g {{ . }}
 {{- end }}
 {{- end }}
