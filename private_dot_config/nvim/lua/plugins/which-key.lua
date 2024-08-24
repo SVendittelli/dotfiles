@@ -54,6 +54,7 @@ return {
       { '<leader>f', group = '[F]ind' },
       { '<leader>r', group = '[R]ename' },
       { '<leader>s', group = '[S]plit' },
+      { '<leader>t', group = '[T]oggle' },
       { '<leader>w', group = '[W]orkspace' },
     })
   end,
