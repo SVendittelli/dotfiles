@@ -1,6 +1,10 @@
 {{ if eq .chezmoi.os "windows" -}}
 
 {{- if lookPath "winget" }}
+Write-Host ""
+Write-Host "Installing winget packages..."
+Write-Host ""
+
 $WingetTempFile = New-TemporaryFile
 
 @'

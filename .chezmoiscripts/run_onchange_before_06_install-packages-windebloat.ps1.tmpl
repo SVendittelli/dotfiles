@@ -1,6 +1,10 @@
 {{ if eq .chezmoi.os "windows" -}}
 
 {{- if lookPath "WinDebloat" }}
+Write-Host ""
+Write-Host "Running WinDebloat..."
+Write-Host ""
+
 WinDebloat --include {{ range .packages.windows.windebloat.include }}{{ . }} {{ end }} --exclude {{ range .packages.windows.windebloat.exclude }}{{ . }} {{ end }}
 {{- end }}
 

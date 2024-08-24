@@ -1,4 +1,7 @@
 {{ if eq .chezmoi.os "windows" -}}
+Write-Host ""
+Write-Host "Installing PowerShell modules..."
+Write-Host ""
 
 # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.psresourceget/
 {{- range .packages.windows.psresourceget }}

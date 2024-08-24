@@ -1,6 +1,10 @@
 {{ if eq .chezmoi.os "windows" -}}
 
 {{- if lookPath "go" }}
+Write-Host ""
+Write-Host "Installing Go packages..."
+Write-Host ""
+
 {{- range .packages.windows.go }}
 go install {{ . }}
 {{- end }}

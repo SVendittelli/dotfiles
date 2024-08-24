@@ -1,6 +1,10 @@
 {{ if eq .chezmoi.os "windows" -}}
 
 {{- if lookPath "pip" }}
+Write-Host ""
+Write-Host "Installing Python packages..."
+Write-Host ""
+
 $PipTempFile = New-TemporaryFile
 
 @'

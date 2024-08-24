@@ -1,6 +1,10 @@
 {{ if eq .chezmoi.os "windows" -}}
 
 {{- if lookPath "gh" }}
+Write-Host ""
+Write-Host "Installing gh extensions..."
+Write-Host ""
+
 {{- range .packages.darwin.gh }}
 gh extension install {{ . }}
 {{- end }}
