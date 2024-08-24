@@ -164,4 +164,5 @@ packages:
       - "WinDirStat.WinDirStat"
       - "WiresharkFoundation.Wireshark"
       - "XAMPPRocky.tokei"
+      - "ZenBrowser.Zen" # Firefox based browser for privacy and speed - https://www.zen-browser.app/
       - "zig.zig"
