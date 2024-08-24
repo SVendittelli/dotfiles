@@ -1,0 +1,28 @@
+{{ if eq .chezmoi.os "windows" -}}
+
+{{- if lookPath "7z" }}
+Write-Host ""
+Write-Host "Installing mingw-w64..."
+Write-Host ""
+
+$Tmp = [System.IO.Path]::GetTempPath() # Not $env:TEMP, see https://stackoverflow.com/a/946017
+$Name = (New-Guid).ToString("N")
+$TmpDir = Join-Path $Tmp $Name
+New-Item -ItemType Directory -Path $TmpDir
+
+#$Uri = {{ gitHubLatestReleaseAssetURL "niXman/mingw-builds-binaries" "x86_64-*-release-posix-seh-ucrt-*.7z" | quote }}
+$Uri = {{ gitHubReleaseAssetURL "niXman/mingw-builds-binaries" "13.2.0-rt_v11-rev1" "x86_64-*-release-posix-seh-ucrt-*.7z" | quote }}
+
+Invoke-WebRequest -Uri $Uri -OutFile "$TmpDir\mingw-builds.7z"
+
+$LocalDir = "$Env:UserProfile\.local"
+Remove-Item -Path "$LocalDir\mingw64" -Recurse -Force
+
+7z x "$TmpDir\mingw-builds.7z" -o"$LocalDir"
+
+Remove-Item -Path $TmpDir -Recurse -Force
+{{- end }}
+
+{{ end -}}
+
+# vim:ft=ps1

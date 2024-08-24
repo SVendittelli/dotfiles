@@ -4,7 +4,9 @@
 # `chezmoi apply` by the script `run_after_00_symlink-config.ps1`:
 
 # Update Path
+$Env:PATH += ";C:\Program Files\7-Zip"
 $Env:PATH += ";$Env:USERPROFILE\.local\bin"
+$Env:PATH += ";$Env:USERPROFILE\.local\mingw64\bin" # gcc and more
 
 # Includes
 # -----------------------------------------------------------------------------
