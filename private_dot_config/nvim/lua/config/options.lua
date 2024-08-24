@@ -51,8 +51,6 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
