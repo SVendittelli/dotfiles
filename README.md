@@ -50,18 +50,6 @@ chezmoi apply
 
 ### Windows
 
-In an _administrator_ shell:
-
-```powershell
-rundll32 sysdm.cpl,EditEnvironmentVariables
-```
-
-Set the following user environment variable:
-
-```toml
-KOMOREBI_CONFIG_HOME = "%USERPROFILE%\.config\komorebi"
-```
-
 Back in the _administrator_ shell:
 
 ```powershell
