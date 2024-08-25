@@ -50,7 +50,7 @@ chezmoi apply
 
 ### Windows
 
-Back in the _administrator_ shell:
+In an _administrator_ shell:
 
 ```powershell
 # Enable developer mode
