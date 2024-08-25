@@ -41,6 +41,7 @@ packages:
       - "pre-commit"
       - "raycast"
       - "ripgrep"
+      - "sqlite" # Embedded relational database - https://www.sqlite.org/
       - "starship"
       - "tlrc"
       - "tmux"
@@ -153,6 +154,7 @@ packages:
       - "schollz.croc"
       - "sharkdp.bat"
       - "sharkdp.fd"
+      - "SQLite.SQLite" # Embedded relational database - https://www.sqlite.org/
       - "Starship.Starship"
       - "SumatraPDF.SumatraPDF"
       - "svenstaro.miniserve"
