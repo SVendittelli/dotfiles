@@ -47,6 +47,10 @@ alias enos="(cd ~/nixos && $EDITOR)"
 alias anos="~/nixos/nixos-rebuild.sh"
 alias update="(cd ~/nixos && nix flake update)"
 
+## just
+alias j="just"
+alias jg="just --global-justfile"
+
 # List processes on port
 function on-port {
     lsof -i :"$@"

@@ -286,9 +286,17 @@ function Get-Aliases {
 # Other useful functions
 # -----------------------------------------------------------------------------
 
-# Change the window title to reflect the pwd
+# Change the window title to reflect the pwd using startship
 function Invoke-Starship-PreCommand {
   $host.ui.RawUI.WindowTitle = "$env:USERNAME@$env:COMPUTERNAME`: $pwd `a"
+}
+
+function Just-Global {
+    <#
+    .SYNOPSIS
+        Runs just scripts from the global justfile. Alias jg
+    #>
+    just --global-justfile $args
 }
 
 function Show-Command {

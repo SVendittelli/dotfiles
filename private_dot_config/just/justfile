@@ -1,0 +1,11 @@
+set shell := ["zsh", "-uc"]
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+
+[private]
+@default:
+    just --list --justfile {{justfile()}}
+
+# Create a new justfile in the current directory from the template
+[no-cd]
+init:
+    cp {{justfile_directory()}}/init_template.just justfile
