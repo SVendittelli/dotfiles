@@ -14,5 +14,6 @@ clear-run-once-state:
     chezmoi state delete-bucket --bucket=scriptState
 
 # Add nuget.org as a dotnet source
+[windows]
 dotnet-nuget-add-source:
     dotnet nuget add source "https://api.nuget.org/v3/index.json" --name "nuget.org"

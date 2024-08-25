@@ -88,16 +88,16 @@ exit
 
 ## Clear the state of all `run_onchange_` and `run_once_` scripts
 
-`chezmoi` stores whether and when `run_onchange_` and run_once_` scripts have been run in its persistent state.
+`chezmoi` stores whether and when `run_onchange_` and `run_once_` scripts have been run in its persistent state.
 
 To clear the state of `run_onchange_` scripts, run:
 
 ```shell
-chezmoi state delete-bucket --bucket=entryState
+just clear-run-on-change-state
 ```
 
 To clear the state of `run_once_` scripts, run:
 
 ```shell
-chezmoi state delete-bucket --bucket=scriptState
+just clear-run-once-state
 ```
