@@ -28,10 +28,12 @@ if (Test-Path $ConfigFolder/aliases.ps1) {
 # -----------------------------------------------------------------------------
 
 $Env:EDITOR = "nvim"
+$Env:PAGER = "less"
 $Env:SHELL = "pwsh"
 $Env:HOME = $Env:USERPROFILE
 $Env:XDG_CONFIG_HOME = "$Env:HOME\.config"
 $Env:BAT_CONFIG_DIR = "$Env:XDG_CONFIG_HOME\bat"
+$Env:BAT_PAGER = "less -FRDa" # work around for less < v663, can be removed in future release
 $Env:KOMOREBI_CONFIG_HOME = "$Env:XDG_CONFIG_HOME\komorebi"
 $Env:RIPGREP_CONFIG_PATH = "$Env:XDG_CONFIG_HOME\.ripgreprc"
 $Env:PET_CONFIG_DIR = "$Env:XDG_CONFIG_HOME\pet"
