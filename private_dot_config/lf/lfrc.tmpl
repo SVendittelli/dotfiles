@@ -4,6 +4,11 @@ set drawbox
 # Disable preivew pane cursor
 set cursorpreviewfmt ""
 
+# Add current directory to the zoxide database after changing directory
+cmd on-cd &{{ "{{" }}
+    zoxide add "$PWD"
+{{ "}}" }}
+
 {{ if eq .chezmoi.os "windows" -}}
 # interpreter for shell commands
 set shell powershell
@@ -37,6 +42,10 @@ set scrolloff 10
 
 # use enter for shell commands
 map <enter> shell
+
+# Add keybind to edit the lf config file
+cmd edit-config $~/.config/lf/edit-config.ps1
+map C edit-config
 {{ else -}}
 # interpreter for shell commands
 set shell zsh
@@ -146,4 +155,11 @@ cmd zip ${{ "{{" }}
     zip -r $1.zip $1
     rm -rf $1
 {{ "}}" }}
+
+cmd edit-config ${{ "{{" }}
+    $EDITOR ~/.config/lf/lfrc
+    lf -remote "send $id source ~/.config/lf/lfrc"
+{{ "}}" }}
+
+map C edit-config
 {{- end }}
