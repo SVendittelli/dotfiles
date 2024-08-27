@@ -33,6 +33,9 @@ email = {{ $email | quote }}
 location = {{ $location | quote }}
 personal = {{ $personal }}
 
+[diff]
+	pager = "less -FR"
+
 [hooks.read-source-state.pre]
 {{ if eq .chezmoi.os "windows" -}}
 command = "pwsh"
