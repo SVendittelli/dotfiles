@@ -1,8 +1,22 @@
-# use enter for shell commands
-map <enter> shell
+# ~/.config/lf/lfrc
+# =============================================================================
+# lf config file
+#
+# See:
+# - https://github.com/gokcehan/lf
+# - https://github.com/gokcehan/lf/blob/master/docs/config.md
 
-# leave some space at the top and the bottom of the screen
+# Use relative line numbers
+set number
+set relativenumber
+# Show hidden files
+set hidden
+
+# Leave some space at the top and the bottom of the screen
 set scrolloff 10
+
+# Use enter for shell commands
+map <enter> shell
 
 # Enable column borders
 set drawbox
@@ -16,6 +30,10 @@ cmd on-cd &{{ "{{" }}
 {{ "}}" }}
 
 {{ if eq .chezmoi.os "windows" -}}
+
+# Windows specific settings
+# -----------------------------------------------------------------------------
+
 # interpreter for shell commands
 set shell powershell
 
@@ -43,10 +61,15 @@ map w $powershell
 # change 'doc' command to use a different pager
 cmd doc $lf -doc | & $Env:PAGER
 
-# add keybind to edit the lf config file
+# Add a keybind to edit the lf config file
 cmd edit-config $~/.config/lf/edit-config.ps1
 map C edit-config
-{{ else -}}
+
+{{- else -}}
+
+# MacOS and Linux specific settings
+# -----------------------------------------------------------------------------
+
 # interpreter for shell commands
 set shell zsh
 
@@ -66,7 +89,7 @@ set shellopts '-eu'
 # commands accordingly.
 set ifs "\n"
 
-# add keybind to edit the lf config file
+# Add a keybind to edit the lf config file
 cmd edit-config ${{ "{{" }}
     $EDITOR ~/.config/lf/lfrc
     lf -remote "send $id source ~/.config/lf/lfrc"
