@@ -297,4 +297,12 @@
 	lazy = !lazygit
 	lz = !lazygit
 
+	### Hooks ###
+
+	# Disable git hooks
+	disable-hooks = config set core.hooksPath {{ if eq .chezmoi.os "windows" }}NUL{{ else }}/dev/null{{ end }}
+
+	# Enable git hooks
+	enable-hooks = config unset core.hooksPath
+
 # vim:ft=gitconfig
