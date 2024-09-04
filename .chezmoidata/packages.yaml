@@ -4,6 +4,7 @@ packages:
       - "act" # Run GitHub Actions locally - https://github.com/nektos/act
       - "arc"
       - "bat"
+      - "charmbracelet/tap/freeze" # Generate images of code or terminal output - https://github.com/charmbracelet/freeze
       - "chezmoi"
       - "cloudflared"
       - "croc"
@@ -22,7 +23,7 @@ packages:
       - "git-extras"
       - "git-lfs"
       - "gitbatch"
-      - "glow"
+      - "glow" # Terminal based markdown renderer - https://github.com/charmbracelet/glow
       - "go"
       - "httpie"
       - "jesseduffield/lazydocker/lazydocker"
@@ -111,7 +112,8 @@ packages:
       - "beekeeper-studio.beekeeper-studio"
       - "BurntSushi.ripgrep.MSVC"
       - "Casey.Just"
-      - "charmbracelet.glow"
+      - "charmbracelet.freeze" # Generate images of code or terminal output - https://github.com/charmbracelet/freeze
+      - "charmbracelet.glow" # Terminal based markdown renderer - https://github.com/charmbracelet/glow
       - "charmbracelet.vhs" # Terminal GIFs as code - https://github.com/charmbracelet/vhs
       - "Cloudflare.cloudflared"
       - "code52.Carnac"
