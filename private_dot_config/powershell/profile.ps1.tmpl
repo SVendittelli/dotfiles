@@ -35,7 +35,7 @@ $Env:XDG_CONFIG_HOME = "$Env:HOME\.config"
 
 $Env:BAT_CONFIG_DIR = "$Env:XDG_CONFIG_HOME\bat"
 $Env:BAT_PAGER = "less -FRDa" # work around for less < v663, can be removed in future release
-$Env:GITHUB_TOKEN = $(gh auth token) # auth token from the GitHub cli
+$Env:CHEZMOI_GITHUB_ACCESS_TOKEN = {{ dashlaneNote "chezmoi-github-pat" | trim | quote }}
 $Env:KOMOREBI_CONFIG_HOME = "$Env:XDG_CONFIG_HOME\komorebi"
 $Env:LF_CONFIG_HOME = "$Env:XDG_CONFIG_HOME"
 $Env:RIPGREP_CONFIG_PATH = "$Env:XDG_CONFIG_HOME\.ripgreprc"

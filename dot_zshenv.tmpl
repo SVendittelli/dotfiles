@@ -5,7 +5,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 ## chezmoi GitHub PAT
-export CHEZMOI_GITHUB_ACCESS_TOKEN={{- dashlaneNote "chezmoi-github-pat" }}
+export CHEZMOI_GITHUB_ACCESS_TOKEN={{ dashlaneNote "chezmoi-github-pat" | trim | quote }}
 
 ## fzf
 export FZF_DEFAULT_OPTS="--height 40% --reverse --border --cycle"
