@@ -35,6 +35,7 @@ packages:
       - "lf"
       - "libqalculate"
       - "lnav"
+      - "maccy" # Lightweight clipboard manager - https://github.com/p0deje/Maccy
       - "miniserve"
       - "neovim"
       - "nvm"
