@@ -163,6 +163,11 @@ eval "$(miniserve --print-completions zsh)"
 eval "$(starship init zsh)"
 {{- end }}
 
+{{ if lookPath "vfox" -}}
+# Set up vfox
+eval "$(vfox activate zsh)"
+{{- end }}
+
 {{ if lookPath "zoxide" -}}
 # Set up zoxide
 eval "$(zoxide init zsh)"

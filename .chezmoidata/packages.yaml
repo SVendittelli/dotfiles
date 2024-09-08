@@ -51,6 +51,7 @@ packages:
       - "tmux"
       - "ttyd" # vhs dependency - https://github.com/tsl0922/ttyd
       - "tokei"
+      - "vfox" # A cross-platform, extensible version manager - https://github.com/version-fox/vfox
       - "vhs" # Terminal GIFs as code - https://github.com/charmbracelet/vhs
       - "zig"
       - "zoxide"
@@ -169,6 +170,7 @@ packages:
       - "tldr-pages.tlrc"
       - "tsl0922.ttyd" # vhs dependency - https://github.com/tsl0922/ttyd
       - "twpayne.chezmoi"
+      - "version-fox.vfox" # A cross-platform, extensible version manager - https://github.com/version-fox/vfox
       - "VideoLAN.VLC"
       - "Wacom.WacomTabletDriver"
       - "wagoodman.dive"

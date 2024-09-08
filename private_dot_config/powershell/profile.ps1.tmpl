@@ -106,6 +106,11 @@ if (Get-Command starship -errorAction SilentlyContinue) {
     Invoke-Expression (&starship init powershell)
 }
 
+## vfox versin manager
+if (Get-Command vfox -errorAction SilentlyContinue) {
+    Invoke-Expression "$(vfox activate pwsh)"
+}
+
 ## zoxide
 if (Get-Command zoxide -errorAction SilentlyContinue) {
     Invoke-Expression (& { (zoxide init powershell | Out-String) })
