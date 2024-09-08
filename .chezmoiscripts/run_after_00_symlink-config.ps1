@@ -6,8 +6,8 @@ If ($PSVersionTable.PSVersion.Major -Le 5 -Or $isWindows) {
   # symlink the nvim folder into the correct location for windows
   $LinkPath = "$env:LOCALAPPDATA\nvim"
   $TargetPath = "$UserConfigFolder\nvim"
-  If (-Not (Test-Path $LinkPath)) {
-    New-Item -ItemType SymbolicLink -Path $LinkPath -Value $TargetPath
+  If (-Not (Test-Path $LinkPath) -And (Test-Path $TargetPath)) {
+    New-Item -ItemType SymbolicLink -Path $LinkPath -Target $TargetPath
   }
 
   # copy powershell profile as OneDrive syncs this file we must over copy it,
@@ -21,28 +21,30 @@ If ($PSVersionTable.PSVersion.Major -Le 5 -Or $isWindows) {
   # symlink alacritty config
   $LinkPath = "$env:APPDATA\alacritty"
   $TargetPath = "$UserConfigFolder\alacritty"
-  If (-Not (Test-Path $LinkPath)) {
-    New-Item -ItemType SymbolicLink -Path $LinkPath -Value $TargetPath
+  If (-Not (Test-Path $LinkPath) -And (Test-Path $TargetPath)) {
+    New-Item -ItemType SymbolicLink -Path $LinkPath -Target $TargetPath
   }
 
   # symlink email autohotkey script to the startup folder
   $LinkPath = "$StartupFolder\email.ahk"
   $TargetPath = "$env:USERPROFILE\email.ahk"
-  If (-Not (Test-Path $LinkPath)) {
+  If (-Not (Test-Path $LinkPath) -And (Test-Path $TargetPath)) {
     New-Item -ItemType SymbolicLink -Path $LinkPath -Target $TargetPath
   }
 
   # symlink slumber config
   $LinkPath = "$env:APPDATA\slumber\config.yml"
   $TargetPath = "$UserConfigFolder\slumber\config.yml"
-  If (-Not (Test-Path $LinkPath)) {
-    New-Item -ItemType SymbolicLink -Path $LinkPath -Value $TargetPath
+  If (-Not (Test-Path $LinkPath) -And (Test-Path $TargetPath)) {
+    # Ensure slumber config folder exists
+    New-Item -ItemType Directory -Path $(Split-Path $LinkPath -Parent) -Force
+    New-Item -ItemType SymbolicLink -Path $LinkPath -Target $TargetPath
   }
 
   # create shortcut for Obsidian in the startup folder
   $LinkPath = "$StartupFolder\obsidian.lnk"
   $TargetPath = "$env:LOCALAPPDATA\Programs\Obsidian\obsidian.exe"
-  If (-Not (Test-Path $LinkPath)) {
+  If (-Not (Test-Path $LinkPath) -And (Test-Path $TargetPath)) {
     $Link = (New-Object -ComObject WScript.Shell).CreateShortcut($LinkPath)
     $Link.TargetPath = $TargetPath
     $Link.Save()
