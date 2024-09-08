@@ -7,11 +7,11 @@ If ($PSVersionTable.PSVersion.Major -Le 5 -Or $isWindows) {
   $LinkPath = "$env:LOCALAPPDATA\nvim"
   $TargetPath = "$UserConfigFolder\nvim"
   If (-Not (Test-Path $LinkPath)) {
-    New-Item -ItemType Junction -Path $LinkPath -Value $TargetPath
+    New-Item -ItemType SymbolicLink -Path $LinkPath -Value $TargetPath
   }
 
   # copy powershell profile as OneDrive syncs this file we must over copy it,
-  # not create a symlink or junction
+  # not create a symlink
   $ConfigFolder = "$UserConfigFolder\powershell"
   $ProfileFolder = Split-Path -Parent $Profile
   $DestinationFile = "$ProfileFolder\powershell.config.json"
@@ -22,7 +22,7 @@ If ($PSVersionTable.PSVersion.Major -Le 5 -Or $isWindows) {
   $LinkPath = "$env:APPDATA\alacritty"
   $TargetPath = "$UserConfigFolder\alacritty"
   If (-Not (Test-Path $LinkPath)) {
-    New-Item -ItemType Junction -Path $LinkPath -Value $TargetPath
+    New-Item -ItemType SymbolicLink -Path $LinkPath -Value $TargetPath
   }
 
   # symlink email autohotkey script to the startup folder
