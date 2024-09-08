@@ -5,6 +5,7 @@ packages:
       - "arc"
       - "bat"
       - "charmbracelet/tap/freeze" # Generate images of code or terminal output - https://github.com/charmbracelet/freeze
+      - "charmbracelet/tap/skate" # A personal key-value store - https://github.com/charmbracelet/skate
       - "chezmoi"
       - "cloudflared"
       - "croc"
@@ -115,6 +116,7 @@ packages:
       - "Casey.Just"
       - "charmbracelet.freeze" # Generate images of code or terminal output - https://github.com/charmbracelet/freeze
       - "charmbracelet.glow" # Terminal based markdown renderer - https://github.com/charmbracelet/glow
+      - "charmbracelet.skate" # A personal key-value store - https://github.com/charmbracelet/skate
       - "charmbracelet.vhs" # Terminal GIFs as code - https://github.com/charmbracelet/vhs
       - "Cloudflare.cloudflared"
       - "code52.Carnac"
