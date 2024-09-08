@@ -58,6 +58,12 @@
 
 {{ else if eq .chezmoi.os "windows" -}}
 # Windows specific
+[".cargo/bin/cargo-binstall.exe"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "cargo-bins/cargo-binstall" "cargo-binstall-x86_64-pc-windows-msvc.zip" | quote }}
+    path = "cargo-binstall.exe"
+    refreshPeriod = "168h"
+    executable = true
 [".config/komorebi/applications.yaml"]
     type = "file"
     url = "https://raw.githubusercontent.com/LGUG2Z/komorebi-application-specific-configuration/master/applications.yaml"
