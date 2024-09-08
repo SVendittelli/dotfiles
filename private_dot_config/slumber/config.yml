@@ -1,0 +1,12 @@
+input_bindings:
+  up: [up, k]
+  down: [down, j]
+  left: [left, h]
+  right: [right, l]
+  page_up: [pgup, ctrl u]
+  page_down: [pgdn, ctrl d]
+  home: [home, g]
+  end: [end, shift g]
+  history: [ctrl r]
+  select_recipe_list: [a]
+  select_request: [r]

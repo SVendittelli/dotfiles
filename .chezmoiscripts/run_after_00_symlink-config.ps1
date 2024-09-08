@@ -32,6 +32,13 @@ If ($PSVersionTable.PSVersion.Major -Le 5 -Or $isWindows) {
     New-Item -ItemType SymbolicLink -Path $LinkPath -Target $TargetPath
   }
 
+  # symlink slumber config
+  $LinkPath = "$env:APPDATA\slumber\config.yml"
+  $TargetPath = "$UserConfigFolder\slumber\config.yml"
+  If (-Not (Test-Path $LinkPath)) {
+    New-Item -ItemType SymbolicLink -Path $LinkPath -Value $TargetPath
+  }
+
   # create shortcut for Obsidian in the startup folder
   $LinkPath = "$StartupFolder\obsidian.lnk"
   $TargetPath = "$env:LOCALAPPDATA\Programs\Obsidian\obsidian.exe"
