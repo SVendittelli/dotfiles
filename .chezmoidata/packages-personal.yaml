@@ -11,4 +11,5 @@ packagesPersonal:
       - "OpenWhisperSystems.Signal"
       - "RaspberryPiFoundation.RaspberryPiImager"
       - "Valve.Steam"
+      - "Zen-Team.Zen-Browser" # Firefox based browser for privacy and speed - https://www.zen-browser.app/
       - "Zoom.Zoom"
