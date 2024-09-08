@@ -79,10 +79,16 @@
     path = "pet.exe"
     refreshPeriod = "168h"
     executable = true
+[".local/bin/slumber.exe"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "LucasPickering/slumber" "slumber-x86_64-pc-windows-msvc.zip" | quote }}
+    path = "slumber.exe"
+    refreshPeriod = "168h"
+    executable = true
 [".local/git-extras"]
-	type = "git-repo"
-	url = "https://github.com/tj/git-extras"
-	refreshPeriod = "168h"
+    type = "git-repo"
+    url = "https://github.com/tj/git-extras"
+    refreshPeriod = "168h"
 ["fonts"]
     type = "archive"
     url = "https://github.com/romkatv/powerlevel10k-media/archive/master.tar.gz"

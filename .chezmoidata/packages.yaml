@@ -36,6 +36,7 @@ packages:
       - "lf"
       - "libqalculate"
       - "lnav"
+      - "LucasPickering/tap/slumber" # A TUI (terminal user interface) HTTP client - https://github.com/LucasPickering/slumber
       - "maccy" # Lightweight clipboard manager - https://github.com/p0deje/Maccy
       - "miniserve"
       - "neovim"
