@@ -9,3 +9,16 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 [no-cd]
 init:
     cp {{justfile_directory()}}/init_template.just justfile
+
+alias kst := komo-start
+alias ksp := komo-stop
+
+# Start komorebi and whkd
+[no-cd]
+komo-start:
+    komorebic start --whkd
+
+# Stop komorebi
+[no-cd]
+komo-stop:
+    komorebic stop
