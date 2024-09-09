@@ -7,4 +7,4 @@ Write-Host ""
 [System.Environment]::SetEnvironmentVariable('POWERSHELL_TELEMETRY_OPTOUT','1', 'User')
 
 ## Set the path to the komorebi config directory
-[System.Environment]::SetEnvironmentVariable('KOMOREBI_CONFIG_HOME','%USERPROFILE%\.config\komorebi', 'User')
+[System.Environment]::SetEnvironmentVariable('KOMOREBI_CONFIG_HOME',"$Env:USERPROFILE\.config\komorebi", 'User')
