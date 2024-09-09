@@ -5,20 +5,32 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 @default:
     just --list --justfile {{justfile()}}
 
-# Create a new justfile in the current directory from the template
-[no-cd]
+# Create a new justfile in the current directory
+[no-cd, group('just')]
 init:
     cp {{justfile_directory()}}/init_template.just justfile
 
-alias kst := komo-start
-alias ksp := komo-stop
+# Edit the global justfile
+[no-cd, group('just')]
+edit:
+    chezmoi edit --apply {{justfile_directory()}}/justfile
 
 # Start komorebi and whkd
-[no-cd]
-komo-start:
+[no-cd, windows, group('komorebi')]
+wm-start:
     komorebic start --whkd
 
 # Stop komorebi
-[no-cd]
-komo-stop:
+[no-cd, windows, group('komorebi')]
+wm-stop:
     komorebic stop
+
+# Check for winget updates
+[no-cd, no-exit-message, windows, group('winget')]
+check-for-updates:
+    winget upgrade --include-unknown --source winget
+
+# Install winget updates
+[no-cd, no-exit-message, windows, group('winget')]
+install-updates:
+    winget upgrade --all --source winget --accept-package-agreements
