@@ -48,14 +48,16 @@ return {
 
     -- Document existing key chains
     require('which-key').add({
-      { '<leader>c', group = '[C]ode' },
-      { '<leader>d', group = '[D]ocument' },
-      { '<leader>e', group = 'File [E]xplorer' },
-      { '<leader>f', group = '[F]ind' },
-      { '<leader>r', group = '[R]ename' },
-      { '<leader>s', group = '[S]plit' },
-      { '<leader>t', group = '[T]oggle' },
-      { '<leader>w', group = '[W]orkspace' },
+      { '<leader>c', group = '[c]ode' },
+      { '<leader>d', group = '[d]ocument' },
+      { '<leader>e', group = 'file [e]xplorer' },
+      { '<leader>f', group = '[f]ind' },
+      { '<leader>g', group = '[g]it hunk', mode = { 'n', 'v' } },
+      { '<leader>h', group = '[h]arpoon' },
+      { '<leader>r', group = '[r]ename' },
+      { '<leader>s', group = '[s]plit' },
+      { '<leader>t', group = '[t]oggle' },
+      { '<leader>w', group = '[w]orkspace' },
     })
   end,
 }
