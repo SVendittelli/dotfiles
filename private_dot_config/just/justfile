@@ -27,10 +27,10 @@ wm-stop:
 
 # Check for winget updates
 [no-cd, no-exit-message, windows, group('winget')]
-check-for-updates:
+up-check:
     winget upgrade --include-unknown --source winget
 
 # Install winget updates
 [no-cd, no-exit-message, windows, group('winget')]
-install-updates:
+up-install:
     winget upgrade --all --source winget --accept-package-agreements
