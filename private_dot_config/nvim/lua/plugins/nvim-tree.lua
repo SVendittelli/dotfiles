@@ -1,3 +1,5 @@
+-- A File Explorer For Neovim Written In Lua
+-- https://github.com/nvim-tree/nvim-tree.lua
 return {
   'nvim-tree/nvim-tree.lua',
   version = '*',
@@ -21,17 +23,23 @@ return {
       enable = true,
       show_on_dirs = true,
     },
-    -- disable window_picker for explorer to work well with window splits
     actions = {
       open_file = {
-        -- quit_on_open = true
+        quit_on_open = true,
+        -- disable window_picker for explorer to work well with window splits
         window_picker = {
           enable = false,
         },
       },
     },
     filters = {
+      git_ignored = false,
       custom = { '^\\.git$' },
+    },
+    filesystem_watchers = {
+      ignore_dirs = {
+        'node_modules',
+      },
     },
   },
   keys = {
