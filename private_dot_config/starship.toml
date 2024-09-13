@@ -19,6 +19,12 @@ symbol = " "
 [crystal]
 symbol = " "
 
+[custom.chezmoi]
+command = "starship-custom-chezmoi-command"
+when = "starship-custom-chezmoi-when"
+symbol = "󱂵 "
+ignore_timeout = true
+
 [dart]
 symbol = " "
 
