@@ -10,8 +10,7 @@ $Name = (New-Guid).ToString("N")
 $TmpDir = Join-Path $Tmp $Name
 New-Item -ItemType Directory -Path $TmpDir
 
-#$Uri = {{ gitHubLatestReleaseAssetURL "niXman/mingw-builds-binaries" "x86_64-*-release-posix-seh-ucrt-*.7z" | quote }}
-$Uri = {{ gitHubReleaseAssetURL "niXman/mingw-builds-binaries" "13.2.0-rt_v11-rev1" "x86_64-*-release-posix-seh-ucrt-*.7z" | quote }}
+$Uri = {{ gitHubLatestReleaseAssetURL "niXman/mingw-builds-binaries" "x86_64-*-release-posix-seh-ucrt-*.7z" | quote }}
 
 Invoke-WebRequest -Uri $Uri -OutFile "$TmpDir\mingw-builds.7z"
 
