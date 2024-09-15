@@ -175,6 +175,7 @@ packages:
       - "Wacom.WacomTabletDriver"
       - "wagoodman.dive"
       - "WinDirStat.WinDirStat"
+      - "Microsoft.WingetCreate" # Create Windows packages - https://github.com/microsoft/winget-create
       - "WiresharkFoundation.Wireshark"
       - "XAMPPRocky.tokei"
       - "zig.zig"
