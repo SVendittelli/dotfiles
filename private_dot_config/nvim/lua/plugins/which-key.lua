@@ -48,6 +48,7 @@ return {
 
     -- Document existing key chains
     require('which-key').add({
+      { '<leader>b', group = '[b]uffer' },
       { '<leader>c', group = '[c]ode' },
       { '<leader>d', group = '[d]ocument' },
       { '<leader>e', group = 'file [e]xplorer' },
