@@ -73,6 +73,10 @@
     url = {{ gitHubLatestReleaseAssetURL "Dashlane/dashlane-cli" "dcli-win-x64-signed.exe" | quote }}
     refreshPeriod = "168h"
     executable = true
+[".local/bin/diff.exe"]
+	type = "file"
+	url = "https://github.com/neovim/deps/raw/21c5e8bdda33521a6ed497b315e03265a2785cbc/opt/diff.exe"
+    refreshPeriod = "168h"
 [".local/bin/hjson.exe"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "hjson/hjson-go" "hjson_*_windows_amd64.zip" | quote }}
