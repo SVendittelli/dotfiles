@@ -51,6 +51,7 @@ packages:
       - "starship"
       - "tlrc"
       - "tmux"
+      - "tre-command" # A modern alternative to the tree command - https://github.com/dduan/tre
       - "ttyd" # vhs dependency - https://github.com/tsl0922/ttyd
       - "tokei"
       - "vfox" # A cross-platform, extensible version manager - https://github.com/version-fox/vfox
@@ -119,6 +120,7 @@ packages:
       - "Balena.Etcher"
       - "beekeeper-studio.beekeeper-studio"
       - "BurntSushi.ripgrep.MSVC"
+      - "ca.duan.tre-command" # A modern alternative to the tree command - https://github.com/dduan/tre
       - "Casey.Just"
       - "charmbracelet.freeze" # Generate images of code or terminal output - https://github.com/charmbracelet/freeze
       - "charmbracelet.glow" # Terminal based markdown renderer - https://github.com/charmbracelet/glow

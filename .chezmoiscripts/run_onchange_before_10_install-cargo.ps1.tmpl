@@ -5,7 +5,7 @@ Write-Host ""
 Write-Host "Installing cargo packages..."
 Write-Host ""
 
-cargo install {{ range .packages.windows.cargo }}{{ . }} {{ end }}
+cargo install --locked {{ range .packages.windows.cargo }}{{ . }} {{ end }}
 
 {{- end }}
 
