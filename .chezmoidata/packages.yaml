@@ -10,6 +10,7 @@ packages:
       - "chezmoi"
       - "cloudflared"
       - "croc"
+      - "difftastic" # tree-sitter based git diff viewer - https://github.com/Wilfred/difftastic
       - "direnv"
       - "diskonaut" # Disk usage analyzer - https://github.com/imsnif/diskonaut
       - "dive"
@@ -183,6 +184,7 @@ packages:
       - "VideoLAN.VLC"
       - "Wacom.WacomTabletDriver"
       - "wagoodman.dive"
+      - "Wilfred.difftastic" # tree-sitter based git diff viewer - https://github.com/Wilfred/difftastic
       - "WinDirStat.WinDirStat"
       - "Microsoft.WingetCreate" # Create Windows packages - https://github.com/microsoft/winget-create
       - "WiresharkFoundation.Wireshark"

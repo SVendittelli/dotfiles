@@ -68,10 +68,11 @@
 [diff]
 	algorithm = histogram
 	colorMoved = default
+	tool = difftastic
 [difftool]
-	tool = nvimdiff
-[difftool "nvimdiff"]
-	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
 [fetch]
 	prune = true
 [filter "lfs"]
@@ -91,6 +92,8 @@
 	tool = nvimdiff
 [mergetool "nvimdiff"]
 	cmd = nvim -d $MERGED $LOCAL $BASE $REMOTE -c '$wincmd J' -c 'wincmd ='
+[pager]
+        difftool = true
 [pull]
 	ff = only
 	rebase = true

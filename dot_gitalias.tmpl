@@ -5,6 +5,7 @@
 	b = branch -vv
 	c = commit
 	d = diff
+	dt = difftool
 	f = fetch
 	g = grep
 	l = log
@@ -59,6 +60,16 @@
 	ds = diff --staged
 #	Differences to the remote main branch
 	dm = diff origin/main
+
+# difftool aliases:
+#	Differences that have been not yet been staged
+	dtc = diff --cached
+#	Differences between the local and remote
+	dtu = diff @{upstream}
+#	Differences that have been staged
+	dts = diff --staged
+#	Differences to the remote main branch
+	dtm = diff origin/main
 
 # gh aliases
 	rvw = !gh repo view --web
