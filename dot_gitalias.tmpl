@@ -63,13 +63,13 @@
 
 # difftool aliases:
 #	Differences that have been not yet been staged
-	dtc = diff --cached
+	dtc = difftool --cached
 #	Differences between the local and remote
-	dtu = diff @{upstream}
+	dtu = difftool @{upstream}
 #	Differences that have been staged
-	dts = diff --staged
+	dts = difftool --staged
 #	Differences to the remote main branch
-	dtm = diff origin/main
+	dtm = difftool origin/main
 
 # gh aliases
 	rvw = !gh repo view --web
