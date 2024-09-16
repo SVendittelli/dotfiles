@@ -35,6 +35,7 @@ $Env:XDG_CONFIG_HOME = "$Env:HOME\.config"
 
 $Env:BAT_CONFIG_DIR = "$Env:XDG_CONFIG_HOME\bat"
 $Env:BAT_PAGER = "less -FRDa" # work around for less < v663, can be removed in future release
+$Env:BROOT_CONFIG_DIR = "$Env:XDG_CONFIG_HOME\broot"
 $Env:CHEZMOI_GITHUB_ACCESS_TOKEN = {{ dashlaneNote "chezmoi-github-pat" | trim | quote }}
 $Env:KOMOREBI_CONFIG_HOME = "$Env:XDG_CONFIG_HOME\komorebi"
 $Env:LF_CONFIG_HOME = "$Env:XDG_CONFIG_HOME"
@@ -88,6 +89,10 @@ if (Get-Command miniserve -errorAction SilentlyContinue) {
 
 # Shell integrations
 # -----------------------------------------------------------------------------
+
+if (Get-Command broot -errorAction SilentlyContinue) {
+    . {{ .chezmoi.homeDir }}\.config\broot\launcher\powershell\br.ps1
+}
 
 ## fnm
 ## Use zoxide for cd and invoke fnm immediately afterwards

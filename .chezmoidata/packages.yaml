@@ -4,6 +4,7 @@ packages:
       - "act" # Run GitHub Actions locally - https://github.com/nektos/act
       - "arc"
       - "bat"
+      - "broot" # A new way to see and navigate directory trees - https://dystroy.org/broot/
       - "charmbracelet/tap/freeze" # Generate images of code or terminal output - https://github.com/charmbracelet/freeze
       - "charmbracelet/tap/skate" # A personal key-value store - https://github.com/charmbracelet/skate
       - "chezmoi"
@@ -133,6 +134,7 @@ packages:
       - "Docker.DockerDesktop"
       - "Doist.Todoist"
       - "DuongDieuPhap.ImageGlass" # Image viewer for Windows - https://imageglass.org/
+      - "Dystroy.broot" # A new way to see and navigate directory trees - https://dystroy.org/broot/
       - "eza-community.eza"
       - "Fastfetch-cli.Fastfetch"
       - "Git.Git"
