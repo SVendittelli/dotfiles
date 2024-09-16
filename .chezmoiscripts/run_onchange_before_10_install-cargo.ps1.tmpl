@@ -1,0 +1,14 @@
+{{ if eq .chezmoi.os "windows" -}}
+
+{{- if lookPath "cargo" }}
+Write-Host ""
+Write-Host "Installing cargo packages..."
+Write-Host ""
+
+cargo install {{ range .packages.windows.cargo }}{{ . }} {{ end }}
+
+{{- end }}
+
+{{ end -}}
+
+# vim:ft=ps1

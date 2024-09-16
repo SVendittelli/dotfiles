@@ -15,6 +15,7 @@ Write-Host ""
 npm install --global {{ range .packages.windows.npm }}{{ . }} {{ end }}
 
 corepack enable
+
 {{- end }}
 
 {{ end -}}
