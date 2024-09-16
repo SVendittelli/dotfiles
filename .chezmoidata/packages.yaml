@@ -11,6 +11,7 @@ packages:
       - "croc"
       - "direnv"
       - "dive"
+      - "duf" # Disk Usage/Free Utility - https://github.com/muesli/duf
       - "eza"
       - "fastfetch"
       - "fd"
@@ -149,6 +150,7 @@ packages:
       - "Microsoft.PowerToys"
       - "Microsoft.VisualStudioCode"
       - "Mozilla.Firefox.DeveloperEdition"
+      - "muesli.duf" # Disk Usage/Free Utility - https://github.com/muesli/duf
       - "nektos.act" # Run GitHub Actions locally - https://github.com/nektos/act
       - "Neovim.Neovim"
       - "Obsidian.Obsidian"
