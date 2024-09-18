@@ -11,7 +11,7 @@ packages:
       - "cloudflared"
       - "croc"
       - "difftastic" # tree-sitter based git diff viewer - https://github.com/Wilfred/difftastic
-      - "direnv"
+      - "direnv" # unclutter your .profile - https://direnv.net/
       - "diskonaut" # Disk usage analyzer - https://github.com/imsnif/diskonaut
       - "dive"
       - "duf" # Disk Usage/Free Utility - https://github.com/muesli/duf

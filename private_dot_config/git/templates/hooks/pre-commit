@@ -6,7 +6,7 @@ if [[ "$(git config get --type bool hooks.gitleaks)" == "true" ]]; then
     echo "Running gitleaks..."
 
     # Run gitleaks and capture the exit code
-    gitleaks protect -v --staged
+    gitleaks git --verbose --pre-commit --staged
     exitCode=$?
 
     echo
