@@ -30,7 +30,12 @@ wm-stop:
 up-check:
     winget upgrade --include-unknown --source winget
 
-# Install winget updates
+# Install all winget updates
 [no-cd, no-exit-message, windows, group('winget')]
-up-install:
+up-all:
     winget upgrade --all --source winget --accept-package-agreements
+
+# Install winget package by exact id
+[no-cd, no-exit-message, windows, group('winget')]
+up-install *args:
+    winget upgrade --exact --id {{args}}
