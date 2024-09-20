@@ -3,33 +3,71 @@
 # This list defines globs to ignore, and supports Go's text/template language.
 # See https://www.chezmoi.io/reference/special-files-and-directories/chezmoiignore/
 
+# =============================================================================
+# Ignore these files on all operating systems
+# =============================================================================
+
 README.md
 requirements.txt
 
 .oh-my-zsh/cache/completions/
 .oh-my-zsh/cache/grep-alias/
 
-{{ if eq .chezmoi.os "windows" -}}
+# =============================================================================
+# Include only OS specific scripts
+# =============================================================================
+
+{{ if ne .chezmoi.os "darwin" }}
+.chezmoiscripts/darwin/**
+.chezmoiscripts/unix/**
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+.chezmoiscripts/linux/**
+.chezmoiscripts/unix/**
+{{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+.chezmoiscripts/windows/**
+{{ end }}
+
+# =============================================================================
+# Ignore files based on Windows vs non-Windows
+# =============================================================================
+
+{{ if eq .chezmoi.os "windows" }}
+
+# -----------------------------------------------------------------------------
 # Files to be ignored on windows
+# -----------------------------------------------------------------------------
+
+# Ignore all bash scripts
 **/*.sh
 
+# Ignore all config for other shells
 .bashrc
-
 .zsh/**
 .zsh*
 .oh-my-zsh/**
 
+# Ignore config for unix only tools
 .config/atuin
 .config/kitty
 
 .config/tmux
 .tmux/**
 
-{{ else -}}
-# Files to be ignored on both macOS and linux
+{{ else }}
+
+# -----------------------------------------------------------------------------
+# Files to be ignored on non-Windows
+# -----------------------------------------------------------------------------
+
+# Ignore all AutoHotkey and PowerShell scripts
 **/*.ahk
 **/*.ps1
 
+# Ignore config for windows only tools
 .config/komorebi
 .config/whkdrc
 
@@ -37,22 +75,28 @@ requirements.txt
 
 .wslconfig
 
-{{- if eq .chezmoi.os "linux" }}
-# Files to be ignored on linux
-{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-# Files to be ignored in WSL
-{{ else }}
-# Files ignored on other linux machines
-.bashrc
 {{ end }}
-**/*darwin.sh
 
-{{- else if eq .chezmoi.os "darwin" }}
-# Files to be ignored on macOS
-**/*linux.sh
+# =============================================================================
+# Ignore files on linux based on WSL vs non-WSL
+# =============================================================================
 
-{{- end }}
+{{ if eq .chezmoi.os "linux" }}
+{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
 
-{{- end }}
+# -----------------------------------------------------------------------------
+# Files to be ignored in WSL
+# -----------------------------------------------------------------------------
+
+{{ else }}
+
+# -----------------------------------------------------------------------------
+# Files ignored on non-WSL linux
+# -----------------------------------------------------------------------------
+
+.bashrc
+
+{{ end }}
+{{ end }}
 
 # vim:ft=gitignore
