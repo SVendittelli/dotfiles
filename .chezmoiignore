@@ -48,7 +48,7 @@ requirements.txt
 # Files ignored on non-WSL Linux
 # -----------------------------------------------------------------------------
 
-.bashrc
+.bash*
 
 {{ end }}
 {{ end }}
@@ -77,7 +77,8 @@ requirements.txt
 **/*.sh
 
 # Ignore all config for other shells
-.bashrc
+.bash*
+
 .zsh/**
 .zsh*
 .oh-my-zsh/**
