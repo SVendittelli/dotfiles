@@ -19,16 +19,48 @@ requirements.txt
 
 {{ if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
-.chezmoiscripts/unix/**
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
-.chezmoiscripts/unix/**
 {{ end }}
 
 {{ if ne .chezmoi.os "windows" }}
 .chezmoiscripts/windows/**
+{{ else }}
+.chezmoiscripts/unix/**
+{{ end }}
+
+# =============================================================================
+# Ignore files on linux based on WSL vs non-WSL
+# =============================================================================
+
+{{ if eq .chezmoi.os "linux" }}
+{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+
+# -----------------------------------------------------------------------------
+# Files to be ignored in WSL
+# -----------------------------------------------------------------------------
+
+{{ else }}
+
+# -----------------------------------------------------------------------------
+# Files ignored on non-WSL Linux
+# -----------------------------------------------------------------------------
+
+.bashrc
+
+{{ end }}
+{{ end }}
+
+# =============================================================================
+# Ignore files on macOS
+# =============================================================================
+
+{{ if eq .chezmoi.os "darwin" }}
+
+.local/bin/reboot-to-bios.sh
+
 {{ end }}
 
 # =============================================================================
@@ -60,7 +92,7 @@ requirements.txt
 {{ else }}
 
 # -----------------------------------------------------------------------------
-# Files to be ignored on non-Windows
+# Files to be ignored on non-Windows, i.e. macOS and Linux
 # -----------------------------------------------------------------------------
 
 # Ignore all AutoHotkey and PowerShell scripts
@@ -75,28 +107,6 @@ requirements.txt
 
 .wslconfig
 
-{{ end }}
-
-# =============================================================================
-# Ignore files on linux based on WSL vs non-WSL
-# =============================================================================
-
-{{ if eq .chezmoi.os "linux" }}
-{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-
-# -----------------------------------------------------------------------------
-# Files to be ignored in WSL
-# -----------------------------------------------------------------------------
-
-{{ else }}
-
-# -----------------------------------------------------------------------------
-# Files ignored on non-WSL linux
-# -----------------------------------------------------------------------------
-
-.bashrc
-
-{{ end }}
 {{ end }}
 
 # vim:ft=gitignore

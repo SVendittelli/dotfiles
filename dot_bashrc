@@ -1,3 +1,11 @@
+# ~/.bashrc
+# =============================================================================
+# Bash interactive, non-login shell startup script
+#
+# See:
+# - https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files
+# - https://joshstaiger.org/archives/2005/07/bash_profile_vs.html
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;

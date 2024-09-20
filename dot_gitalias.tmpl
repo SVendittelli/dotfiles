@@ -1,3 +1,11 @@
+# ~/.gitalias
+# =============================================================================
+# List of git aliases, imported into ~/.gitconfig
+#
+# See:
+# - https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
+# - https://git-scm.com/docs/git-config#Documentation/git-config.txt-alias
+
 [alias]
 #	Short aliases for frequent commands
 
@@ -24,6 +32,8 @@
 	au = add --update
 #	add an entry for the path in the index with no content. Useful for showing the unstaged content of new files with git diff and committing them with git commit -a.
 	an = add --intent-to-add
+#	add chmod +x
+	ax = add --chmod=+x
 
 # branch aliases:
 #	Create a branch

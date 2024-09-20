@@ -1,3 +1,7 @@
+# ~/.local/bin/starship-custom-chezmoi-when.ps1
+# =============================================================================
+# Only show chezmoi status when there are changes
+
 $LocalCommit = git rev-parse HEAD
 $RemoteCommit = git rev-parse origin
 

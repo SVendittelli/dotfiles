@@ -1,3 +1,7 @@
+# ~/.local/bin/starship-custom-chezmoi-command.sh
+# =============================================================================
+# Add chezmoi status to starship prompt
+
 if [ !(git diff --quiet HEAD *> /dev/null) ] ; then
     $Changes = '!'
 else

@@ -1,3 +1,7 @@
+# ~/.local/bin/starship-custom-chezmoi-command.ps1
+# =============================================================================
+# Add chezmoi status to starship prompt
+
 &chezmoi git -- diff --quiet HEAD *> $NUL
 if ($LASTEXITCODE -ne 0) {
     $Changes = '!'

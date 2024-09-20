@@ -34,7 +34,7 @@ location = {{ $location | quote }}
 personal = {{ $personal }}
 
 [diff]
-	pager = "less -FR"
+pager = "less -FR"
 
 [hooks.read-source-state.pre]
 {{ if eq .chezmoi.os "windows" -}}

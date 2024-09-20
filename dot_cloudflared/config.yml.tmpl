@@ -1,3 +1,11 @@
+# ~/.cloudflared/config.yml
+# =============================================================================
+# cloudflared config file
+#
+# See:
+# - https://github.com/cloudflare/cloudflared
+# - https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/
+
 url: http://localhost:3000
 tunnel: 595fd69a-601f-4e73-a47b-a74f9eb03e09
 credentials-file: {{ .chezmoi.homeDir }}{{ .chezmoi.pathSeparator }}.cloudflared{{ .chezmoi.pathSeparator }}595fd69a-601f-4e73-a47b-a74f9eb03e09.json
