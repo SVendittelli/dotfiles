@@ -118,6 +118,7 @@ packages:
     winget:
       - "ajeetdsouza.zoxide"
       - "Alacritty.Alacritty"
+      - "Anki.Anki" # Powerful, intelligent flash cards - https://apps.ankiweb.net/
       - "AutoHotkey.AutoHotkey"
       - "Balena.Etcher"
       - "beekeeper-studio.beekeeper-studio"
