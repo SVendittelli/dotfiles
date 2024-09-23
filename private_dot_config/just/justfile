@@ -15,6 +15,11 @@ init:
 edit:
     chezmoi edit --apply {{justfile_directory()}}/justfile
 
+# Create a new .editorconfig in the current directory
+[no-cd]
+editorconfig:
+    cp {{justfile_directory()}}/.editorconfig .editorconfig
+
 # Start komorebi and whkd
 [no-cd, windows, group('komorebi')]
 wm-start:

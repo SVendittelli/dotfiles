@@ -1,0 +1,103 @@
+# For more information about the properties used in
+# this file, please see the EditorConfig documentation:
+# https://editorconfig.org
+
+# This template contains many languages, remove unused ones as appropriate
+
+# This file is the top-most EditorConfig file
+root = true
+
+# ALl files
+[*]
+charset = utf-8
+end_of_line = lf
+ident_style = space
+indent_size = 2
+insert_final_newline = true
+max_line_length = 80
+spelling_language = en
+trim_trailing_whitespace = true
+
+# AutoHotKey
+[*.ahk]
+indent_style = tab
+
+# Bash files
+[*.sh]
+end_of_line = lf
+
+# Batch
+[*.{cmd,bat}]
+end_of_line = crlf
+
+# CSS
+[*.{css,scss,sass}]
+indent_size = 2
+indent_style = space
+
+# golang
+[*.go]
+indent_style = tab
+
+# HTML and svg
+[*.{htm,html,svg}]
+indent_size = 2
+indent_style = space
+
+# java, groovy, kotlin
+[*.{java,groovy,kt}]
+indent_size = 4
+indent_style = space
+
+# JavaScript and TypeScript
+[*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}]
+indent_size = 2
+indent_style = space
+
+# Makefile
+[Makefile]
+indent_size = 8
+indent_style = tab
+
+# Markdown
+[*.{md,mdx,markdown}]
+max_line_length = 0
+# double whitespace at the end of a line of markdown indicates a line break
+trim_trailing_whitespace = false
+
+# PowerShell
+[*.ps1]
+indent_size = 4
+indent_style = space
+
+# Python
+[*.py]
+indent_size = 4
+indent_style = space
+
+# Ruby
+[*.rb]
+indent_size = 2
+indent_style = space
+
+# Rust
+[*.rs]
+indent_size = 4
+indent_style = space
+
+# Scala
+[*.scala]
+indent_size = 2
+indent_style = space
+
+# XML
+[*.xml]
+indent_size = 2
+indent_style = space
+
+# yaml
+[*.{yml,yaml}]
+indent_size = 2
+indent_style = space
+
+# vim: ft=editorconfig

@@ -1,0 +1,78 @@
+# For more information about the properties used in
+# this file, please see the EditorConfig documentation:
+# https://editorconfig.org
+
+# This template contains many languages, remove unused ones as appropriate
+
+# This file is the top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+ident_style = space
+indent_size = 2
+insert_final_newline = true
+max_line_length = 80
+spelling_language = en
+trim_trailing_whitespace = true
+
+[*.ahk]
+indent_style = tab
+
+[*.{css,scss,sass}]
+indent_size = 2
+indent_style = space
+
+[*.go]
+indent_style = tab
+
+[*.{html,htm}]
+indent_size = 2
+indent_style = space
+
+[*.{java,groovy,kt}]
+indent_size = 4
+indent_style = space
+
+[*.{js,jsm,ts,tsm}]
+indent_size = 2
+indent_style = space
+
+[Makefile]
+indent_style = tab
+
+[*.{md,markdown}]
+max_line_length = 0
+# double whitespace at the end of a line of markdown indicates a line break
+trim_trailing_whitespace = false
+
+[*.ps1]
+indent_size = 4
+indent_style = space
+
+[*.py]
+indent_size = 4
+indent_style = space
+
+[*.rb]
+indent_size = 2
+indent_style = space
+
+[*.rs]
+indent_size = 4
+indent_style = space
+
+[*.scala]
+indent_size = 2
+indent_style = space
+
+[*.xml]
+indent_size = 2
+indent_style = space
+
+[*.{yml,yaml}]
+indent_size = 2
+indent_style = space
+
+# vim: ft=editorconfig
