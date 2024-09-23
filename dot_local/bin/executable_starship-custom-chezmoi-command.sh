@@ -2,7 +2,7 @@
 # =============================================================================
 # Add chezmoi status to starship prompt
 
-if [ !(git diff --quiet HEAD *> /dev/null) ] ; then
+if [ !(chezmoi git diff --quiet HEAD *> /dev/null) ] ; then
     $Changes = '!'
 else
     $Changes = ''

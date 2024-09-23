@@ -2,8 +2,8 @@
 # =============================================================================
 # Only show chezmoi status when there are changes
 
-$LocalCommit = git rev-parse HEAD
-$RemoteCommit = git rev-parse origin
+$LocalCommit = chezmoi git rev-parse HEAD
+$RemoteCommit = chezmoi git rev-parse origin
 
 &chezmoi git -- diff --quiet HEAD *> $NUL
 if ($LASTEXITCODE -ne 0 -or ($LocalCommit -ne $RemoteCommit)) {
