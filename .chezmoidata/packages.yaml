@@ -78,6 +78,7 @@ packages:
       - "github.com/go-delve/delve/cmd/dlv@latest" # Debugger for the Go programming language - https://github.com/go-delve/delve
       - "github.com/merschformann/gotz@latest"
     npm:
+      - "@fsouza/prettierd" # prettier, as a daemon, for improved formatting speed - https://github.com/fsouza/prettierd
       - "corepack" # Node.js package manager bridge - https://github.com/nodejs/corepack
   linux:
     gh:
@@ -103,6 +104,7 @@ packages:
     msstore:
       - "9PFZ3G4D1C9R" # LanguageTool
     npm:
+      - "@fsouza/prettierd" # prettier, as a daemon, for improved formatting speed - https://github.com/fsouza/prettierd
       - "corepack" # Node.js package manager bridge - https://github.com/nodejs/corepack
     pip:
       - "gitbatch"
