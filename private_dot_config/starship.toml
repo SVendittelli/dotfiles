@@ -23,6 +23,7 @@ symbol = " "
 command = "starship-custom-chezmoi-command"
 when = "starship-custom-chezmoi-when"
 symbol = "󱂵 "
+format = "with [$symbol($output )]($style)"
 ignore_timeout = true
 
 [dart]
