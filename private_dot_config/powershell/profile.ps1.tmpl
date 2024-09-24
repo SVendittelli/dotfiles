@@ -55,11 +55,14 @@ Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
+# Fetch chezmoi changes
+# -----------------------------------------------------------------------------
+Start-Process -FilePath chezmoi -ArgumentList "git","fetch" -NoNewWindow
+
 # Completions
 # -----------------------------------------------------------------------------
 
 ## chezmoi
-chezmoi git -- fetch --quiet
 {{ completion "powershell" }}
 
 ## delta
