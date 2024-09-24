@@ -43,4 +43,4 @@ up-all:
 # Install winget package by exact id
 [no-cd, no-exit-message, windows, group('winget')]
 up-install *args:
-    winget upgrade --exact --id {{args}}
+    winget upgrade {{args}}
