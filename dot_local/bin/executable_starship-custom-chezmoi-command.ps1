@@ -9,12 +9,12 @@ if ($LASTEXITCODE -ne 0) {
     $Changes = ''
 }
 
-if ($(chezmoi git -- rev-list --right-only --count origin..HEAD) -gt 0) {
+if ($(chezmoi git -- rev-list --count origin..HEAD) -gt 0) {
     $Ahead = '+'
 } else {
     $Ahead = ''
 }
-if ($(chezmoi git -- rev-list --left-only --count origin..HEAD) -gt 0) {
+if ($(chezmoi git -- rev-list --count HEAD..origin) -gt 0) {
     $Behind = '-'
 } else {
     $Behind = ''

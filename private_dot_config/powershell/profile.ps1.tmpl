@@ -57,7 +57,7 @@ Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 # Fetch chezmoi changes
 # -----------------------------------------------------------------------------
-Start-Process -FilePath chezmoi -ArgumentList "git","fetch" -NoNewWindow
+Start-Process -FilePath chezmoi -ArgumentList "git","--","fetch","--quiet" -NoNewWindow
 
 # Completions
 # -----------------------------------------------------------------------------
