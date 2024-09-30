@@ -6,6 +6,8 @@ Write-Host ""
 Write-Host "Installing .NET packages..."
 Write-Host ""
 
+# windebloat new version detection: {{ (gitHubLatestTag "SimonCropp/WinDebloat").Name }}
+
 {{ range .packages }}
 {{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
 {{- with .platforms.windows.dotnet }}

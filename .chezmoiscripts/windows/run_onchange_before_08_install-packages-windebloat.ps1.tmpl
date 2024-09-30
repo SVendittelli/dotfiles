@@ -6,6 +6,8 @@ Write-Host ""
 Write-Host "Running WinDebloat..."
 Write-Host ""
 
+# windebloat new version detection: {{ (gitHubLatestTag "SimonCropp/WinDebloat").Name }}
+
 WinDebloat --include {{ range .windebloat.include }}{{ . }} {{ end }} --exclude {{ range .windebloat.exclude }}{{ . }} {{ end }}
 
 {{- end -}}
