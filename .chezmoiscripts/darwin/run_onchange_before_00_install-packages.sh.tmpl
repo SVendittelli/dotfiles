@@ -1,26 +1,45 @@
 #!/usr/bin/env bash
+# chezmoi:template:missing-key=invalid
+{{- $personal := .personal -}}
 {{- if eq .chezmoi.os "darwin" }}
 
 {{- if lookPath "brew" }}
 brew bundle --no-lock --file=/dev/stdin <<EOF
-{{ range .packages.darwin.brews -}}
+{{- range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.darwin.brew }}
+{{- if . }}
 brew {{ . | quote }}
-{{ end -}}
-{{ range .packages.darwin.casks -}}
+{{- end }}
+{{- end }}
+{{- with .platforms.darwin.cask }}
+{{- if . }}
 cask {{ . | quote }}
-{{ end -}}
+{{- end }}
+{{- end }}
+{{- end }}
 EOF
 {{- end }}
 
 {{- if lookPath "gh" }}
-{{- range .packages.darwin.gh }}
+{{ range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.all.gh }}
+{{- if . }}
 gh extension install {{ . }}
+{{- end }}
+{{- end }}
 {{- end }}
 {{- end }}
 
 {{- if lookPath "go" }}
-{{- range .packages.darwin.go }}
+{{ range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.all.go }}
+{{- if . }}
 go install {{ . }}
+{{- end }}
+{{- end }}
 {{- end }}
 {{- end }}
 

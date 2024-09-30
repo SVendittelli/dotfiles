@@ -1,13 +1,14 @@
-{{ if eq .chezmoi.os "windows" -}}
-
-{{- if lookPath "WinDebloat" }}
+# chezmoi:template:missing-key=invalid
+{{- $personal := .personal -}}
+{{- if eq .chezmoi.os "windows" -}}
+{{- if lookPath "WinDebloat" -}}
 Write-Host ""
 Write-Host "Running WinDebloat..."
 Write-Host ""
 
-WinDebloat --include {{ range .packages.windows.windebloat.include }}{{ . }} {{ end }} --exclude {{ range .packages.windows.windebloat.exclude }}{{ . }} {{ end }}
-{{- end }}
+WinDebloat --include {{ range .windebloat.include }}{{ . }} {{ end }} --exclude {{ range .windebloat.exclude }}{{ . }} {{ end }}
 
-{{ end -}}
+{{- end -}}
+{{- end }}
 
 # vim:ft=ps1

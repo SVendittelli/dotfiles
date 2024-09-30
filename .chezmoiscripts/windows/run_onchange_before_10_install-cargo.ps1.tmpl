@@ -1,14 +1,19 @@
-{{ if eq .chezmoi.os "windows" -}}
-
-{{- if lookPath "cargo" }}
+# chezmoi:template:missing-key=invalid
+{{- $personal := .personal -}}
+{{- if eq .chezmoi.os "windows" -}}
+{{- if lookPath "cargo" -}}
 Write-Host ""
 Write-Host "Installing cargo packages..."
 Write-Host ""
 
-cargo install --locked {{ range .packages.windows.cargo }}{{ . }} {{ end }}
-
+cargo install --locked {{ range .packages -}}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end -}}
+{{- with .platforms.windows.cargo -}}
+{{- if . }}{{ . }} {{ end -}}
+{{- end }}
 {{- end }}
 
-{{ end -}}
+{{- end -}}
+{{- end }}
 
 # vim:ft=ps1

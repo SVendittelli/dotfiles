@@ -43,14 +43,24 @@ sudo snap install {{ . }}
 {{ end }}
 
 {{- if lookPath "gh" }}
-{{- range .packages.darwin.gh }}
+{{ range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.all.gh }}
+{{- if . }}
 gh extension install {{ . }}
+{{- end }}
+{{- end }}
 {{- end }}
 {{- end }}
 
 {{- if lookPath "go" }}
-{{- range .packages.linux.go }}
+{{ range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.all.go }}
+{{- if . }}
 go install {{ . }}
+{{- end }}
+{{- end }}
 {{- end }}
 {{- end }}
 

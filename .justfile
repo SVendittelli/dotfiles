@@ -17,3 +17,7 @@ clear-run-once-state:
 [windows]
 dotnet-nuget-add-source:
     dotnet nuget add source "https://api.nuget.org/v3/index.json" --name "nuget.org"
+
+# Sort the packages in the packages.yaml by name
+sort-packages:
+    yq '.packages |= sort_by(.name)' -i .chezmoidata/packages.yaml

@@ -1,6 +1,7 @@
-{{ if eq .chezmoi.os "windows" -}}
-
-{{- if lookPath "pip" }}
+# chezmoi:template:missing-key=invalid
+{{- $personal := .personal -}}
+{{- if eq .chezmoi.os "windows" -}}
+{{- if lookPath "pip" -}}
 Write-Host ""
 Write-Host "Installing Python packages..."
 Write-Host ""
@@ -8,16 +9,21 @@ Write-Host ""
 $PipTempFile = New-TemporaryFile
 
 @'
-{{- range .packages.windows.pip }}
+{{- range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.windows.pip }}
+{{- if . }}
 {{ . }}
+{{- end }}
+{{- end }}
 {{- end }}
 '@ | Out-File $PipTempFile
 
 pip install -r $PipTempFile
 
 Remove-Item $PipTempFile
-{{- end }}
 
-{{ end -}}
+{{- end -}}
+{{- end }}
 
 # vim:ft=ps1

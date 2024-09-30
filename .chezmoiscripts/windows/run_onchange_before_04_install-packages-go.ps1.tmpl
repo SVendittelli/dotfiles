@@ -1,15 +1,21 @@
-{{ if eq .chezmoi.os "windows" -}}
-
-{{- if lookPath "go" }}
+# chezmoi:template:missing-key=invalid
+{{- $personal := .personal -}}
+{{- if eq .chezmoi.os "windows" -}}
+{{- if lookPath "go" -}}
 Write-Host ""
 Write-Host "Installing Go packages..."
 Write-Host ""
 
-{{- range .packages.windows.go }}
+{{ range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.all.go }}
+{{- if . }}
 go install {{ . }}
 {{- end }}
 {{- end }}
+{{- end }}
 
-{{ end -}}
+{{- end -}}
+{{- end }}
 
 # vim:ft=ps1

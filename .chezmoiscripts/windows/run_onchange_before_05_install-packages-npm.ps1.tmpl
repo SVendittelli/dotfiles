@@ -1,6 +1,7 @@
-{{ if eq .chezmoi.os "windows" -}}
-
-{{- if lookPath "fnm" }}
+# chezmoi:template:missing-key=invalid
+{{- $personal := .personal -}}
+{{- if eq .chezmoi.os "windows" -}}
+{{- if lookPath "fnm" -}}
 Write-Host ""
 Write-Host "Installing latest Node.js LTS..."
 Write-Host ""
@@ -12,12 +13,16 @@ Write-Host ""
 Write-Host "Installing npm packages..."
 Write-Host ""
 
-npm install --global {{ range .packages.windows.npm }}{{ . }} {{ end }}
+npm install --global {{ range .packages -}}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end -}}
+{{- with .platforms.all.npm -}}
+{{- if . }}{{ . }} {{ end -}}
+{{- end }}
+{{- end }}
 
 corepack enable
 
+{{- end -}}
 {{- end }}
-
-{{ end -}}
 
 # vim:ft=ps1

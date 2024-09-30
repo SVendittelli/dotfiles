@@ -1,13 +1,21 @@
-{{ if eq .chezmoi.os "windows" -}}
+# chezmoi:template:missing-key=invalid
+{{- $personal := .personal -}}
+{{- if eq .chezmoi.os "windows" -}}
 Write-Host ""
 Write-Host "Installing PowerShell modules..."
 Write-Host ""
 
 # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.psresourceget/
-{{- range .packages.windows.psresourceget }}
+
+{{- range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.windows.psresourceget }}
+{{- if . }}
 Install-PSResource -Name {{ . }}
 {{- end }}
+{{- end }}
+{{- end }}
 
-{{ end -}}
+{{- end }}
 
 # vim:ft=ps1

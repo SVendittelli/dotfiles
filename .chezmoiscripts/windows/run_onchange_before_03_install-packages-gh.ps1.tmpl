@@ -1,15 +1,21 @@
-{{ if eq .chezmoi.os "windows" -}}
-
-{{- if lookPath "gh" }}
+# chezmoi:template:missing-key=invalid
+{{- $personal := .personal -}}
+{{- if eq .chezmoi.os "windows" -}}
+{{- if lookPath "gh" -}}
 Write-Host ""
 Write-Host "Installing gh extensions..."
 Write-Host ""
 
-{{- range .packages.darwin.gh }}
+{{ range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.all.gh }}
+{{- if . }}
 gh extension install {{ . }}
 {{- end }}
 {{- end }}
+{{- end }}
 
-{{ end -}}
+{{- end -}}
+{{- end }}
 
 # vim:ft=ps1

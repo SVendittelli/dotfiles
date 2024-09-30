@@ -1,195 +1,787 @@
 packages:
-  darwin:
-    brews:
-      - "act" # Run GitHub Actions locally - https://github.com/nektos/act
-      - "arc"
-      - "bat"
-      - "broot" # A new way to see and navigate directory trees - https://dystroy.org/broot/
-      - "charmbracelet/tap/freeze" # Generate images of code or terminal output - https://github.com/charmbracelet/freeze
-      - "charmbracelet/tap/skate" # A personal key-value store - https://github.com/charmbracelet/skate
-      - "chezmoi"
-      - "cloudflared"
-      - "croc"
-      - "difftastic" # tree-sitter based git diff viewer - https://github.com/Wilfred/difftastic
-      - "direnv" # unclutter your .profile - https://direnv.net/
-      - "diskonaut" # Disk usage analyzer - https://github.com/imsnif/diskonaut
-      - "dive"
-      - "duf" # Disk Usage/Free Utility - https://github.com/muesli/duf
-      - "eza"
-      - "fastfetch"
-      - "fd"
-      - "ffmpeg" # Play, record, convert, and stream audio and video - vhs dependency - https://ffmpeg.org/
-      - "fnm"
-      - "fzf"
-      - "gh"
-      - "git"
-      - "gitleaks" # Scan git repos for secrets - https://github.com/zricethezav/gitleaks
-      - "git-delta"
-      - "git-extras"
-      - "git-lfs"
-      - "gitbatch"
-      - "glow" # Terminal based markdown renderer - https://github.com/charmbracelet/glow
-      - "go"
-      - "httpie"
-      - "jesseduffield/lazydocker/lazydocker"
-      - "jq"
-      - "just"
-      - "knqyf263/pet/pet"
-      - "lazygit"
-      - "less"
-      - "lf"
-      - "libqalculate"
-      - "lnav"
-      - "LucasPickering/tap/slumber" # A TUI (terminal user interface) HTTP client - https://github.com/LucasPickering/slumber
-      - "maccy" # Lightweight clipboard manager - https://github.com/p0deje/Maccy
-      - "miniserve"
-      - "neovim"
-      - "nvm"
-      - "oven-sh/bun/bun" # JavaScript runtime - https://github.com/oven-sh/bun
-      - "pre-commit"
-      - "raycast"
-      - "ripgrep"
-      - "sqlite" # Embedded relational database - https://www.sqlite.org/
-      - "starship"
-      - "tlrc"
-      - "tmux"
-      - "tre-command" # A modern alternative to the tree command - https://github.com/dduan/tre
-      - "ttyd" # vhs dependency - https://github.com/tsl0922/ttyd
-      - "tokei"
-      - "vfox" # A cross-platform, extensible version manager - https://github.com/version-fox/vfox
-      - "vhs" # Terminal GIFs as code - https://github.com/charmbracelet/vhs
-      - "zig"
-      - "zoxide"
-      - "zsh"
-    casks:
-      - "alacritty"
-      - "docker"
-      - "firefox@developer-edition"
-      - "google-chrome"
-      - "meetingbar"
-      - "obsidian"
-      - "rectangle"
-      - "visual-studio-code"
-    gh:
-      - "dlvhdr/gh-dash"
-      - "seachicken/gh-poi"
-    go:
-      - "github.com/air-verse/air@latest" # Live reload for Go apps - https://github.com/air-verse/air
-      - "github.com/go-delve/delve/cmd/dlv@latest" # Debugger for the Go programming language - https://github.com/go-delve/delve
-      - "github.com/merschformann/gotz@latest"
-    npm:
-      - "@fsouza/prettierd" # prettier, as a daemon, for improved formatting speed - https://github.com/fsouza/prettierd
-      - "corepack" # Node.js package manager bridge - https://github.com/nodejs/corepack
-  linux:
-    gh:
-      - "dlvhdr/gh-dash"
-      - "seachicken/gh-poi"
-    go:
-      - "github.com/air-verse/air@latest" # Live reload for Go apps - https://github.com/air-verse/air
-      - "github.com/go-delve/delve/cmd/dlv@latest" # Debugger for the Go programming language - https://github.com/go-delve/delve
-      - "github.com/merschformann/gotz@latest"
-  windows:
-    cargo:
-      - "diskonaut" # Disk usage analyzer - https://github.com/imsnif/diskonaut
-    dotnet:
-      - "WinDebloat" # Remove Windows 10 bloatware - https://github.com/SimonCropp/WinDebloat
-    gh:
-      - "dlvhdr/gh-dash"
-      - "seachicken/gh-poi"
-    go:
-      - "github.com/air-verse/air@latest" # Live reload for Go apps - https://github.com/air-verse/air
-      - "github.com/go-delve/delve/cmd/dlv@latest" # Debugger for the Go programming language - https://github.com/go-delve/delve
-      - "github.com/isacikgoz/gitbatch/cmd/gitbatch@latest"
-      - "github.com/merschformann/gotz@latest"
-    msstore:
-      - "9PFZ3G4D1C9R" # LanguageTool
-    npm:
-      - "@fsouza/prettierd" # prettier, as a daemon, for improved formatting speed - https://github.com/fsouza/prettierd
-      - "corepack" # Node.js package manager bridge - https://github.com/nodejs/corepack
-    pip:
-      - "gitbatch"
-      - "pre-commit"
-    psresourceget:
-      - "posh-git"
-    windebloat:
-      include:
-        - "DeveloperMode" # Enables Developer Mode
-        - "Paint" # Uninstall Paint and install paint.net
-      exclude:
-        - "Xbox" # Do not remove Xbox apps, needed for AoE II
-    winget:
-      - "ajeetdsouza.zoxide"
-      - "Alacritty.Alacritty"
-      - "Anki.Anki" # Powerful, intelligent flash cards - https://apps.ankiweb.net/
-      - "AutoHotkey.AutoHotkey"
-      - "Balena.Etcher"
-      - "beekeeper-studio.beekeeper-studio"
-      - "BurntSushi.ripgrep.MSVC"
-      - "ca.duan.tre-command" # A modern alternative to the tree command - https://github.com/dduan/tre
-      - "Casey.Just"
-      - "charmbracelet.freeze" # Generate images of code or terminal output - https://github.com/charmbracelet/freeze
-      - "charmbracelet.glow" # Terminal based markdown renderer - https://github.com/charmbracelet/glow
-      - "charmbracelet.skate" # A personal key-value store - https://github.com/charmbracelet/skate
-      - "charmbracelet.vhs" # Terminal GIFs as code - https://github.com/charmbracelet/vhs
-      - "Cloudflare.cloudflared"
-      - "code52.Carnac"
-      - "CodeSector.TeraCopy"
-      - "dandavison.delta"
-      - "Docker.DockerDesktop"
-      - "Doist.Todoist"
-      - "DuongDieuPhap.ImageGlass" # Image viewer for Windows - https://imageglass.org/
-      - "Dystroy.broot" # A new way to see and navigate directory trees - https://dystroy.org/broot/
-      - "eza-community.eza"
-      - "Fastfetch-cli.Fastfetch"
-      - "Git.Git"
-      - "GitHub.cli"
-      - "Gitleaks.Gitleaks" # Scan git repos for secrets - https://github.com/zricethezav/gitleaks
-      - "gokcehan.lf"
-      - "GoLang.Go"
-      - "Google.Chrome"
-      - "Gyan.FFmpeg" # Play, record, convert, and stream audio and video - vhs dependency - https://ffmpeg.org/
-      - "HTTPie.HTTPie"
-      - "Inkscape.Inkscape"
-      - "JesseDuffield.Lazydocker"
-      - "JesseDuffield.lazygit"
-      - "jftuga.less"
-      - "jqlang.jq"
-      - "LGUG2Z.komorebi"
-      - "LGUG2Z.whkd"
-      - "Microsoft.DotNet.SDK.8" # Dependency of WinDebloat
-      - "Microsoft.PowerShell"
-      - "Microsoft.PowerToys"
-      - "Microsoft.VisualStudioCode"
-      - "Mozilla.Firefox.DeveloperEdition"
-      - "muesli.duf" # Disk Usage/Free Utility - https://github.com/muesli/duf
-      - "nektos.act" # Run GitHub Actions locally - https://github.com/nektos/act
-      - "Neovim.Neovim"
-      - "Obsidian.Obsidian"
-      - "OlegDanilov.RapidEnvironmentEditor"
-      - "Oven-sh.Bun" # JavaScript runtime - https://github.com/oven-sh/bun
-      - "Python.Python.3.12"
-      - "Qalculate.Qalculate"
-      - "Rustlang.Rustup"
-      - "Schniz.fnm"
-      - "schollz.croc"
-      - "sharkdp.bat"
-      - "sharkdp.fd"
-      - "SQLite.SQLite" # Embedded relational database - https://www.sqlite.org/
-      - "Starship.Starship"
-      - "SumatraPDF.SumatraPDF"
-      - "svenstaro.miniserve"
-      - "th-ch.YouTubeMusic"
-      - "TheBrowserCompany.Arc"
-      - "tldr-pages.tlrc"
-      - "tsl0922.ttyd" # vhs dependency - https://github.com/tsl0922/ttyd
-      - "twpayne.chezmoi"
-      - "version-fox.vfox" # A cross-platform, extensible version manager - https://github.com/version-fox/vfox
-      - "VideoLAN.VLC"
-      - "Wacom.WacomTabletDriver"
-      - "wagoodman.dive"
-      - "Wilfred.difftastic" # tree-sitter based git diff viewer - https://github.com/Wilfred/difftastic
-      - "WinDirStat.WinDirStat"
-      - "Microsoft.WingetCreate" # Create Windows packages - https://github.com/microsoft/winget-create
-      - "WiresharkFoundation.Wireshark"
-      - "XAMPPRocky.tokei"
-      - "zig.zig"
+  - name: 7zip
+    description: A file archiver with a high compression ratio
+    homepage: https://www.7-zip.org/
+    personal: true
+    platforms:
+      windows:
+        winget: "7zip.7zip"
+  - name: act
+    description: Run GitHub Actions locally
+    homepage: https://github.com/nektos/act
+    dependencies:
+      - docker
+    platforms:
+      darwin:
+        brew: "act"
+      windows:
+        winget: "nektos.act"
+  - name: air
+    description: Live reload for Go apps
+    homepage: https://github.com/air-verse/air
+    platforms:
+      all:
+        go: "github.com/air-verse/air@latest"
+  - name: alacritty
+    description: A cross-platform, OpenGL terminal emulator
+    homepage: https://github.com/alacritty/alacritty
+    platforms:
+      darwin:
+        cask: "alacritty"
+      windows:
+        winget: "Alacritty.Alacritty"
+  - name: anki
+    description: Powerful, intelligent flash cards
+    homepage: https://apps.ankiweb.net/
+    personal: true
+    platforms:
+      windows:
+        winget: "Anki.Anki"
+  - name: arc browser
+    description: Chrome-based web browser
+    homepage: https://arc.net/
+    platforms:
+      darwin:
+        brew: "arc"
+      windows:
+        winget: "TheBrowserCompany.Arc"
+  - name: autohotkey
+    description: The ultimate automation scripting language for Windows
+    homepage: https://www.autohotkey.com/
+    platforms:
+      windows:
+        winget: "AutoHotkey.AutoHotkey"
+  - name: balenaetcher
+    description: SD card and USB image flashers
+    homepage: https://etcher.balena.io/
+    personal: true
+    platforms:
+      windows:
+        winget: "Balena.Etcher"
+  - name: bat
+    description: A cat(1) clone with wings
+    homepage: https://github.com/sharkdp/bat
+    platforms:
+      darwin:
+        brew: "bat"
+      windows:
+        winget: "sharkdp.bat"
+  - name: beekeeper-studio
+    description: Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more
+    homepage: https://github.com/beekeeper-studio/beekeeper-studio/
+    platforms:
+      windows:
+        winget: "beekeeper-studio.beekeeper-studio"
+  - name: broot
+    description: A new way to see and navigate directory trees
+    homepage: https://dystroy.org/broot/
+    platforms:
+      darwin:
+        brew: "broot"
+      windows:
+        winget: "Dystroy.broot"
+  - name: bun
+    description: JavaScript runtime
+    homepage: https://github.com/oven-sh/bun
+    platforms:
+      darwin:
+        brew: "oven-sh/bun/bun"
+      windows:
+        winget: "Oven-sh.Bun"
+  - name: chezmoi
+    description: Manage your dotfiles across multiple diverse machines, securely
+    homepage: https://www.chezmoi.io/
+    dependencies:
+      - git
+    platforms:
+      darwin:
+        brew: "chezmoi"
+      windows:
+        winget: "twpayne.chezmoi"
+  - name: chrome
+    description: Web browser
+    homepage: https://www.google.co.uk/chrome/
+    platforms:
+      darwin:
+        cask: "google-chrome"
+      windows:
+        winget: "Google.Chrome"
+  - name: cloudflared
+    description: Cloudflare Tunnel client
+    homepage: https://github.com/cloudflare/cloudflared
+    platforms:
+      darwin:
+        brew: "cloudflared"
+      windows:
+        winget: "Cloudflare.cloudflared"
+  - name: corepack
+    description: Node.js package manager bridge
+    homepage: https://github.com/nodejs/corepack
+    platforms:
+      all:
+        npm: "corepack"
+  - name: croc
+    description: Easily and securely send things from one computer to another
+    homepage: https://github.com/schollz/croc
+    platforms:
+      darwin:
+        brew: "croc"
+      windows:
+        winget: "schollz.croc"
+  - name: delta
+    description: A syntax-highlighting pager for git, diff, and grep output
+    homepage: https://github.com/dandavison/delta
+    dependencies:
+      - git
+    platforms:
+      darwin:
+        brew: "git-delta"
+      windows:
+        winget: "dandavison.delta"
+  - name: difftastic
+    description: tree-sitter based git diff viewer
+    homepage: https://github.com/Wilfred/difftastic
+    dependencies:
+      - git
+    platforms:
+      darwin:
+        brew: "difftastic"
+      windows:
+        winget: "Wilfred.difftastic"
+  - name: direnv
+    description: unclutter your .profile
+    homepage: https://direnv.net/
+    platforms:
+      darwin:
+        brew: "direnv"
+  - name: discord
+    description: Group chat application
+    homepage: https://discord.com/
+    personal: true
+    platforms:
+      windows:
+        winget: "Discord.Discord"
+  - name: diskonaut
+    description: Disk usage analyzer
+    homepage: https://github.com/imsnif/diskonaut
+    platforms:
+      darwin:
+        brew: "diskonaut"
+      windows:
+        cargo: "diskonaut"
+  - name: dive
+    description: A tool for exploring each layer in a docker image
+    homepage: https://github.com/wagoodman/dive
+    dependencies:
+      - docker
+    platforms:
+      darwin:
+        brew: "dive"
+      windows:
+        winget: "wagoodman.dive"
+  - name: dlv
+    description: Debugger for the Go programming language
+    homepage: https://github.com/go-delve/delve
+    platforms:
+      all:
+        go: "github.com/go-delve/delve/cmd/dlv@latest"
+  - name: docker
+    description: Container build and management tool
+    homepage: https://www.docker.com/
+    platforms:
+      darwin:
+        cask: "docker"
+      windows:
+        winget: "Docker.DockerDesktop"
+  - name: dotnet-sdk-8
+    description: .NET developer platform
+    homepage: https://dotnet.microsoft.com
+    platforms:
+      windows:
+        winget: "Microsoft.DotNet.SDK.8"
+  - name: duf
+    description: Disk Usage/Free Utility
+    homepage: https://github.com/muesli/duf
+    platforms:
+      darwin:
+        brew: "duf"
+      windows:
+        winget: "muesli.duf"
+  - name: eza
+    description: A modern alternative to ls
+    homepage: https://github.com/eza-community/eza
+    platforms:
+      darwin:
+        brew: "eza"
+      windows:
+        winget: "eza-community.eza"
+  - name: fastfetch
+    description: neofetch like system information tool
+    homepage: https://github.com/fastfetch-cli/fastfetch/
+    platforms:
+      darwin:
+        brew: "fastfetch"
+      windows:
+        winget: "Fastfetch-cli.Fastfetch"
+  - name: fd
+    description: A simple, fast and user-friendly alternative to 'find'
+    homepage: https://github.com/sharkdp/fd
+    platforms:
+      darwin:
+        brew: "fd"
+      windows:
+        winget: "sharkdp.fd"
+  - name: ffmpeg
+    description: Play, record, convert, and stream audio and video
+    homepage: https://ffmpeg.org/
+    platforms:
+      darwin:
+        brew: "ffmpeg"
+      windows:
+        winget: "Gyan.FFmpeg"
+  - name: firefox-dev-edition
+    description: The browser made for developers
+    homepage: https://www.mozilla.org/en-GB/firefox/developer/
+    platforms:
+      darwin:
+        cask: "firefox@developer-edition"
+      windows:
+        winget: "Mozilla.Firefox.DeveloperEdition"
+  - name: freeze
+    description: Generate images of code or terminal output
+    homepage: https://github.com/charmbracelet/freeze
+    platforms:
+      darwin:
+        brew: "charmbracelet/tap/freeze"
+      windows:
+        winget: "charmbracelet.freeze"
+  - name: fzf
+    description: A command-line fuzzy finder
+    homepage: https://github.com/junegunn/fzf
+    platforms:
+      darwin:
+        brew: "fzf"
+      windows:
+        winget: "junegunn.fzf"
+  - name: gh
+    description: GitHub’s official command line tool
+    homepage: https://cli.github.com/
+    dependencies:
+      - git
+    platforms:
+      darwin:
+        brew: "gh"
+      windows:
+        winget: "GitHub.cli"
+  - name: gh-dash
+    description: A beautiful CLI dashboard for GitHub
+    homepage: https://github.com/dlvhdr/gh-dash
+    platforms:
+      all:
+        gh: "dlvhdr/gh-dash"
+  - name: gh-poi
+    description: Safely clean up your local branches
+    homepage: https://github.com/seachicken/gh-poi
+    platforms:
+      all:
+        gh: "seachicken/gh-poi"
+  - name: git
+    description: A distributed version control system
+    homepage: https://git-scm.com/
+    platforms:
+      darwin:
+        brew: "git"
+      windows:
+        winget: "Git.Git"
+  - name: git-extras
+    description: git utilities
+    homepage: https://github.com/tj/git-extras
+    dependencies:
+      - git
+    platforms:
+      darwin:
+        brew: "git-extras"
+  - name: git-lfs
+    description: Git extension for versioning large files
+    homepage: https://git-lfs.com/
+    dependencies:
+      - git
+    platforms:
+      darwin:
+        brew: "git-lfs"
+      windows:
+        none: # Included in git for windows
+  - name: gitleaks
+    description: Scan git repos for secrets
+    homepage: https://github.com/zricethezav/gitleaks
+    dependencies:
+      - git
+    platforms:
+      darwin:
+        brew: "gitleaks"
+      windows:
+        winget: "Gitleaks.Gitleaks"
+  - name: glow
+    description: Terminal based markdown renderer
+    homepage: https://github.com/charmbracelet/glow
+    platforms:
+      darwin:
+        brew: "glow"
+      windows:
+        winget: "charmbracelet.glow"
+  - name: go
+    description: The Go programming language
+    homepage: https://go.dev/
+    platforms:
+      darwin:
+        brew: "go"
+      windows:
+        winget: "GoLang.Go"
+  - name: httpie
+    description: HTTP and API testing client
+    homepage: https://httpie.io/
+    platforms:
+      darwin:
+        brew: "httpie"
+      windows:
+        winget: "HTTPie.HTTPie"
+  - name: imageglass
+    description: Image viewer for Windows
+    homepage: https://imageglass.org/
+    platforms:
+      windows:
+        winget: "DuongDieuPhap.ImageGlass"
+  - name: inkscape
+    description: Vector graphics editor
+    homepage: https://inkscape.org/
+    platforms:
+      windows:
+        winget: "Inkscape.Inkscape"
+  - name: jq
+    description: Command-line JSON processor
+    homepage: https://github.com/jqlang/jq/
+    platforms:
+      darwin:
+        brew: "jq"
+      windows:
+        winget: "jqlang.jq"
+  - name: just
+    description: Just a command runner
+    homepage: https://github.com/casey/just
+    platforms:
+      darwin:
+        brew: "just"
+      windows:
+        winget: "Casey.Just"
+  - name: komorebi
+    description: Tiling window manager for windows
+    homepage: https://github.com/LGUG2Z/komorebi
+    platforms:
+      windows:
+        winget: "LGUG2Z.komorebi"
+  - name: krita
+    description: Digital painting program
+    homepage: https://krita.org/en/
+    personal: true
+    platforms:
+      windows:
+        winget: "KDE.Krita"
+  - name: languagetool
+    description: Writing assistant
+    homepage: https://languagetool.org/
+    platforms:
+      windows:
+        msstore: "9PFZ3G4D1C9R"
+  - name: lazydocker
+    description: The lazier way to manage everything docker
+    homepage: https://github.com/jesseduffield/lazydocker
+    platforms:
+      darwin:
+        brew: "jesseduffield/lazydocker/lazydocker"
+      windows:
+        winget: "JesseDuffield.Lazydocker"
+  - name: lazygit
+    description: simple terminal UI for git commands
+    homepage: https://github.com/jesseduffield/lazygit
+    dependencies:
+      - git
+    platforms:
+      darwin:
+        brew: "lazygit"
+      windows:
+        winget: "JesseDuffield.lazygit"
+  - name: less
+    description: Pager program similar to more
+    homepage:
+      unix: https://www.greenwoodsoftware.com/less/index.html
+      windows: https://github.com/jftuga/less-Windows
+    platforms:
+      darwin:
+        brew: "less"
+      windows:
+        winget: "jftuga.less"
+  - name: lf
+    description: Terminal file manager
+    homepage: https://github.com/gokcehan/lf
+    platforms:
+      darwin:
+        brew: "lf"
+      windows:
+        winget: "gokcehan.lf"
+  - name: libqalculate
+    description: The ultimate desktop calculator
+    homepage: https://qalculate.github.io/
+    platforms:
+      darwin:
+        brew: "libqalculate"
+      windows:
+        winget: "Qalculate.Qalculate"
+  - name: meetingbar
+    description: Your meetings at your fingertips in the macOS menu bar
+    homepage: https://github.com/leits/MeetingBar
+    platforms:
+      darwin:
+        cask: "meetingbar"
+  - name: minserve
+    description: For when you really just want to serve some files over HTTP right now
+    homepage: https://github.com/svenstaro/miniserve
+    platforms:
+      darwin:
+        brew: "miniserve"
+      windows:
+        winget: "svenstaro.miniserve"
+  - name: neovim
+    description: hyperextensible Vim-based text editor
+    homepage: https://neovim.io/
+    platforms:
+      darwin:
+        brew: "neovim"
+      windows:
+        winget: "Neovim.Neovim"
+  - name: netflix
+    description: Movie and TV show streaming
+    homepage: https://netflix.com/
+    personal: true
+    platforms:
+      windows:
+        msstore: "9WZDNCRFJ3TJ"
+  - name: obsidian
+    description: A private, adaptable note-taking app
+    homepage: https://obsidian.md/
+    platforms:
+      darwin:
+        cask: "obsidian"
+      windows:
+        winget: "Obsidian.Obsidian"
+  - name: pet
+    description: Simple command-line snippet manager
+    homepage: https://github.com/knqyf263/pet
+    dependencies:
+      - git
+    platforms:
+      darwin:
+        brew: "knqyf263/pet/pet"
+      windows:
+        external: # Installed directly in the external file
+  - name: posh-git
+    description: A PowerShell environment for Git
+    homepage: http://dahlbyk.github.io/posh-git/
+    platforms:
+      windows:
+        psresourceget: "posh-git"
+  - name: power-toys
+    description: Windows utilities for power users
+    homepage: https://github.com/microsoft/PowerToys
+    platforms:
+      windows:
+        winget: "Microsoft.PowerToys"
+  - name: powershell
+    description: Cross-Platform CLI
+    homepage: https://microsoft.com/PowerShell
+    platforms:
+      windows:
+        winget: "Microsoft.PowerShell"
+  - name: pre-commit
+    description: A framework for managing and maintaining multi-language pre-commit hooks
+    homepage: https://pre-commit.com/
+    platforms:
+      darwin:
+        brew: "pre-commit"
+      windows:
+        pip: "pre-commit"
+  - name: prettierd
+    description: prettier, as a daemon, for improved formatting speed
+    homepage: https://github.com/fsouza/prettierd
+    platforms:
+      all:
+        npm: "@fsouza/prettierd"
+  - name: python 3.12
+    description: The Python programming language
+    homepage: https://www.python.org/
+    platforms:
+      windows:
+        winget: "Python.Python.3.12"
+  - name: rapid-environment-editor
+    description: An environment variables editor
+    homepage: https://www.rapidee.com/
+    platforms:
+      windows:
+        winget: "OlegDanilov.RapidEnvironmentEditor"
+  - name: rectangle
+    description: Move and resize windows in macOS using keyboard shortcuts or snap areas
+    homepage: https://rectangleapp.com/
+    platforms:
+      darwin:
+        cask: "rectangle"
+  - name: ripgrep
+    description: A line-oriented search tool that recursively searches the current directory for a regex pattern
+    homepage: https://github.com/BurntSushi/ripgrep
+    platforms:
+      darwin:
+        brew: "ripgrep"
+      windows:
+        winget: "BurntSushi.ripgrep.MSVC"
+  - name: rpi-imager
+    description: A tool for creating bootable media for Raspberry Pi devices
+    homepage: https://github.com/raspberrypi/rpi-imager
+    personal: true
+    platforms:
+      windows:
+        winget: "RaspberryPiFoundation.RaspberryPiImager"
+  - name: rustup
+    description: The Rust toolchain installer
+    homepage: https://rust-lang.github.io/rustup/
+    platforms:
+      windows:
+        winget: "Rustlang.Rustup"
+  - name: signal
+    description: Privacy focused chat app
+    homepage: https://signal.org/
+    personal: true
+    platforms:
+      windows:
+        winget: "OpenWhisperSystems.Signal"
+  - name: skate
+    description: A personal key-value store
+    homepage: https://github.com/charmbracelet/skate
+    platforms:
+      darwin:
+        brew: "charmbracelet/tap/skate"
+      windows:
+        winget: "charmbracelet.skate"
+  - name: slumber
+    description: A TUI (terminal user interface) HTTP client
+    homepage: https://github.com/LucasPickering/slumber
+    platforms:
+      darwin:
+        brew: "LucasPickering/tap/slumber"
+      windows:
+        external: # Installed directly in the external file
+  - name: sqlite
+    description: Embedded relational database
+    homepage: https://www.sqlite.org/
+    platforms:
+      darwin:
+        brew: "sqlite"
+      windows:
+        winget: "SQLite.SQLite"
+  - name: starship
+    description: Cross-shell prompt
+    homepage: https://starship.rs/
+    platforms:
+      darwin:
+        brew: "starship"
+      windows:
+        winget: "Starship.Starship"
+  - name: steam
+    description: Games manager
+    homepage: https://store.steampowered.com/
+    personal: true
+    platforms:
+      windows:
+        winget: "Valve.Steam"
+  - name: stream deck
+    description: COntrol software with physical buttons
+    homepage: https://www.elgato.com/uk/en/s/downloads
+    personal: true
+    platforms:
+      windows:
+        winget: "Elgato.StreamDeck"
+  - name: sumatrapdf
+    description: Free PDF viewer
+    homepage: https://github.com/sumatrapdfreader/sumatrapdf
+    platforms:
+      windows:
+        winget: "SumatraPDF.SumatraPDF"
+  - name: teracopy
+    description: File transfer utility
+    homepage: https://www.codesector.com/teracopy
+    platforms:
+      windows:
+        winget: "CodeSector.TeraCopy"
+  - name: tldr
+    description: Simplified and community-driven man pages
+    homepage: https://tldr.sh/
+    platforms:
+      darwin:
+        brew: "tlrc"
+      windows:
+        winget: "tldr-pages.tlrc"
+  - name: tmux
+    description: Terminal multiplexer
+    homepage: https://github.com/tmux/tmux/wiki
+    platforms:
+      darwin:
+        brew: "tmux"
+  - name: todoist
+    description: To-do list app
+    homepage: https://todoist.com/
+    platforms:
+      windows:
+        winget: "Doist.Todoist"
+  - name: tokei
+    description: Count your code, quickly
+    homepage: https://github.com/XAMPPRocky/tokei
+    platforms:
+      darwin:
+        brew: "tokei"
+      windows:
+        winget: "XAMPPRocky.tokei"
+  - name: tre
+    description: A modern alternative to the tree command
+    homepage: https://github.com/dduan/tre
+    platforms:
+      darwin:
+        brew: "tre-command"
+      windows:
+        winget: "ca.duan.tre-command"
+  - name: ttyd
+    description: Share your terminal over the web
+    homepage: https://github.com/tsl0922/ttyd
+    platforms:
+      darwin:
+        brew: "ttyd"
+      windows:
+        winget: "tsl0922.ttyd"
+  - name: vfox
+    description: A cross-platform, extensible version manager
+    homepage: https://github.com/version-fox/vfox
+    platforms:
+      darwin:
+        brew: "vfox"
+      windows:
+        winget: "version-fox.vfox"
+  - name: vhs
+    description: Terminal GIFs as code
+    homepage: https://github.com/charmbracelet/vhs
+    dependencies:
+      - ffmpeg
+      - ttyd
+    platforms:
+      darwin:
+        brew: "vhs"
+      windows:
+        winget: "charmbracelet.vhs"
+  - name: vlc media player
+    description: Cross-platform multimedia player
+    homepage: https://www.videolan.org/vlc/
+    platforms:
+      windows:
+        winget: "VideoLAN.VLC"
+  - name: vs-code
+    description: Code editor
+    homepage: https://code.visualstudio.com/
+    platforms:
+      darwin:
+        cask: "visual-studio-code"
+      windows:
+        winget: "Microsoft.VisualStudioCode"
+  - name: wacon-tablet-driver
+    description: Drivers for Wacom Tablet
+    homepage: https://www.wacom.com/support/product-support/drivers
+    platforms:
+      windows:
+        winget: "Wacom.WacomTabletDriver"
+  - name: whatsapp
+    description: Personal messaging app
+    homepage: http://whatsapp.com/
+    personal: true
+    platforms:
+      windows:
+        msstore: "9NKSQGP7F2NH"
+  - name: whkd
+    description: A simple hotkey daemon for Windows
+    homepage: https://github.com/LGUG2Z/whkd
+    platforms:
+      windows:
+        winget: "LGUG2Z.whkd"
+  - name: windebloat
+    description: Remove Windows 10 bloatware
+    homepage: https://github.com/SimonCropp/WinDebloat
+    dependencies:
+      - dotnet-sdk-8
+    platforms:
+      windows:
+        dotnet: "WinDebloat"
+  - name: winget create
+    description: Create Windows packages
+    homepage: https://github.com/microsoft/winget-create
+    platforms:
+      windows:
+        winget: "Microsoft.WingetCreate"
+  - name: wireshark
+    description: Network protocol analyzer
+    homepage: https://www.wireshark.org/
+    platforms:
+      windows:
+        winget: "WiresharkFoundation.Wireshark"
+  - name: youtube music
+    description: YouTube Music Desktop App bundled with custom plugins
+    homepage: https://github.com/th-ch/youtube-music
+    platforms:
+      windows:
+        winget: "th-ch.YouTubeMusic"
+  - name: yq
+    description: Lightweight and portable command-line YAML, JSON and XML processor
+    homepage: https://github.com/mikefarah/yq
+    platforms:
+      darwin:
+        brew: "yq"
+      windows:
+        winget: "MikeFarah.yq"
+  - name: zen browser
+    description: Firefox based browser for privacy and speed
+    homepage: https://www.zen-browser.app/
+    personal: true
+    platforms:
+      windows:
+        winget: "Zen-Team.Zen-Browser"
+  - name: zig
+    description: Zig programming language
+    homepage: https://ziglang.org/
+    platforms:
+      darwin:
+        brew: "zig"
+      windows:
+        winget: "zig.zig"
+  - name: zoom
+    description: Video communication software
+    homepage: https://zoom.us/
+    personal: true
+    platforms:
+      windows:
+        winget: "Zoom.Zoom"
+  - name: zoxide
+    description: A smarter cd command
+    homepage: https://github.com/ajeetdsouza/zoxide
+    platforms:
+      darwin:
+        brew: "zoxide"
+      windows:
+        winget: "ajeetdsouza.zoxide"
+  - name: zsh
+    description: Interactive shell
+    homepage: https://www.zsh.org/
+    platforms:
+      darwin:
+        brew: "zsh"

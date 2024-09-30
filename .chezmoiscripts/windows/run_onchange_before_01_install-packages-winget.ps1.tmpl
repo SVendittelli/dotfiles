@@ -1,6 +1,7 @@
-{{ if eq .chezmoi.os "windows" -}}
-
-{{- if lookPath "winget" }}
+# chezmoi:template:missing-key=invalid
+{{- $personal := .personal -}}
+{{- if eq .chezmoi.os "windows" -}}
+{{- if lookPath "winget" -}}
 Write-Host ""
 Write-Host "Installing winget packages..."
 Write-Host ""
@@ -15,16 +16,14 @@ $WingetTempFile = New-TemporaryFile
         {
             "Packages" :
             [
-{{- range .packages.windows.winget }}
+{{- range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.windows.winget }}
+{{- if . }}
                 {
                     "PackageIdentifier" : {{ . | quote }}
                 },
 {{- end }}
-{{- if .personal }}
-{{- range .packagesPersonal.windows.winget }}
-                {
-                    "PackageIdentifier" : {{ . | quote }}
-                },
 {{- end }}
 {{- end }}
             ],
@@ -39,16 +38,14 @@ $WingetTempFile = New-TemporaryFile
         {
             "Packages" :
             [
-{{- range .packages.windows.msstore }}
+{{- range .packages }}
+{{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
+{{- with .platforms.windows.msstore }}
+{{- if . }}
                 {
                     "PackageIdentifier" : {{ . | quote }}
                 },
 {{- end }}
-{{- if .personal }}
-{{- range .packagesPersonal.windows.msstore }}
-                {
-                    "PackageIdentifier" : {{ . | quote }}
-                },
 {{- end }}
 {{- end }}
             ],
@@ -67,8 +64,8 @@ $WingetTempFile = New-TemporaryFile
 winget import -i $WingetTempFile --ignore-unavailable --no-upgrade --accept-package-agreements
 
 Remove-Item $WingetTempFile
-{{- end }}
 
-{{ end -}}
+{{- end -}}
+{{- end }}
 
 # vim:ft=ps1
