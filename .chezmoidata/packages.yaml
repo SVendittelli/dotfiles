@@ -247,6 +247,14 @@ packages:
         cask: "firefox@developer-edition"
       windows:
         winget: "Mozilla.Firefox.DeveloperEdition"
+  - name: fnm
+    description: Fast and simple Node.js version manager
+    homepage: https://github.com/Schniz/fnm
+    platforms:
+      darwin:
+        brew: "fnm"
+      windows:
+        winget: "Schniz.fnm"
   - name: freeze
     description: Generate images of code or terminal output
     homepage: https://github.com/charmbracelet/freeze
