@@ -10,12 +10,13 @@ program = "pwsh"
 {{- end }}
 
 [window]
+decorations = "None"
 opacity = 0.9
 blur = true
 option_as_alt = "Both"
 
 [font.normal]
-family = "MesloLGS NF"
+family = {{ .font | quote }}
 
 [cursor.style]
 shape = "Beam"

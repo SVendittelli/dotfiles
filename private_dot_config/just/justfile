@@ -23,12 +23,12 @@ editorconfig:
 # Start komorebi and whkd
 [no-cd, windows, group('komorebi')]
 wm-start:
-    komorebic start --whkd
+    komorebic start --whkd --bar
 
 # Stop komorebi
 [no-cd, windows, group('komorebi')]
 wm-stop:
-    komorebic stop
+    komorebic stop --whkd --bar
 
 # Check for winget updates
 [no-cd, no-exit-message, windows, group('winget')]
