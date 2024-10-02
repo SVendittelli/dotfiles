@@ -40,7 +40,8 @@ Set-Alias -Name e -Value nvim
 Set-Alias -Name g -Value git
 Set-Alias -Name j -Value just
 Set-Alias -Name jg -Value Just-Global
-Set-Alias -Name lz -Value lazygit
+Set-Alias -Name lzd -Value lazydocker
+Set-Alias -Name lzg -Value lazygit
 Set-Alias -Name neofetch -Value fastfetch
 Set-Alias -Name open -Value Invoke-Item
 Set-Alias -Name python3 -Value python
