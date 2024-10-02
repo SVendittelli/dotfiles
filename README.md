@@ -50,6 +50,13 @@ chezmoi apply
 
 ### Windows
 
+> It is highly recommended that you enable the "Turn off all unnecessary
+> animations (when possible)" option in "Control Panel > Ease of Access > Ease
+> of Access Centre / Make the computer easier to see" for the best performance
+> with komorebi.
+>
+> ~ [Komorebi Docs](https://lgug2z.github.io/komorebi/installation.html#disabling-unnecessary-system-animations)
+
 In an _administrator_ shell:
 
 ```powershell
@@ -58,6 +65,11 @@ Set-ItemProperty -Path "Registry::HKLM\SOFTWARE\Policies\Microsoft\Windows\Appx"
                  -Name "AllowDevelopmentWithoutDevLicense"`
                  -Type "DWord"`
                  -Value "1"
+
+# Enable support for long windows paths
+Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem'`
+                 -Name 'LongPathsEnabled'`
+                 -Value 1
 
 # Set the execution policy
 Set-ExecutionPolicy remotesigned
