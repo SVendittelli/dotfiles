@@ -51,5 +51,5 @@ If ($PSVersionTable.PSVersion.Major -Le 5 -Or $isWindows) {
   }
 
   #enable komorebi to start automatically
-  komorebic.exe enable-autostart --whkd --bar
+  komorebic.exe enable-autostart --whkd --bar > $null
 }
