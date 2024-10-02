@@ -4,9 +4,9 @@
     "index": 0,
     "work_area_offset": {
       "left": 0,
-      "top": 40,
+      "top": {{ if eq .chassisType "laptop" }}50{{ else }}40{{ end }},
       "right": 0,
-      "bottom": 40
+      "bottom": {{ if eq .chassisType "laptop" }}50{{ else }}40{{ end }}
     }
   },
   "font_family": "{{ .font  }}",
