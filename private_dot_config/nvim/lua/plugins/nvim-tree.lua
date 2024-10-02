@@ -1,5 +1,26 @@
 -- A File Explorer For Neovim Written In Lua
 -- https://github.com/nvim-tree/nvim-tree.lua
+
+local view_width_max = -1 -- Dynamic to start
+
+-- toggle the width and redraw
+local function toggle_width_adaptive()
+  if view_width_max == -1 then
+    -- If dynamic, switch to fixed
+    view_width_max = 35
+  else
+    -- If fixed, switch to dynamic
+    view_width_max = -1
+  end
+
+  require('nvim-tree.api').tree.reload()
+end
+
+-- get current view width
+local function get_view_width_max()
+  return view_width_max
+end
+
 return {
   'nvim-tree/nvim-tree.lua',
   version = '*',
@@ -9,7 +30,11 @@ return {
   },
   opts = {
     view = {
-      width = 35,
+      side = 'right',
+      width = {
+        min = 30,
+        max = get_view_width_max,
+      },
     },
     renderer = {
       indent_markers = {
@@ -43,10 +68,11 @@ return {
     },
   },
   keys = {
-    { '<leader>ec', '<cmd>NvimTreeCollapse<CR>', desc = 'File [E]xplorer [C]ollaspe' },
-    { '<leader>ef', '<cmd>NvimTreeFocus<CR>', desc = 'File [E]xplorer [F]ocus' },
-    { '<leader>eF', '<cmd>NvimTreeFindFile<CR>', desc = 'File [E]xplorer on current [F]ile' },
-    { '<leader>er', '<cmd>NvimTreeRefresh<CR>', desc = 'File [E]xplorer [R]efresh' },
-    { '<leader>ex', '<cmd>NvimTreeClose<CR>', desc = 'File [E]xplorer e[X]it' },
+    { '<leader>ec', '<cmd>NvimTreeCollapse<CR>', desc = 'File [e]xplorer [c]ollaspe' },
+    { '<leader>ef', '<cmd>NvimTreeFindFile<CR>', desc = 'File [e]xplorer on current [f]ile' },
+    { '<leader>eF', '<cmd>NvimTreeFocus<CR>', desc = 'File [e]xplorer [F]ocus' },
+    { '<leader>er', '<cmd>NvimTreeRefresh<CR>', desc = 'File [e]xplorer [r]efresh' },
+    { '<leader>ew', toggle_width_adaptive, desc = 'File [e]xplorer toggle adaptive [w]idth' },
+    { '<leader>ex', '<cmd>NvimTreeClose<CR>', desc = 'File [e]xplorer e[x]it' },
   },
 }
