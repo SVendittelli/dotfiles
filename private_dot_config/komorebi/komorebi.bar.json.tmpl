@@ -4,12 +4,12 @@
     "index": 0,
     "work_area_offset": {
       "left": 0,
-      "top": {{ if eq .chassisType "laptop" }}50{{ else }}40{{ end }},
+      "top": {{ mulf 40 .scale }},
       "right": 0,
-      "bottom": {{ if eq .chassisType "laptop" }}50{{ else }}40{{ end }}
+      "bottom": {{ mulf 40 .scale }}
     }
   },
-  "font_family": "{{ .font  }}",
+  "font_family": "{{ .font }}",
   "left_widgets": [
     {
       "Komorebi": {

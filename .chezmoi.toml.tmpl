@@ -5,9 +5,10 @@
 # `~/.config/chezmoi/chezmoi.toml`
 # See https://www.chezmoi.io/docs/how-to/
 
-{{- $email := promptString "Git email address for the author/committer" }}
-{{- $location := promptString "Location to show weather for" }}
-{{- $personal := promptBool "Install personal packages" }}
+{{- $email := promptStringOnce . "email" "Git email address for the author/committer" }}
+{{- $scale := promptStringOnce . "scale" "Display scaling on this device" "100%" }}
+{{- $location := promptStringOnce . "location" "Location to show weather for" "Maidenhead" }}
+{{- $personal := promptBoolOnce . "personal" "Install personal packages" }}
 {{- $chassisType := "desktop" }}
 {{- if eq .chezmoi.os "darwin" }}
 {{-   if contains "MacBook" (output "sysctl" "-n" "hw.model") }}
@@ -33,6 +34,7 @@ email = {{ $email | quote }}
 font = "MesloLGS NF"
 location = {{ $location | quote }}
 personal = {{ $personal }}
+scale = {{ divf (trimSuffix "%" $scale) 100 }}
 
 [diff]
 pager = "less -FR"
