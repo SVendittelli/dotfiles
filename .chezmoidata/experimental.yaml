@@ -1,0 +1,4 @@
+experimental:
+  ps:
+    - PSCommandNotFoundSuggestion # For PowerToys CommandNotFound module
+    - PSFeedbackProvider # For PowerToys CommandNotFound module

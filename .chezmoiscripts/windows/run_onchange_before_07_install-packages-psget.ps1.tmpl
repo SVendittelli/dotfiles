@@ -2,6 +2,14 @@
 {{- $personal := .personal -}}
 {{- if eq .chezmoi.os "windows" -}}
 Write-Host ""
+Write-Host "Enabling required experimental features..."
+Write-Host ""
+
+{{- range .experimental.ps }}
+Enable-ExperimentalFeature {{ . }}
+{{- end }}
+
+Write-Host ""
 Write-Host "Installing PowerShell modules..."
 Write-Host ""
 
