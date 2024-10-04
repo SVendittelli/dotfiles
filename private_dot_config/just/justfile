@@ -30,6 +30,10 @@ wm-start:
 wm-stop:
     komorebic stop --whkd --bar
 
+# Restart komorebi
+[no-cd, windows, group('komorebi')]
+wm-restart: wm-stop wm-start
+
 # Check for winget updates
 [no-cd, no-exit-message, windows, group('winget')]
 up-check:
