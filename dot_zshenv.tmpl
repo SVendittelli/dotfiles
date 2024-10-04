@@ -32,5 +32,6 @@ export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; 
 
 # set config directory to default value (makes some apps on macOS look in the correct place)
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
 
 # vim:ft=zsh

@@ -32,6 +32,7 @@ $Env:PAGER = "less"
 $Env:SHELL = "pwsh"
 $Env:HOME = $Env:USERPROFILE
 $Env:XDG_CONFIG_HOME = "$Env:HOME\.config"
+$Env:XDG_DATA_HOME = "$Env:HOME\.local\share"
 
 $Env:BAT_CONFIG_DIR = "$Env:XDG_CONFIG_HOME\bat"
 $Env:BAT_PAGER = "less -FRDa" # work around for less < v663, can be removed in future release

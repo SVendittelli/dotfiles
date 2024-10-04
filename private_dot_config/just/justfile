@@ -1,6 +1,8 @@
 set shell := ["zsh", "-uc"]
 set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
+templates_dir := env_var("XDG_DATA_HOME") / "templates"
+
 [private]
 @default:
     just --list --justfile {{justfile()}}
@@ -8,7 +10,7 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 # Create a new justfile in the current directory
 [no-cd, group('just')]
 init:
-    cp {{justfile_directory()}}/init_template.just justfile
+    cp {{templates_dir}}/justfile justfile
 
 # Edit the global justfile
 [no-cd, group('just')]
@@ -18,7 +20,7 @@ edit:
 # Create a new .editorconfig in the current directory
 [no-cd]
 editorconfig:
-    cp {{justfile_directory()}}/template.editorconfig .editorconfig
+    cp {{templates_dir}}/.editorconfig .editorconfig
 
 # Start komorebi and whkd
 [no-cd, windows, group('komorebi')]
