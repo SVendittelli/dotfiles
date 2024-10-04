@@ -78,7 +78,7 @@ Set-ExecutionPolicy remotesigned
 $Env:PATH += ";$Env:USERPROFILE\.local\bin"
 
 # Trust the PSGallery repository
-Set-PSResourceRepository -Name PSGallery -Trusted
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
 # Initialise chezmoi
 chezmoi init SVendittelli

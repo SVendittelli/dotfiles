@@ -9,9 +9,9 @@ Write-Host ""
 
 {{- range .packages }}
 {{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
-{{- with .platforms.windows.psresourceget }}
+{{- with .platforms.windows.psget }}
 {{- if . }}
-Install-PSResource -Name {{ . }}
+Install-Module -Name {{ . }}
 {{- end }}
 {{- end }}
 {{- end }}

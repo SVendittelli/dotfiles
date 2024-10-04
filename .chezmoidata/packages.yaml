@@ -496,7 +496,7 @@ packages:
     homepage: http://dahlbyk.github.io/posh-git/
     platforms:
       windows:
-        psresourceget: "posh-git"
+        psget: "posh-git"
   - name: power-toys
     description: Windows utilities for power users
     homepage: https://github.com/microsoft/PowerToys
@@ -731,6 +731,12 @@ packages:
     platforms:
       windows:
         dotnet: "WinDebloat"
+  - name: winget client module
+    description: PowerShell Module for the Windows Package Manager Client
+    homepage: https://www.powershellgallery.com/packages/Microsoft.WinGet.Client
+    platforms:
+      windows:
+        psget: "Microsoft.WinGet.Client"
   - name: winget create
     description: Create Windows packages
     homepage: https://github.com/microsoft/winget-create
