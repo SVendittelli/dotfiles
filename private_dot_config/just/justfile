@@ -50,3 +50,13 @@ up-all:
 [no-cd, no-exit-message, windows, group('winget')]
 up-install *args:
     winget upgrade {{args}}
+
+# Check for pip updates
+[no-cd, group('python')]
+pip-outdated:
+    python -m pip list --outdated
+
+# Update a pip package
+[no-cd, group('python')]
+pip-upgrade *packages:
+    python -m pip install --upgrade {{packages}}

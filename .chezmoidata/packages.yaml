@@ -352,7 +352,7 @@ packages:
       darwin:
         brew: "httpie"
       windows:
-        winget: "HTTPie.HTTPie"
+        pip: "httpie"
   - name: imageglass
     description: Image viewer for Windows
     homepage: https://imageglass.org/

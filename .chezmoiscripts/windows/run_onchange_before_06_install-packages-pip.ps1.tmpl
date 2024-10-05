@@ -6,6 +6,9 @@ Write-Host ""
 Write-Host "Installing Python packages..."
 Write-Host ""
 
+# Get the latest version of pip
+python -m pip install --upgrade pip wheel
+
 $PipTempFile = New-TemporaryFile
 
 @'
@@ -19,7 +22,7 @@ $PipTempFile = New-TemporaryFile
 {{- end }}
 '@ | Out-File $PipTempFile
 
-pip install -r $PipTempFile
+python -m pip install -r $PipTempFile
 
 Remove-Item $PipTempFile
 
