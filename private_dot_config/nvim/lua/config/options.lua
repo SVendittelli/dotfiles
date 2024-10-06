@@ -78,3 +78,6 @@ vim.opt.wrap = false
 
 -- True color support
 vim.opt.termguicolors = true
+
+-- Set recommended sessionoptions for auto-session
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
