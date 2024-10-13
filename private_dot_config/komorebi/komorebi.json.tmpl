@@ -23,26 +23,13 @@
   "monitors": [
     {
       "workspaces": [
+{{- $root := . }}
+{{- range $index, $workspace := .workspaces }}
         {
-          "name": "I",
-          "layout": "{{ template "komorebi_layout" . }}"
+          "name": "{{ $workspace }}",
+          "layout": "{{ template "komorebi_layout" $root }}"
         },
-        {
-          "name": "II",
-          "layout": "{{ template "komorebi_layout" . }}"
-        },
-        {
-          "name": "III",
-          "layout": "{{ template "komorebi_layout" . }}"
-        },
-        {
-          "name": "IV",
-          "layout": "{{ template "komorebi_layout" . }}"
-        },
-        {
-          "name": "V",
-          "layout": "{{ template "komorebi_layout" . }}"
-        }
+{{- end }}
       ]
     }
   ]
