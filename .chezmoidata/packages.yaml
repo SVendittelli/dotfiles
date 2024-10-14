@@ -444,6 +444,14 @@ packages:
         brew: "libqalculate"
       windows:
         winget: "Qalculate.Qalculate"
+  - name: logitech-options-plus
+    description: Logi Options+ customization for Logitech devices
+    homepage: https://www.logitech.com/en-gb/software/logi-options-plus.html
+    platforms:
+      darwin:
+        cask: "logi-options+"
+      windows:
+        winget: "Logitech.OptionsPlus"
   - name: meetingbar
     description: Your meetings at your fingertips in the macOS menu bar
     homepage: https://github.com/leits/MeetingBar
