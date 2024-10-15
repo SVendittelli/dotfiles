@@ -739,6 +739,12 @@ packages:
     platforms:
       windows:
         dotnet: "WinDebloat"
+  - name: windows-scan
+    description: Scan documents and pictures on Windows
+    homepage: https://www.microsoft.com/store/productId/9WZDNCRFJ3PV
+    platforms:
+      windows:
+        msstore: "9WZDNCRFJ3PV"
   - name: winget client module
     description: PowerShell Module for the Windows Package Manager Client
     homepage: https://www.powershellgallery.com/packages/Microsoft.WinGet.Client
