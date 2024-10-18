@@ -444,6 +444,13 @@ packages:
         brew: "libqalculate"
       windows:
         winget: "Qalculate.Qalculate"
+  - name: libre-office
+    description: A private, free and open source office suite – the successor project to OpenOffice
+    homepage: https://www.libreoffice.org/
+    personal: true
+    platforms:
+      windows:
+        winget: "TheDocumentFoundation.LibreOffice"
   - name: logitech-options-plus
     description: Logi Options+ customization for Logitech devices
     homepage: https://www.logitech.com/en-gb/software/logi-options-plus.html
