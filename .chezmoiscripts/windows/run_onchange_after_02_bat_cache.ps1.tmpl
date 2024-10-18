@@ -1,6 +1,13 @@
+{{- if eq .chezmoi.os "windows" -}}
+{{- if lookPath "bat" }}
+Write-Header "Updating bat cache..."
+
 # change detection hash: {{ joinPath .chezmoi.homeDir ".config/bat/themes/tokyonight_night.tmTheme" | include | sha256sum }}
-{{ if lookPath "bat" }}
 bat cache --build
-{{ end }}
+
+{{- end }}
+{{- end }}
+
+Write-Done
 
 # vim:ft=ps1

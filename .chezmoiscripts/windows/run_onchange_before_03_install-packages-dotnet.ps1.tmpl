@@ -1,20 +1,21 @@
 # chezmoi:template:missing-key=invalid
 {{- $personal := .personal -}}
 {{- if eq .chezmoi.os "windows" -}}
-{{- if lookPath "go" -}}
-Write-Host ""
-Write-Host "Installing Go packages..."
-Write-Host ""
+{{- if lookPath "dotnet" -}}
+Write-Header "Installing .NET packages..."
+
+# windebloat new version detection: {{ (gitHubLatestTag "SimonCropp/WinDebloat").Name }}
 
 {{ range .packages }}
 {{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
-{{- with .platforms.all.go }}
+{{- with .platforms.windows.dotnet }}
 {{- if . }}
-go install {{ . }}
+dotnet tool install -g {{ . }}
 {{- end }}
 {{- end }}
 {{- end }}
 
+Write-Done
 {{- end -}}
 {{- end }}
 

@@ -2,9 +2,7 @@
 {{- $personal := .personal -}}
 {{- if eq .chezmoi.os "windows" -}}
 {{- if lookPath "cargo" -}}
-Write-Host ""
-Write-Host "Installing cargo packages..."
-Write-Host ""
+Write-Header "Installing cargo packages..."
 
 cargo install --locked {{ range .packages -}}
 {{- if and (.personal) (not $personal) }}{{ continue }}{{ end -}}
@@ -13,6 +11,7 @@ cargo install --locked {{ range .packages -}}
 {{- end }}
 {{- end }}
 
+Write-Done
 {{- end -}}
 {{- end }}
 

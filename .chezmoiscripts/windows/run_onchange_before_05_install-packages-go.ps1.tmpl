@@ -1,20 +1,19 @@
 # chezmoi:template:missing-key=invalid
 {{- $personal := .personal -}}
 {{- if eq .chezmoi.os "windows" -}}
-{{- if lookPath "gh" -}}
-Write-Host ""
-Write-Host "Installing gh extensions..."
-Write-Host ""
+{{- if lookPath "go" -}}
+Write-Header "Installing Go packages..."
 
 {{ range .packages }}
 {{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
-{{- with .platforms.all.gh }}
+{{- with .platforms.all.go }}
 {{- if . }}
-gh extension install {{ . }}
+go install {{ . }}
 {{- end }}
 {{- end }}
 {{- end }}
 
+Write-Done
 {{- end -}}
 {{- end }}
 

@@ -1,7 +1,5 @@
 # Set user environment variables that need to defined outside of a shell context.
-Write-Host ""
-Write-Host "Setting user environment variables..."
-Write-Host ""
+Write-Header "Setting user environment variables..."
 
 ## Set XDG Paths
 [System.Environment]::SetEnvironmentVariable('XDG_CONFIG_HOME',"$Env:USERPROFILE\.config", 'User')
@@ -13,3 +11,5 @@ Write-Host ""
 
 ## Set the path to the komorebi config directory
 [System.Environment]::SetEnvironmentVariable('KOMOREBI_CONFIG_HOME',"$Env:USERPROFILE\.config\komorebi", 'User')
+
+Write-Done

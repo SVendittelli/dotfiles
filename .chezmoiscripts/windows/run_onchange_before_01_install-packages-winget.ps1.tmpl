@@ -2,9 +2,7 @@
 {{- $personal := .personal -}}
 {{- if eq .chezmoi.os "windows" -}}
 {{- if lookPath "winget" -}}
-Write-Host ""
-Write-Host "Installing winget packages..."
-Write-Host ""
+Write-Header "Installing winget packages..."
 
 $WingetTempFile = New-TemporaryFile
 
@@ -65,6 +63,7 @@ winget import -i $WingetTempFile --ignore-unavailable --no-upgrade --accept-pack
 
 Remove-Item $WingetTempFile
 
+Write-Done
 {{- end -}}
 {{- end }}
 

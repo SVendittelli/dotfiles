@@ -2,16 +2,12 @@
 {{- $personal := .personal -}}
 {{- if eq .chezmoi.os "windows" -}}
 {{- if lookPath "fnm" -}}
-Write-Host ""
-Write-Host "Installing latest Node.js LTS..."
-Write-Host ""
+Write-Header "Installing latest Node.js LTS..."
 
 fnm install --lts
 fnm default lts-latest
 
-Write-Host ""
-Write-Host "Installing npm packages..."
-Write-Host ""
+Write-Header "Installing npm packages..."
 
 npm install --global {{ range .packages -}}
 {{- if and (.personal) (not $personal) }}{{ continue }}{{ end -}}
@@ -22,6 +18,7 @@ npm install --global {{ range .packages -}}
 
 corepack enable
 
+Write-Done
 {{- end -}}
 {{- end }}
 

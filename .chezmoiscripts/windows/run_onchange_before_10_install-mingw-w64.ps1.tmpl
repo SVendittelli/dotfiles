@@ -1,9 +1,7 @@
 {{ if eq .chezmoi.os "windows" -}}
 
 {{- if lookPath "7z" }}
-Write-Host ""
-Write-Host "Installing mingw-w64..."
-Write-Host ""
+Write-Header "Installing mingw-w64..."
 
 $Tmp = [System.IO.Path]::GetTempPath() # Not $env:TEMP, see https://stackoverflow.com/a/946017
 $Name = (New-Guid).ToString("N")
@@ -21,6 +19,7 @@ Remove-Item -Path "$LocalDir\mingw64" -Recurse -Force
 
 Remove-Item -Path $TmpDir -Recurse -Force
 
+Write-Done
 {{- end -}}
 {{- end }}
 

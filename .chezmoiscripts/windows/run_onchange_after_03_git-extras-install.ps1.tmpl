@@ -1,9 +1,7 @@
 {{ if eq .chezmoi.os "windows" -}}
 
 {{- if lookPath "git" }}
-Write-Host ""
-Write-Host "Installing git-extras..."
-Write-Host ""
+Write-Header "Installing git-extras..."
 
 cd "$Env:USERPROFILE\.local\git-extras"
 
@@ -15,6 +13,8 @@ Start-Process -Verb RunAs -Wait -FilePath .\install.cmd
 
 # Checkout the main branch so the latest version can alway be pulled
 git checkout main --quiet
+
+Write-Done
 {{- end }}
 
 {{- end }}

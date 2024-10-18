@@ -1,22 +1,19 @@
 # chezmoi:template:missing-key=invalid
 {{- $personal := .personal -}}
 {{- if eq .chezmoi.os "windows" -}}
-{{- if lookPath "dotnet" -}}
-Write-Host ""
-Write-Host "Installing .NET packages..."
-Write-Host ""
-
-# windebloat new version detection: {{ (gitHubLatestTag "SimonCropp/WinDebloat").Name }}
+{{- if lookPath "gh" -}}
+Write-Header "Installing gh extensions..."
 
 {{ range .packages }}
 {{- if and (.personal) (not $personal) }}{{ continue }}{{ end }}
-{{- with .platforms.windows.dotnet }}
+{{- with .platforms.all.gh }}
 {{- if . }}
-dotnet tool install -g {{ . }}
+gh extension install {{ . }}
 {{- end }}
 {{- end }}
 {{- end }}
 
+Write-Done
 {{- end -}}
 {{- end }}
 

@@ -283,6 +283,31 @@ function Get-Aliases {
     Get-Alias | Format-Table Name,ResolvedCommandName,Description,HelpUri
 }
 
+function Write-Done {
+    <#
+    .SYNOPSIS
+        Write a formatted header using Write-Host
+    .LINK
+        Write-Host
+    #>
+  Write-Host "Done!" -ForegroundColor Green
+}
+
+function Write-Header {
+    <#
+    .SYNOPSIS
+        Write a formatted header using Write-Host
+    .LINK
+        Write-Host
+    #>
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $true, Position = 0)]
+        [string]$Message
+    )
+  Write-Host "`n$Message`n" -ForegroundColor Cyan
+}
+
 # Other useful functions
 # -----------------------------------------------------------------------------
 

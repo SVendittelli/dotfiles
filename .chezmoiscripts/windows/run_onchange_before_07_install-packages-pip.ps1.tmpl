@@ -2,9 +2,7 @@
 {{- $personal := .personal -}}
 {{- if eq .chezmoi.os "windows" -}}
 {{- if lookPath "pip" -}}
-Write-Host ""
-Write-Host "Installing Python packages..."
-Write-Host ""
+Write-Header "Installing Python packages..."
 
 # Get the latest version of pip
 python -m pip install --upgrade pip wheel
@@ -26,6 +24,7 @@ python -m pip install -r $PipTempFile
 
 Remove-Item $PipTempFile
 
+Write-Done
 {{- end -}}
 {{- end }}
 

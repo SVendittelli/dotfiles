@@ -2,14 +2,13 @@
 {{- $personal := .personal -}}
 {{- if eq .chezmoi.os "windows" -}}
 {{- if lookPath "WinDebloat" -}}
-Write-Host ""
-Write-Host "Running WinDebloat..."
-Write-Host ""
+Write-Header "Running WinDebloat..."
 
 # windebloat new version detection: {{ (gitHubLatestTag "SimonCropp/WinDebloat").Name }}
 
 WinDebloat --include {{ range .windebloat.include }}{{ . }} {{ end }} --exclude {{ range .windebloat.exclude }}{{ . }} {{ end }}
 
+Write-Done
 {{- end -}}
 {{- end }}
 

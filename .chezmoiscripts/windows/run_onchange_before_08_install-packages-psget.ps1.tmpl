@@ -1,17 +1,15 @@
 # chezmoi:template:missing-key=invalid
 {{- $personal := .personal -}}
 {{- if eq .chezmoi.os "windows" -}}
-Write-Host ""
-Write-Host "Enabling required experimental features..."
-Write-Host ""
+Write-Header "Enabling required experimental features..."
 
 {{- range .experimental.ps }}
 Enable-ExperimentalFeature {{ . }}
 {{- end }}
 
-Write-Host ""
-Write-Host "Installing PowerShell modules..."
-Write-Host ""
+Write-Done
+
+Write-Header "Installing PowerShell modules..."
 
 # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.psresourceget/
 
@@ -24,6 +22,7 @@ Install-Module -Name {{ . }}
 {{- end }}
 {{- end }}
 
+Write-Done
 {{- end }}
 
 # vim:ft=ps1
