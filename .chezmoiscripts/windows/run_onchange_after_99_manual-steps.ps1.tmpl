@@ -1,0 +1,13 @@
+{{- if eq .chezmoi.os "windows" -}}
+{{- $config := ".config/winutil.json" }}
+
+Write-Header "Manual Steps"
+Write-Host "In an adminitrator shell, run the following commands:`n"
+Write-Host '  iex "& { $(irm christitus.com/win) } -Config $Env:USERPROFILE/{{ $config }} -Run"' -ForegroundColor Green
+
+# Change detection hashes:
+# WinUtil: {{ joinPath .chezmoi.homeDir $config | include | sha256sum }}
+
+{{- end }}
+
+# vim:ft=ps1

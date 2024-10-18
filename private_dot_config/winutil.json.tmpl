@@ -1,0 +1,26 @@
+{
+  "WPFFeature": [
+    "WPFFeaturewsl",
+    "WPFFeatureRegBackup"
+  ],
+  "WPFInstall": [],
+  "WPFTweaks": [
+    "WPFTweaksRestorePoint",
+    "WPFTweaksIPv46",
+    "WPFTweaksLoc",
+    "WPFTweaksStorage",
+    "WPFTweaksWifi",
+    "WPFTweaksEndTaskOnTaskbar",
+    "WPFTweaksServices",
+    "WPFTweaksPowershell7Tele",
+    "WPFTweaksConsumerFeatures",
+    "WPFTweaksDeleteTempFiles",
+    "WPFTweaksDVR",
+    "WPFTweaksHome",
+    "WPFTweaksTele",
+    {{ if eq .chassisType "desktop" }}"WPFTweaksHiber"{{ else }}"WPFTweaksLaptopHibernation"{{ end }},
+    "WPFTweaksDiskCleanup",
+    "WPFTweaksAH"
+  ],
+  "Install": []
+}

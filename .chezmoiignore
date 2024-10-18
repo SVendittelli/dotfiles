@@ -106,6 +106,8 @@ requirements.txt
 
 .config/powershell
 
+.config/winutil.json
+
 .wslconfig
 
 {{ end }}
