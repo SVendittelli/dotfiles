@@ -16,6 +16,13 @@ packages:
         brew: "act"
       windows:
         winget: "nektos.act"
+  - name: sqlc
+    description: Generate type-safe code from SQL
+    homepage: https://github.com/sqlc-dev/sqlc
+    personal: true
+    platforms:
+      all:
+        go: "github.com/sqlc-dev/sqlc/cmd/sqlc@latest"
   - name: air
     description: Live reload for Go apps
     homepage: https://github.com/air-verse/air
