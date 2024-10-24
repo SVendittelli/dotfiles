@@ -16,13 +16,6 @@ packages:
         brew: "act"
       windows:
         winget: "nektos.act"
-  - name: sqlc
-    description: Generate type-safe code from SQL
-    homepage: https://github.com/sqlc-dev/sqlc
-    personal: true
-    platforms:
-      all:
-        go: "github.com/sqlc-dev/sqlc/cmd/sqlc@latest"
   - name: air
     description: Live reload for Go apps
     homepage: https://github.com/air-verse/air
@@ -607,6 +600,13 @@ packages:
         brew: "LucasPickering/tap/slumber"
       windows:
         external: # Installed directly in the external file
+  - name: sqlc
+    description: Generate type-safe code from SQL
+    homepage: https://github.com/sqlc-dev/sqlc
+    personal: true
+    platforms:
+      all:
+        go: "github.com/sqlc-dev/sqlc/cmd/sqlc@latest"
   - name: sqlite
     description: Embedded relational database
     homepage: https://www.sqlite.org/
