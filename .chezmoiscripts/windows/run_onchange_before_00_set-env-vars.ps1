@@ -3,6 +3,7 @@ Write-Header "Setting user environment variables..."
 
 ## Set XDG Paths
 [System.Environment]::SetEnvironmentVariable('XDG_CONFIG_HOME',"$Env:USERPROFILE\.config", 'User')
+[System.Environment]::SetEnvironmentVariable('XDG_BIN_HOME',"$Env:USERPROFILE\.local\bin", 'User')
 [System.Environment]::SetEnvironmentVariable('XDG_DATA_HOME',"$Env:USERPROFILE\.local\share", 'User')
 [System.Environment]::SetEnvironmentVariable('XDG_STATE_HOME',"$Env:USERPROFILE\.local\state", 'User')
 

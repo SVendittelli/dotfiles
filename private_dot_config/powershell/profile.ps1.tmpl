@@ -3,9 +3,16 @@
 # This file will be copied over to $Profile.CurrentUserAllHosts after running
 # `chezmoi apply` by the script `run_after_00_symlink-config.ps1`:
 
+# XDG Base Directories
+$Env:HOME = $Env:USERPROFILE
+$Env:XDG_CONFIG_HOME = "$Env:HOME\.config"
+$Env:XDG_BIN_HOME = "$Env:HOME\.local\bin"
+$Env:XDG_DATA_HOME = "$Env:HOME\.local\share"
+$Env:XDG_STATE_HOME = "$Env:HOME\.local\state"
+
 # Update Path
 $Env:PATH += ";C:\Program Files\7-Zip"
-$Env:PATH += ";$Env:USERPROFILE\.local\bin"
+$Env:PATH += ";$Env:XDG_BIN_HOME"
 $Env:PATH += ";$Env:USERPROFILE\.local\mingw64\bin" # gcc and more
 
 # Includes
@@ -31,12 +38,6 @@ if (Test-Path $ConfigFolder/aliases.ps1) {
 $Env:EDITOR = "nvim"
 $Env:PAGER = "less"
 $Env:SHELL = "pwsh"
-
-## XDG Base Directories
-$Env:HOME = $Env:USERPROFILE
-$Env:XDG_CONFIG_HOME = "$Env:HOME\.config"
-$Env:XDG_DATA_HOME = "$Env:HOME\.local\share"
-$Env:XDG_STATE_HOME = "$Env:HOME\.local\state"
 
 ## Program config
 $Env:BAT_CONFIG_DIR = "$Env:XDG_CONFIG_HOME\bat"
