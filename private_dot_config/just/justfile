@@ -22,6 +22,25 @@ edit:
 editorconfig:
     cp {{templates_dir}}/.editorconfig .editorconfig
 
+# Start the email AutoHotkey script
+[no-cd, windows, group('autohotkey')]
+ah-start:
+    Invoke-Item {{home_directory()}}/email.ahk
+
+# Stop the email AutoHotkey script
+[no-cd, windows, group('autohotkey')]
+ah-stop:
+    Stop-Process -Name:AutoHotkey64 -ErrorAction Ignore
+
+# Start Apex Legends
+[no-cd, windows, group('steam')]
+apex-start: wm-stop ah-stop
+    explorer 'steam://rungameid/1172470'
+
+# Restart wm and ah after game closed
+[no-cd, windows, group('steam')]
+apex-stop: ah-start wm-start
+
 # Start komorebi and whkd
 [no-cd, windows, group('komorebi')]
 wm-start:
